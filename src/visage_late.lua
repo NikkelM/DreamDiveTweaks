@@ -23,8 +23,10 @@ modutil.mod.Path.Context.Wrap.Static("HecateBattleStart", function ( hecate, arg
     end)
     modutil.mod.Path.Wrap("SetThingProperty", function (base, args)
         args = args or {}
-        if game.CurrentRun.IsDreamRun and config.disable_visage_forms.model and game.Contains({"GR2/HecateBattleDream_Color", "GR2/HecateEMDream_Color"}, args.Value) then
+        if game.CurrentRun.IsDreamRun and config.disable_visage_forms.model and "GR2/HecateBattleDream_Color" == args.Value then
             return
+        elseif game.CurrentRun.IsDreamRun and config.disable_visage_forms.model and "GR2/HecateEMDream_Color" == args.Value then
+            args.Value = "GR2/HecateEM_Color"
         end
         return base(args)
     end)

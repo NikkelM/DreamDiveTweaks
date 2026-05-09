@@ -63,6 +63,7 @@ local function on_ready()
     import 'harvest.lua'
     import 'early_unlock.lua'
     import 'runlength.lua'
+    import 'music_fix.lua'
 end
 
 local function on_reload()
