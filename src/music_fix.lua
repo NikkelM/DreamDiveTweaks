@@ -6,5 +6,6 @@ modutil.mod.Path.Wrap("StartRoomMusic", function (base, currentRun, currentRoom)
         roomData.SecretMusic = roomData.ShopSecretMusic
     end
     local retval = base(currentRun, currentRoom)
+    roomData.SecretMusic = secretMusicCopy
     return retval
 end)
