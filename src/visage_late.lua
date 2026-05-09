@@ -55,3 +55,23 @@ modutil.mod.Path.Context.Wrap.Static("CerberusStageEnter", function ( unit )
         return base(args)
     end)
 end)
+
+modutil.mod.Path.Context.Wrap.Static("TyphonHeadSummonPresentation", function ( unit )
+    modutil.mod.Path.Wrap("SetThingProperty", function (base, args)
+        args = args or {}
+        if game.CurrentRun.IsDreamRun and config.disable_visage_forms.model and string.match(args.Value, "_Color") then
+            args.Value = string.gsub(args.Value, "Dream", "")
+        end
+        return base(args)
+    end)
+end)
+
+modutil.mod.Path.Context.Wrap.Static("FakeDeathTyphonEntrance", function ( unit )
+    modutil.mod.Path.Wrap("SetThingProperty", function (base, args)
+        args = args or {}
+        if game.CurrentRun.IsDreamRun and config.disable_visage_forms.model and string.match(args.Value, "_Color") then
+            args.Value = string.gsub(args.Value, "Dream", "")
+        end
+        return base(args)
+    end)
+end)

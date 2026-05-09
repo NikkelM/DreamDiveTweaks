@@ -58,7 +58,11 @@ local function on_ready()
             return tostring(o)
         end
     end
+
     import 'visage.lua'
+    import 'harvest.lua'
+    import 'early_unlock.lua'
+    import 'runlength.lua'
 end
 
 local function on_reload()
