@@ -38,25 +38,46 @@ config = chalk.auto 'config.lua'
 -- ^ this updates our `.cfg` file in the config folder!
 public.config = config -- so other mods can access our config
 
+function dump(o, depth)
+    depth = depth or 0
+    if type(o) == 'table' then
+        local s = "\n" .. string.rep("\t", depth) .. '{\n'
+        for k,v in pairs(o) do
+            if type(k) ~= 'number' then k = '"'..k..'"' end
+            s = s .. string.rep("\t",(depth+1)) .. '['..k..'] = ' .. dump(v, depth + 1) .. ',\n'
+        end
+        return s .. string.rep("\t", depth) .. '}'
+    elseif type(o) == "string" then
+        return "\"" .. o .. "\""
+    else
+        return tostring(o)
+    end
+end
+
 local function on_ready()
     -- what to do when we are ready, but not re-do on reload.
     if config.enabled == false then return end
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     mod.config = config
-    function mod.dump(o, depth)
+
+    function MergeUptoDepth(base, incoming, depth, currentDepth)
         depth = depth or 0
-        if type(o) == 'table' then
-            local s = "\n" .. string.rep("\t", depth) .. '{\n'
-            for k,v in pairs(o) do
-                if type(k) ~= 'number' then k = '"'..k..'"' end
-                s = s .. string.rep("\t",(depth+1)) .. '['..k..'] = ' .. mod.dump(v, depth + 1) .. ',\n'
+        currentDepth = currentDepth or 0
+        local returnTable = base
+        for k, v in pairs( incoming ) do
+            if type(v) == "table" and currentDepth<depth then
+                if next(v) == nil then
+                    returnTable[k] = {}
+                else
+                    returnTable[k] = MergeUptoDepth( returnTable[k], v, depth, currentDepth + 1 )
+                end
+            elseif v == "nil" then
+                returnTable[k] = nil
+            else
+                returnTable[k] = v
             end
-            return s .. string.rep("\t", depth) .. '}'
-        elseif type(o) == "string" then
-            return "\"" .. o .. "\""
-        else
-            return tostring(o)
         end
+        return returnTable
     end
 
     import 'visage.lua'
