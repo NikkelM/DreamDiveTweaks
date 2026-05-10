@@ -2116,20 +2116,915 @@ BaseStyxEnemy =
 	},
 },
 
+DestructibleTree =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 18,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 21.6,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 25.92,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 31.1,
+					},
+				},
+			},
+		},
+	},
+},
+
+SteamTrap =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.4,
+					},
+					{
+						NonPlayerMultiplier = 120,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.88,
+					},
+					{
+						NonPlayerMultiplier = 144,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.46,
+					},
+					{
+						NonPlayerMultiplier = 172.8,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 4.15,
+					},
+					{
+						NonPlayerMultiplier = 207.36,
+					},
+				},
+			},
+		},
+	},
+},
+
+SteamWallTrap =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.4,
+					},
+					{
+						NonPlayerMultiplier = 120,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.88,
+					},
+					{
+						NonPlayerMultiplier = 144,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.46,
+					},
+					{
+						NonPlayerMultiplier = 172.8,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 4.15,
+					},
+					{
+						NonPlayerMultiplier = 207.36,
+					},
+				},
+			},
+		},
+	},
+},
+
+SteamCubeFused =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.4,
+					},
+					{
+						NonPlayerMultiplier = 120,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.88,
+					},
+					{
+						NonPlayerMultiplier = 144,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.46,
+					},
+					{
+						NonPlayerMultiplier = 172.8,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 4.15,
+					},
+					{
+						NonPlayerMultiplier = 207.36,
+					},
+				},
+			},
+		},
+	},
+},
+
+ThornTree =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.8,
+					},
+					{
+						NonPlayerMultiplier = 72,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.16,
+					},
+					{
+						NonPlayerMultiplier = 86.4,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.59,
+					},
+					{
+						NonPlayerMultiplier = 103.68,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.11,
+					},
+					{
+						NonPlayerMultiplier = 124.42,
+					},
+				},
+			},
+		},
+	},
+},
+
+SpikeTrapClockwork =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.8,
+					},
+					{
+						NonPlayerMultiplier = 54,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.16,
+					},
+					{
+						NonPlayerMultiplier = 64.8,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.59,
+					},
+					{
+						NonPlayerMultiplier = 77.76,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.11,
+					},
+					{
+						NonPlayerMultiplier = 93.31,
+					},
+				},
+			},
+		},
+	},
+},
+
+BeamTrap =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.8,
+					},
+					{
+						NonPlayerMultiplier = 3.6,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.16,
+					},
+					{
+						NonPlayerMultiplier = 4.32,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.59,
+					},
+					{
+						NonPlayerMultiplier = 5.18,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.11,
+					},
+					{
+						NonPlayerMultiplier = 6.22,
+					},
+				},
+			},
+		},
+	},
+},
+
+SoulPylon =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 2.4,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 2.88,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 3.46,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 4.15,
+					},
+				},
+			},
+		},
+	},
+},
+
+FireBarrel =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.4,
+					},
+					{
+						NonPlayerMultiplier = 120,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.88,
+					},
+					{
+						NonPlayerMultiplier = 144,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 3.46,
+					},
+					{
+						NonPlayerMultiplier = 172.8,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 4.15,
+					},
+					{
+						NonPlayerMultiplier = 207.36,
+					},
+				},
+			},
+		},
+	},
+},
+
+FireBarrelShips =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.56,
+					},
+					{
+						NonPlayerMultiplier = 78,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.87,
+					},
+					{
+						NonPlayerMultiplier = 93.6,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.25,
+					},
+					{
+						NonPlayerMultiplier = 112.32,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.7,
+					},
+					{
+						NonPlayerMultiplier = 134.78,
+					},
+				},
+			},
+		},
+	},
+},
+
+TyphonEgg =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.2,
+					},
+					{
+						NonPlayerMultiplier = 36,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.44,
+					},
+					{
+						NonPlayerMultiplier = 43.2,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.73,
+					},
+					{
+						NonPlayerMultiplier = 51.84,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.07,
+					},
+					{
+						NonPlayerMultiplier = 62.21,
+					},
+				},
+			},
+		},
+	},
+},
+
+TyphonMine =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.2,
+					},
+					{
+						NonPlayerMultiplier = 36,
+					},
+				},
+			},
+		},
+		[6] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.44,
+					},
+					{
+						NonPlayerMultiplier = 43.2,
+					},
+				},
+			},
+		},
+		[7] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 1.73,
+					},
+					{
+						NonPlayerMultiplier = 51.84,
+					},
+				},
+			},
+		},
+		[8] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 2.07,
+					},
+					{
+						NonPlayerMultiplier = 62.21,
+					},
+				},
+			},
+		},
+	},
+},
+
+GunBombUnit =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 1.56,
+			},
+		},
+		[6] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 1.87,
+			},
+		},
+		[7] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 2.25,
+			},
+		},
+		[8] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 2.7,
+			},
+		},
+	},
+},
+
+TyphonEggLarge =
+{
+	DreamBiomeData =
+	{
+		[5] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 1.2,
+			},
+		},
+		[6] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 1.44,
+			},
+		},
+		[7] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 1.73,
+			},
+		},
+		[8] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 2.07,
+			},
+		},
+	},
+},
+
 }
 
 for enemy, data in pairs(enemyScalingData) do
-    for index, value in pairs(data.DreamBiomeData) do
-        if game.EnemyData[enemy] then
+    if game.EnemyData[enemy] then
+        for index, value in pairs(data.DreamBiomeData) do
             game.EnemyData[enemy].DreamBiomeData[index] = value
-        else
-            print("unable to patch scaling for", enemy)
         end
+    else
+        print("unable to patch scaling for", enemy)
     end
 end
 
--- game.SetupRunData()
+local dreamBiomeCache = {}
+
+print("before", dump(game.EnemyData.Mati.DreamBiomeData))
+
+for enemy, data in pairs(game.EnemyData) do
+    if data.DreamBiomeData and not enemyScalingData[enemy] then
+        dreamBiomeCache[enemy] = data.DreamBiomeData
+        data.DreamBiomeData = nil
+    end
+end
+
+print("nil", dump(game.EnemyData.Mati.DreamBiomeData))
+
+game.SetupRunData()
+
+print("setup", dump(game.EnemyData.Mati.DreamBiomeData))
+
+for enemy, data in pairs(game.EnemyData) do
+    if data.DreamBiomeData == nil and dreamBiomeCache[enemy] then
+        data.DreamBiomeData = dreamBiomeCache[enemy]
+    end
+end
+
+print("restore", dump(game.EnemyData.Mati.DreamBiomeData))
 
 print(dump(game.EnemyData.Hecate.DreamBiomeData))
-
-print(dump(game.EnemyData.Mati.DreamBiomeData))
