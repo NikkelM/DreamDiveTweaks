@@ -1,1 +1,1 @@
-rom.mods["NikkelM-Resources_In_Chaos_Trials"].config.dreamDives = config.harvest_resources
+rom.mods["NikkelM-Resources_In_Chaos_Trials"].config.dreamDives = config.dream_resources

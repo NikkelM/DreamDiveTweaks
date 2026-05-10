@@ -23,15 +23,15 @@ game.ConcatTableValuesIPairs(game.RoomSets.Dream,{
 })
 
 modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, source, args)
-    if game.CurrentRun.IsDreamRun and game.GameData.FullRunBiomeCount ~=4 then
+    if game.CurrentRun.IsDreamRun and game.GameData.FullRunBiomeCount ~= 4 then
         args = args or {}
 
         if args.UseShrineUpgradesCache then
-            if (game.CurrentRun.ShrineUpgradesCache.BossDifficultyShrineUpgrade or 0) < game.CurrentRun.EnteredBiomes*(4/game.GameData.FullRunBiomeCount) then
+            if (game.CurrentRun.ShrineUpgradesCache.BossDifficultyShrineUpgrade or 0) * game.GameData.FullRunBiomeCount < game.CurrentRun.EnteredBiomes * 4 then
                 return false
             end
         else
-            if (game.GameState.ShrineUpgrades.BossDifficultyShrineUpgrade or 0) < game.CurrentRun.EnteredBiomes*(4/game.GameData.FullRunBiomeCount) then
+            if (game.GameState.ShrineUpgrades.BossDifficultyShrineUpgrade or 0) * game.GameData.FullRunBiomeCount < game.CurrentRun.EnteredBiomes * 4 then
                 return false
             end
 	    end
