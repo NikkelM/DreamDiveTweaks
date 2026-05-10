@@ -1,6 +1,8 @@
 import 'EnemyScalingData.lua'
 import 'EncounterScalingLogic.lua'
 
+--#region Basic runlength changes
+
 if type(config.biome_count) == "number" then
     config.biome_count = math.min(config.biome_count, 8)
     config.biome_count = math.max(config.biome_count, 2)
@@ -21,6 +23,8 @@ game.ConcatTableValuesIPairs(game.RoomSets.Dream,{
     "Dream_PostBoss02",
     "Dream_PostBoss03",
 })
+
+--#endregion
 
 modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, source, args)
     if game.CurrentRun.IsDreamRun and game.GameData.FullRunBiomeCount ~= 4 then
@@ -50,6 +54,8 @@ modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, sou
     end
     return base(source, args)
 end)
+
+--#region Run result subtitle
 
 local screenTextEnFile = rom.path.combine(rom.paths.Content, "Game\\Text\\en\\ScreenText.en.sjson")
 
@@ -100,3 +106,145 @@ modutil.mod.Path.Wrap("GetVisitedBiomeIcons", function (base, run)
 	end
 	return tooltipData
 end)
+
+--#endregion
+
+--#region 3rd hammer after 4th region
+
+game.NamedRequirementsData[_PLUGIN.guid.."LateHammerLootRequirements"] =
+{
+    -- unlock requirements
+    {
+        Path = { "GameState", "TextLinesRecord" },
+        CountOf =
+        {
+            "PoseidonFirstPickUp",
+            "DemeterFirstPickUp",
+            "HestiaFirstPickUp",
+            "AphroditeFirstPickUp",
+            "ZeusFirstPickUp",
+            "HephaestusFirstPickUp",
+        },
+        Comparison = ">=",
+        Value = 4,
+    },
+
+    -- run requirements
+    {
+        FunctionName = "RequiredNotInStore",
+        FunctionArgs = { Name = "WeaponUpgradeDrop", },
+    },
+    {
+        Path = { "CurrentRun", "EnteredBiomes" },
+        Comparison = ">",
+        Value = 4,
+    },
+    {
+        Path = { "CurrentRun", "LootTypeHistory", "WeaponUpgrade" },
+        Comparison = "==",
+        Value = 2,
+    },
+}
+
+table.insert(game.RewardStoreData.RunProgress, {
+    Name = "WeaponUpgrade",
+    GameStateRequirements =
+    {
+        NamedRequirements = { _PLUGIN.guid.."LateHammerLootRequirements" },
+    }
+})
+
+table.insert(game.RewardStoreData.TartarusRewards, {
+    Name = "WeaponUpgrade",
+    GameStateRequirements =
+    {
+        NamedRequirements = { _PLUGIN.guid.."LateHammerLootRequirements" },
+    }
+})
+
+table.insert(game.RewardStoreData.TyphonBossRewards, {
+    Name = "WeaponUpgrade",
+    GameStateRequirements =
+    {
+        NamedRequirements = { _PLUGIN.guid.."LateHammerLootRequirements" },
+    }
+})
+
+table.insert(game.PresetEventArgs.NemesisBuyItemChoices.GetOptions,{
+    Name = "WeaponUpgrade", CostResourceName = "Money", CostResourceMin = 180, CostResourceMax = 205,
+    GameStateRequirements =
+    {
+        NamedRequirements = { _PLUGIN.guid.."LateHammerLootRequirements", },
+    },
+})
+
+table.insert(game.StoreData.WorldShop.GroupsOf[2].OptionsData, 3, {
+    Name = "WeaponUpgradeDrop", Weight = 2.5,
+    ReplaceRequirements =
+    {
+        {
+            PathTrue = { "GameState", "UseRecord", "WeaponUpgrade" },
+        },
+        NamedRequirements = { _PLUGIN.guid.."LateHammerLootRequirements" },
+    },
+})
+
+--#endregion
+
+--#region 3rd Hermes drop
+game.NamedRequirementsData[_PLUGIN.guid.."LateHermesUpgradeRequirements"] =
+{
+    -- unlock requirements
+    {
+        Path = { "GameState", "TextLinesRecord" },
+        HasAll = { "HermesFirstPickUp" },
+    },
+
+    -- run requirements
+    {
+        FunctionName = "RequiredNotInStore",
+        FunctionArgs = { Name = "ShopHermesUpgrade", },
+    },
+    {
+        Path = { "CurrentRun", "BiomeUseRecord", },
+        HasNone = { "HermesUpgrade", "ShopHermesUpgrade", },
+    },
+    {
+        Path = { "CurrentRun", "LootTypeHistory", "HermesUpgrade" },
+        Comparison = "==",
+        Value = 2,
+    },
+    {
+        Path = { "CurrentRun", "EnteredBiomes" },
+        Comparison = ">",
+        Value = 4,
+    },
+}
+
+table.insert(game.RewardStoreData.HubRewards, {
+    Name = "HermesUpgrade",
+    GameStateRequirements =
+    {
+        NamedRequirements = { _PLUGIN.guid.."LateHermesUpgradeRequirements", },
+    }
+})
+
+table.insert(game.RewardStoreData.RunProgress, {
+    Name = "HermesUpgrade",
+    GameStateRequirements =
+    {
+        NamedRequirements = { _PLUGIN.guid.."LateHermesUpgradeRequirements", },
+    }
+})
+--#endregion
+
+--#region 5th god
+
+modutil.mod.Path.Wrap("StartRoom", function (base, currentRun, currentRoom)
+    base(currentRun, currentRoom)
+    if currentRun.IsDreamRun and currentRun.EnteredBiomes == 5 and currentRoom.BiomeStartRoom then
+        game.CurrentRun.MaxGodsPerRun = 5
+    end
+end)
+
+--#endregion
