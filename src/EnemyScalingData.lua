@@ -2690,3 +2690,24 @@ end
 -- print("restore", dump(game.EnemyData.Mati.DreamBiomeData))
 
 -- print(dump(game.EnemyData.Hecate.DreamBiomeData))
+
+local vorBossSetupEventIndex = {
+	Hecate = {2},
+	Polyphemus = {3},
+	Scylla = {1},
+	SirenDrummer = {1},
+	SirenKeytarist = {1},
+	Chronos = {3},
+	Hades = {1},
+}
+
+for enemy, eventIndex in pairs(vorBossSetupEventIndex) do
+	if game.EnemyData[enemy] and game.EnemyData[enemy].SetupEvents[eventIndex[1]] then
+		game.EnemyData[enemy].SetupEvents[eventIndex[1]].Args.DreamBiomeData[5] = game.EnemyData[enemy].DreamBiomeData[5]
+		game.EnemyData[enemy].SetupEvents[eventIndex[1]].Args.DreamBiomeData[6] = game.EnemyData[enemy].DreamBiomeData[6]
+		game.EnemyData[enemy].SetupEvents[eventIndex[1]].Args.DreamBiomeData[7] = game.EnemyData[enemy].DreamBiomeData[7]
+		game.EnemyData[enemy].SetupEvents[eventIndex[1]].Args.DreamBiomeData[8] = game.EnemyData[enemy].DreamBiomeData[8]
+	else
+		print("Unable to patch VoR scaling for", enemy)
+	end
+end

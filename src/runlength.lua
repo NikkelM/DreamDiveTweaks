@@ -94,7 +94,7 @@ end)
 
 modutil.mod.Path.Wrap("GetVisitedBiomeIcons", function (base, run)
     local tooltipData = {}
-	for i=1, math.max(#(run.BiomeVisitOrder),4) do
+	for i=1, math.max( #(run.BiomeVisitOrder), 4) do
 		local icon = game.RoomSetIcons[run.BiomeVisitOrder[i]] or "BiomeMysteryIcon"
 		tooltipData[i] = game.IconData[icon].TexturePath
 	end
