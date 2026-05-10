@@ -1480,54 +1480,10 @@ BaseFEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 11.7,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 3.6,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 15.21,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 4.32,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 19.77,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 5.18,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 25.7,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 6.22,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 11.7, MoneyMultiplier = 3.0, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 3.6 } },
+		[6] = { DataOverrides = { HealthMultiplier = 15.21, MoneyMultiplier = 3.6, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 4.32 } },
+		[7] = { DataOverrides = { HealthMultiplier = 19.77, MoneyMultiplier = 4.32, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 5.18 } },
+		[8] = { DataOverrides = { HealthMultiplier = 25.7, MoneyMultiplier = 5.18, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 6.22 } },
 	},
 },
 
@@ -1535,54 +1491,10 @@ BaseGEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 6.5,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.4,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 8.45,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.88,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 10.98,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 3.46,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 14.27,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 4.15,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 6.5, MoneyMultiplier = 2.58, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.4 } },
+		[6] = { DataOverrides = { HealthMultiplier = 8.45, MoneyMultiplier = 3.1, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.88 } },
+		[7] = { DataOverrides = { HealthMultiplier = 10.98, MoneyMultiplier = 3.72, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 3.46 } },
+		[8] = { DataOverrides = { HealthMultiplier = 14.27, MoneyMultiplier = 4.46, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 4.15 } },
 	},
 },
 
@@ -1590,50 +1502,10 @@ BaseHEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 3.58,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.8,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 4.65,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.16,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 6.05,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.59,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 7.87,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 3.11,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 3.58, MoneyMultiplier = 1.62 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.8 } },
+		[6] = { DataOverrides = { HealthMultiplier = 4.65, MoneyMultiplier = 1.94 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.16 } },
+		[7] = { DataOverrides = { HealthMultiplier = 6.05, MoneyMultiplier = 2.33 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.59 } },
+		[8] = { DataOverrides = { HealthMultiplier = 7.87, MoneyMultiplier = 2.8 }, AddOutgoingDamageModifier = { PlayerMultiplier = 3.11 } },
 	},
 },
 
@@ -1641,54 +1513,10 @@ BaseIEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 1.95,
-				HealingMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.62,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 2.54,
-				HealingMultiplier = 1.7,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.94,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 3.3,
-				HealingMultiplier = 2.3,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.33,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 4.29,
-				HealingMultiplier = 3,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.8,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 1.95, MoneyMultiplier = 0.7, HealingMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.62 } },
+		[6] = { DataOverrides = { HealthMultiplier = 2.54, MoneyMultiplier = 0.7, HealingMultiplier = 1.7 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.94 } },
+		[7] = { DataOverrides = { HealthMultiplier = 3.3, MoneyMultiplier = 0.7, HealingMultiplier = 2.3 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.33 } },
+		[8] = { DataOverrides = { HealthMultiplier = 4.29, MoneyMultiplier = 0.7, HealingMultiplier = 3 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.8 } },
 	},
 },
 
@@ -1696,54 +1524,10 @@ BaseNEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 7.8,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.4,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 10.14,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.88,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 13.18,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 3.46,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 17.13,
-				SpeedMultiplier = 1.4,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 4.15,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 7.8, MoneyMultiplier = 3.0, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.4 } },
+		[6] = { DataOverrides = { HealthMultiplier = 10.14, MoneyMultiplier = 3.6, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.88 } },
+		[7] = { DataOverrides = { HealthMultiplier = 13.18, MoneyMultiplier = 4.32, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 3.46 } },
+		[8] = { DataOverrides = { HealthMultiplier = 17.13, MoneyMultiplier = 5.18, SpeedMultiplier = 1.4 }, AddOutgoingDamageModifier = { PlayerMultiplier = 4.15 } },
 	},
 },
 
@@ -1751,54 +1535,10 @@ BaseOEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 4.29,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.56,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 5.58,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.87,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 7.25,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.24,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 9.43,
-				SpeedMultiplier = 1.2,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.69,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 4.29, MoneyMultiplier = 2.58, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.56 } },
+		[6] = { DataOverrides = { HealthMultiplier = 5.58, MoneyMultiplier = 3.1, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.87 } },
+		[7] = { DataOverrides = { HealthMultiplier = 7.25, MoneyMultiplier = 3.72, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.24 } },
+		[8] = { DataOverrides = { HealthMultiplier = 9.43, MoneyMultiplier = 4.46, SpeedMultiplier = 1.2 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.69 } },
 	},
 },
 
@@ -1806,50 +1546,10 @@ BasePEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 2.34,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.96,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 3.04,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.35,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 3.95,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.82,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 5.14,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 3.38,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 2.34, MoneyMultiplier = 1.5 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.96 } },
+		[6] = { DataOverrides = { HealthMultiplier = 3.04, MoneyMultiplier = 1.8 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.35 } },
+		[7] = { DataOverrides = { HealthMultiplier = 3.95, MoneyMultiplier = 2.16 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.82 } },
+		[8] = { DataOverrides = { HealthMultiplier = 5.14, MoneyMultiplier = 2.59 }, AddOutgoingDamageModifier = { PlayerMultiplier = 3.38 } },
 	},
 },
 
@@ -1857,50 +1557,10 @@ BaseQEnemy =
 {
 	DreamBiomeData =
 	{
-		[5] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 1.57,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 1.96,
-			},
-		},
-		[6] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 2.04,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.35,
-			},
-		},
-		[7] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 2.65,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 2.82,
-			},
-		},
-		[8] =
-		{
-			DataOverrides =
-			{
-				HealthMultiplier = 3.44,
-			},
-			AddOutgoingDamageModifier =
-			{
-				PlayerMultiplier = 3.38,
-			},
-		},
+		[5] = { DataOverrides = { HealthMultiplier = 1.57, MoneyMultiplier = 1.3 }, AddOutgoingDamageModifier = { PlayerMultiplier = 1.96 } },
+		[6] = { DataOverrides = { HealthMultiplier = 2.04, MoneyMultiplier = 1.5 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.35 } },
+		[7] = { DataOverrides = { HealthMultiplier = 2.65, MoneyMultiplier = 1.7 }, AddOutgoingDamageModifier = { PlayerMultiplier = 2.82 } },
+		[8] = { DataOverrides = { HealthMultiplier = 3.44, MoneyMultiplier = 2.0 }, AddOutgoingDamageModifier = { PlayerMultiplier = 3.38 } },
 	},
 },
 
@@ -3004,8 +2664,9 @@ end
 
 local dreamBiomeCache = {}
 
-print("before", dump(game.EnemyData.Mati.DreamBiomeData))
+-- print("before", dump(game.EnemyData.Mati.DreamBiomeData))
 
+-- nil out DreamBiomeData so it can be re-inherited when running SetupRunData
 for enemy, data in pairs(game.EnemyData) do
     if data.DreamBiomeData and not enemyScalingData[enemy] then
         dreamBiomeCache[enemy] = data.DreamBiomeData
@@ -3013,18 +2674,19 @@ for enemy, data in pairs(game.EnemyData) do
     end
 end
 
-print("nil", dump(game.EnemyData.Mati.DreamBiomeData))
+-- print("nil", dump(game.EnemyData.Mati.DreamBiomeData))
 
 game.SetupRunData()
 
-print("setup", dump(game.EnemyData.Mati.DreamBiomeData))
+-- print("setup", dump(game.EnemyData.Mati.DreamBiomeData))
 
+-- restore any data that wasn't able to be re-inherited
 for enemy, data in pairs(game.EnemyData) do
     if data.DreamBiomeData == nil and dreamBiomeCache[enemy] then
         data.DreamBiomeData = dreamBiomeCache[enemy]
     end
 end
 
-print("restore", dump(game.EnemyData.Mati.DreamBiomeData))
+-- print("restore", dump(game.EnemyData.Mati.DreamBiomeData))
 
-print(dump(game.EnemyData.Hecate.DreamBiomeData))
+-- print(dump(game.EnemyData.Hecate.DreamBiomeData))

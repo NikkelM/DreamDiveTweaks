@@ -7,4 +7,4 @@ for enemy, data in pairs(game.EnemyData) do
         count = count + 1
     end
 end
-print("unpatched enemies reaminaing", count)
+print("unpatched enemies remainaing", count)
