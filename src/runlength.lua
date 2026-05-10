@@ -31,6 +31,24 @@ modutil.mod.Path.Wrap("SelectNextDreamBiome", function (base, source, args)
     end
 end)
 
+function mod.SanitizeKeepsakeCache()
+    local shortenedKeepsakes = {}
+    for i = 1, 4 do
+        shortenedKeepsakes[i] = game.CurrentRun.KeepsakeCache[i]
+    end
+    game.CurrentRun.KeepsakeCache = shortenedKeepsakes
+end
+
+modutil.mod.Path.Wrap("KillHero", function (base, ...)
+    mod.SanitizeKeepsakeCache()
+    return base(...)
+end)
+
+modutil.mod.Path.Wrap("DeathAreaRoomTransition", function (base, ...)
+    mod.SanitizeKeepsakeCache()
+    return base(...)
+end)
+
 --#endregion
 
 modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, source, args)
