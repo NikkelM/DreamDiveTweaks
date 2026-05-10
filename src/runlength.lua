@@ -24,6 +24,13 @@ game.ConcatTableValuesIPairs(game.RoomSets.Dream,{
     "Dream_PostBoss03",
 })
 
+modutil.mod.Path.Wrap("SelectNextDreamBiome", function (base, source, args)
+    base(source,args)
+    if game.CurrentRun.CurrentRoom.NextRoomSet[1] == nil then
+        game.CurrentRun.CurrentRoom.NextRoomSet = { game.RemoveRandomValue( game.CurrentRun.DreamBiomePool ) }
+    end
+end)
+
 --#endregion
 
 modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, source, args)

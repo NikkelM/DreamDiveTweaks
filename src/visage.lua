@@ -9,6 +9,16 @@ function GameStateRequirementHasIsDreamRun(requirement)
     return false
 end
 
+function GameStateRequirementHasFalseIsDreamRun(requirement)
+    if requirement then
+        for index, condition in ipairs(requirement) do
+            if condition.PathFalse and table.concat(condition.PathFalse) == "CurrentRunIsDreamRun" then
+                return index
+            end
+        end
+    end
+end
+
 for unitName, unitData in pairs(game.EnemyData) do
     local setupFunctions = unitData.SetupEvents
     if setupFunctions then
@@ -38,6 +48,25 @@ for unitName, unitData in pairs(game.EnemyData) do
                 table.insert(functionData.GameStateRequirements, {
                     PathFalse = {_PLUGIN.guid, "config", "disable_visage_forms", "model"}
                 })
+            end
+            -- seen in cerberus EM so far
+            if functionData.FunctionName == "OverwriteSelf" and functionData.Args and
+               functionData.Args.GrannyTexture and string.match(functionData.Args.GrannyTexture, ".*_Color$") and not string.match(functionData.Args.GrannyTexture, "Dream") and
+               GameStateRequirementHasFalseIsDreamRun(functionData.GameStateRequirements) then
+                local req_index = GameStateRequirementHasFalseIsDreamRun(functionData.GameStateRequirements)
+                game.RemoveIndexAndCollapse(functionData.GameStateRequirements, req_index)
+                functionData.GameStateRequirements.OrRequirements = {
+                    {
+                        {
+                            PathFalse = { "CurrentRun", "IsDreamRun" },
+                        },
+                    },
+                    {
+                        {
+                            PathTrue = {_PLUGIN.guid, "config", "disable_visage_forms", "model"}
+                        }
+                    }
+                }
             end
         end
     end

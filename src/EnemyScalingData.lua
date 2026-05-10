@@ -2699,6 +2699,7 @@ local vorBossSetupEventIndex = {
 	SirenKeytarist = {1},
 	Chronos = {3},
 	Hades = {1},
+	Eris = {1},
 }
 
 for enemy, eventIndex in pairs(vorBossSetupEventIndex) do

@@ -86,6 +86,7 @@ local function on_ready()
     import 'runlength.lua'
     import 'runlength_late.lua'
     import 'music_fix.lua'
+    import 'metareward.lua'
 end
 
 local function on_reload()
