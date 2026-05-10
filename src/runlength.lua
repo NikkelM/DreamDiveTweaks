@@ -248,3 +248,46 @@ modutil.mod.Path.Wrap("StartRoom", function (base, currentRun, currentRoom)
 end)
 
 --#endregion
+
+--#region Hermes early spawn
+
+function mod.SpawnShopItemsEarly()
+    if game.CurrentRun.IsDreamRun and game.CurrentRun.EnteredBiomes == game.GameData.FullRunBiomeCount then
+        local hermesTraits = {}
+        for _, trait in pairs( game.CurrentRun.Hero.Traits ) do
+            if trait.OnExpire and trait.OnExpire.SpawnShopItem then
+                table.insert( hermesTraits, trait )
+            end
+        end
+        for _, trait in pairs( hermesTraits ) do
+		    game.RemoveTraitData( game.CurrentRun.Hero, trait, { Silent = true })
+        end
+    end
+end
+
+local shopRooms = {
+    "F_PreBoss01",
+    "G_PreBoss01",
+    "H_PreBoss01",
+    "I_PreBoss02",
+    "I_PreBoss01",
+    "N_PreBoss01",
+    "O_PreBoss01",
+    "P_PreBoss01",
+
+    "A_PreBoss01",
+    "X_PreBoss01",
+    "Y_PreBoss01",
+}
+
+for _, roomName in ipairs(shopRooms) do
+    local roomData = game.RoomData[roomName]
+    if roomData then
+        roomData.StartThreadedEvents = roomData.StartThreadedEvents or {}
+        table.insert(roomData.StartThreadedEvents, {
+            FunctionName = _PLUGIN.guid .. "." .. "SpawnShopItemsEarly"
+        })
+    end
+end
+
+--endregion
