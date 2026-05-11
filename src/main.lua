@@ -84,7 +84,7 @@ local function on_ready()
                 rom.mods["NikkelM-Zagreus_Journey"].config and
                 rom.mods["NikkelM-Zagreus_Journey"].config.enabled
 
-    mod.MaxAllowedBiomeCount = (mod.IsZag and 8) or 8
+    mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
 
     import 'visage.lua'
     import 'harvest.lua'
