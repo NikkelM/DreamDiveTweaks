@@ -40,6 +40,7 @@ local NPC_fucntions = {
     "CirceBlessingChoice",
     "IcarusBenefitChoice",
 }
+
 for _, functionName in ipairs(NPC_fucntions) do
     modutil.mod.Path.Context.Wrap.Static(functionName, function ()
         modutil.mod.Path.Wrap("OpenUpgradeChoiceMenu", function (base, source, args)
