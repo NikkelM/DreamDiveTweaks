@@ -21,4 +21,4 @@ local function ExtendAllDreamBiomeData( encounterTable, maxIndex )
 	end
 end
 
-ExtendAllDreamBiomeData( game.EncounterData, 8 )
+ExtendAllDreamBiomeData( game.EncounterData, mod.MaxAllowedBiomeCount )

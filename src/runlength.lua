@@ -49,6 +49,20 @@ modutil.mod.Path.Wrap("DeathAreaRoomTransition", function (base, ...)
     return base(...)
 end)
 
+modutil.mod.Path.Wrap("CheckDreamBiomeCompletion", function (base, ...)
+    -- safeguard incase config is modfified erroneously or a different save is loaded
+    if game.CurrentRun.EnteredBiomes > game.GameData.FullRunBiomeCount then
+        game.TraitTrayScreenClose( game.ActiveScreens.TraitTrayScreen )
+        game.CloseBoonInfoScreen( game.ActiveScreens.BoonInfo )
+        game.CloseCodexScreen( game.ActiveScreens.Codex )
+        game.CloseInventoryScreen( game.ActiveScreens.InventoryScreen )
+
+        game.thread( game.EndDreamRunPresentation )
+        return true
+    end
+    return base(...)
+end)
+
 --#endregion
 
 modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, source, args)
