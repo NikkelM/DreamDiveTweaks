@@ -46,7 +46,7 @@ function DrawMenu()
     rom.ImGui.Separator()
 
     rom.ImGui.Text(string.gsub("Set a longer/shorter number of Regions (2-MaxBiomeCount)", "MaxBiomeCount", mod.MaxAllowedBiomeCount))
-    if game.CurrentHubRoom and game.CurrentHubRoom.Name == "Hub_PreRun" then
+    if game.CurrentHubRoom then
         local selected
         value, selected = rom.ImGui.SliderInt("Regions", config.biome_count, 2, mod.MaxAllowedBiomeCount, '%d%')
         if selected and value ~= previousConfig.biome_count then
