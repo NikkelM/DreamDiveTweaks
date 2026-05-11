@@ -64,7 +64,7 @@ function DrawMenu()
             game.GameData.FullRunBiomeCount = config.biome_count
         end
     else
-        rom.ImGui.Text("Currently configured number of biomes: " .. config.biome_count)
+        rom.ImGui.Text("Currently configured number of Regions: " .. config.biome_count)
         rom.ImGui.Text("This can only be configured at the Crossroads")
     end
 
