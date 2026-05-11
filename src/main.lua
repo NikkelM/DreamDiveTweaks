@@ -94,6 +94,7 @@ local function on_ready()
     import 'music_fix.lua'
     import 'metareward.lua'
     import 'hermes_shrine.lua'
+    import 'purging_well.lua'
 end
 
 local function on_reload()

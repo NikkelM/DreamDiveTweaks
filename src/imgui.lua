@@ -30,7 +30,6 @@ function DrawMenu()
     value, checked = rom.ImGui.Checkbox("Allow harvestable resources to spawn in Dream Dives", config.dream_resources)
     if checked then
         config.dream_resources = value
-        rom.mods["NikkelM-Resources_In_Chaos_Trials"].config.dreamDives = config.dream_resources
     end
 
     value, checked = rom.ImGui.Checkbox("Unlock Dream Dives earlier than intended. Requires\nboth Chronos and Typhon to be fought at least once", config.early_unlock)
