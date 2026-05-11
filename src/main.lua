@@ -93,6 +93,7 @@ local function on_ready()
     import 'runlength_late.lua'
     import 'music_fix.lua'
     import 'metareward.lua'
+    import 'hermes_shrine.lua'
 end
 
 local function on_reload()

@@ -61,18 +61,28 @@ function DrawMenu()
 
     rom.ImGui.Separator()
 
-    value, checked = rom.ImGui.Checkbox("Fix final biomes having too many meta progression rewards", config.meta_reward_fix)
+    value, checked = rom.ImGui.Checkbox("Fix final biomes having too many meta rewards", config.meta_reward_fix)
     if checked then
         config.meta_reward_fix = value
     end
     if config.meta_reward_fix then
         local selected
-        value, selected = rom.ImGui.SliderInt("###metacap", config.meta_reward_fix_chance_cap, 30, 90, '%d%')
+        value, selected = rom.ImGui.SliderInt("###metacap", config.meta_reward_fix_chance_cap, 30, 90, '%d%%')
         if selected and value ~= previousConfig.meta_reward_fix_chance_cap then
             config.meta_reward_fix_chance_cap = value
             previousConfig.meta_reward_fix_chance_cap = value
         end
-        rom.ImGui.Text("% meta reward spawn chance cap")
+        rom.ImGui.Text("meta reward spawn chance cap")
+    end
+
+    rom.ImGui.Separator()
+
+    rom.ImGui.Text("Chance for a Hermes Shrine to appear in post boss room")
+    local selected
+    value, selected = rom.ImGui.SliderInt("###hermeschance", config.hermes_shrine_chance, 0, 100, '%d%%')
+    if selected and value ~= previousConfig.hermes_shrine_chance then
+    config.hermes_shrine_chance = value
+    previousConfig.hermes_shrine_chance = value
     end
 end
 

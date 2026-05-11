@@ -14,8 +14,7 @@ local config = {
   early_unlock = false,
   shop_music_fix = true,
   -- purging_well = true,
-  -- hermes_shrine = true,
-  -- hermes_shrine_chance = 0.5,
+  hermes_shrine_chance = 50,
   biome_count = 4,
 }
 
@@ -29,6 +28,7 @@ local configDesc = {
   dream_resources = "Allow harvestable resources to spawn in Dream Dives",
   early_unlock = "Unlock Dream Dives earlier than intended, requires both Chronos and Typhon to be fought at least once",
   shop_music_fix = "Fix shop music being absent in Dream Dives",
+  hermes_shrine_chance = "% chance of spawning a Hermes Shrine instead of Well Shop in post boss rooms",
   biome_count = "Set a longer/shorter number of Regions (2-8)"
 }
 
