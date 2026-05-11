@@ -22,6 +22,9 @@ game.ConcatTableValuesIPairs(game.RoomSets.Dream,{
     "Dream_PostBoss01",
     "Dream_PostBoss02",
     "Dream_PostBoss03",
+    "Dream_PostBoss01",
+    "Dream_PostBoss02",
+    "Dream_PostBoss03",
 })
 
 modutil.mod.Path.Wrap("SelectNextDreamBiome", function (base, source, args)
