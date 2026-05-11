@@ -4,7 +4,7 @@ import 'EncounterScalingLogic.lua'
 --#region Basic runlength changes
 
 if type(config.biome_count) == "number" then
-    config.biome_count = math.min(config.biome_count, 8)
+    config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
     config.biome_count = math.max(config.biome_count, 2)
 else
     config.biome_count = 4
@@ -108,7 +108,7 @@ local clearDreamRunOrder = {
 
 sjson.hook(screenTextEnFile, function (data)
     local lastDisplayName = biomeVisitOrderFormat.DisplayName
-    for i = 5, 8 do
+    for i = 5, 12 do
         local newBiomeVisitOrder = game.DeepCopyTable(biomeVisitOrderFormat)
         newBiomeVisitOrder.Id = newBiomeVisitOrder.Id .. i
         lastDisplayName = lastDisplayName .. string.gsub(" {!TooltipData[Position]}", "Position", i)

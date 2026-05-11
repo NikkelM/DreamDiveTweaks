@@ -1,6 +1,6 @@
 modutil.mod.Path.Wrap("CalcMetaProgressRatio", function (base, run)
     local ratio = base(run)
-    local MinorRunProgressChanceCap = 0.5
+    local MinorRunProgressChanceCap = config.meta_reward_fix_chance_cap/100
     -- force meta progression fix if EnteredBiomes exceed 4
     if ratio and run.IsDreamRun and (config.meta_reward_fix or run.EnteredBiomes > 4) then
         local targetMetaRewardsRatio = (run.TargetMetaRewardsRatio or run.CurrentRoom.TargetMetaRewardsRatio or run.Hero.TargetMetaRewardsRatio)

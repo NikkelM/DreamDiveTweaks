@@ -80,6 +80,12 @@ local function on_ready()
         return returnTable
     end
 
+    mod.IsZag = rom.mods["NikkelM-Zagreus_Journey"] and
+                rom.mods["NikkelM-Zagreus_Journey"].config and
+                rom.mods["NikkelM-Zagreus_Journey"].config.enabled
+
+    mod.MaxAllowedBiomeCount = (mod.IsZag and 8) or 8
+
     import 'visage.lua'
     import 'harvest.lua'
     import 'early_unlock.lua'
