@@ -88,10 +88,10 @@ end
 local count = 0
 local count2 = 0
 for enemy, data in pairs(game.EnemyData) do
-    if data.DreamBiomeData and not data.DreamBiomeData[10] then
+    if data.DreamBiomeData and not (data.DreamBiomeData[10] and data.DreamBiomeData[6]) then
         print(enemy)
         count = count + 1
-    elseif data.DreamBiomeData and data.DreamBiomeData[10] then
+    elseif data.DreamBiomeData and (data.DreamBiomeData[10] and data.DreamBiomeData[6]) then
         count2 = count2 + 1
     end
 end

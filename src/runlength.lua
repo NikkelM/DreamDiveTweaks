@@ -1,4 +1,5 @@
 import 'EnemyScalingData.lua'
+import 'EnemyScalingData12.lua'
 import 'EncounterScalingLogic.lua'
 
 --#region Basic runlength changes
@@ -313,6 +314,7 @@ local shopRooms = {
     "H_PreBoss01",
     "I_PreBoss02",
     "I_PreBoss01",
+
     "N_PreBoss01",
     "O_PreBoss01",
     "P_PreBoss01",
