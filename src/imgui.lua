@@ -45,7 +45,7 @@ function DrawMenu()
     rom.ImGui.Separator()
 
     rom.ImGui.Text(string.gsub("Set a longer/shorter number of Regions (2-MaxBiomeCount)", "MaxBiomeCount", mod.MaxAllowedBiomeCount))
-    if game.CurrentHubRoom then
+    if game.CurrentHubRoom or (game.CurrentRun and game.CurrentRun.CurrentRoom and game.CurrentRun.CurrentRoom.Name == "Dream_Intro") then
         local selected
         value, selected = rom.ImGui.SliderInt("Regions", config.biome_count, 2, mod.MaxAllowedBiomeCount, '%d%')
         if selected and value ~= previousConfig.biome_count then
@@ -80,18 +80,25 @@ function DrawMenu()
     local selected
     value, selected = rom.ImGui.SliderInt("###hermeschance", config.hermes_shrine_chance, 0, 100, '%d%%')
     if selected and value ~= previousConfig.hermes_shrine_chance then
-    config.hermes_shrine_chance = value
-    previousConfig.hermes_shrine_chance = value
+        config.hermes_shrine_chance = value
+        previousConfig.hermes_shrine_chance = value
+    end
+
+    rom.ImGui.Separator()
+
+    value, checked = rom.ImGui.Checkbox("Add purging wells to post boss rooms", config.purging_well)
+    if checked then
+        config.purging_well = value
     end
 end
 
 local count = 0
 local count2 = 0
 for enemy, data in pairs(game.EnemyData) do
-    if data.DreamBiomeData and not (data.DreamBiomeData[10] and data.DreamBiomeData[6]) then
+    if data.DreamBiomeData and not (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
         print(enemy)
         count = count + 1
-    elseif data.DreamBiomeData and (data.DreamBiomeData[10] and data.DreamBiomeData[6]) then
+    elseif data.DreamBiomeData and (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
         count2 = count2 + 1
     end
 end
