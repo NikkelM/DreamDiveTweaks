@@ -335,7 +335,7 @@ for _, roomName in ipairs(shopRooms) do
 end
 
 function mod.CheckLastBiome(source, args)
-    return (game.CurrentRun.EnteredBiomes == game.GameData.FullRunBiomeCount and game.CurrentRun.IsDreamRun) or (game.CurrentRun.EnteredBiomes == 4 and not game.CurrentRun.IsDream)
+    return (game.CurrentRun.EnteredBiomes == game.GameData.FullRunBiomeCount and game.CurrentRun.IsDreamRun) or (game.CurrentRun.EnteredBiomes == 4 and not game.CurrentRun.IsDreamRun)
 end
 
 if game.RoomData["Q_PreBoss01"].DistanceTriggers[1].GameStateRequirements.OrRequirements then
