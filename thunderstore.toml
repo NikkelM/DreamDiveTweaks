@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "zerp"
 name = "DreamDiveTweaks"
-versionNumber = "0.0.1"
+versionNumber = "1.0.0"
 description = "Hades II mod offering multiple configurable tweaks for Dream Dives. Including but not limited to disabling visage forms, longer runs, some minor fixes and more."
 websiteUrl = "https://github.com/adi1998/DreamDiveTweaks"
 containsNsfwContent = false
