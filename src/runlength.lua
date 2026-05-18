@@ -62,6 +62,9 @@ modutil.mod.Path.Wrap("DeathAreaRoomTransition", function (base, ...)
 end)
 
 modutil.mod.Path.Wrap("CheckDreamBiomeCompletion", function (base, ...)
+    if not game.CurrentRun.CurrentRoom.UseRecord.DreamPointsDrop then
+		return false
+	end
     -- safeguard incase config is modfified erroneously or a different save is loaded
     if game.CurrentRun.EnteredBiomes > game.GameData.FullRunBiomeCount then
         game.TraitTrayScreenClose( game.ActiveScreens.TraitTrayScreen )
