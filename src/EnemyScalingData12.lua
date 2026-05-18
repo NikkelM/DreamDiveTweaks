@@ -3071,11 +3071,17 @@ local vorBossSetupEventIndex = {
 }
 
 for enemy, eventIndex in pairs(vorBossSetupEventIndex) do
-    if game.EnemyData[enemy] and game.EnemyData[enemy].SetupEvents[eventIndex[1]] then
-        for b = 9, 12 do
-            game.EnemyData[enemy].SetupEvents[eventIndex[1]].Args.DreamBiomeData[b] = game.EnemyData[enemy].DreamBiomeData[b]
-        end
-    else
-        print("Unable to patch VoR scaling for", enemy)
-    end
+	local setupEvents = game.EnemyData[enemy].SetupEvents or {}
+	local patched
+	for index, value in ipairs(setupEvents) do
+		if value.FunctionName == "OverwriteSelf" and value.Args and value.Args.DreamBiomeData then
+			for b = 9, 12 do
+				value.Args.DreamBiomeData[b] = game.EnemyData[enemy].DreamBiomeData[b]
+			end
+			patched = true
+		end
+	end
+	if not patched then
+		print("Unable to patch VoR scaling for", enemy)
+	end
 end
