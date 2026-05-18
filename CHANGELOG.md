@@ -2,9 +2,10 @@
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-05-17
+- Add version check for Zagreus Journey support
+- Patch enemy scaling in a a better way to avoid conflicts with mods with Dx2_Enemies, etc.
 
-## [0.0.1] - 2026-05-07
+## [1.0.0] - 2026-05-17
 
 - First version of the mod!
 
