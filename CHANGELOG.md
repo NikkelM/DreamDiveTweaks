@@ -2,8 +2,8 @@
 
 ## [Unreleased]
 
-- Add version check for Zagreus Journey support
-- Patch enemy scaling in a a better way to avoid conflicts with mods with Dx2_Enemies, etc.
+- Add a minimum required version check (1.1.0) for Zagreus Journey support
+- Patch enemy scaling in a a better way to avoid conflicts with mods like Dx2_Enemies, etc.
 
 ## [1.0.0] - 2026-05-17
 
