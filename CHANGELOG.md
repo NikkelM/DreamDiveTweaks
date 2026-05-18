@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-05-18
+
 - Add additional chceks for max biome count allowed when ZJ is installed
 
 ## [1.0.1] - 2026-05-18
@@ -13,6 +15,7 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.1...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/adi1998/DreamDiveTweaks/compare/...1.0.0
