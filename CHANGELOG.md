@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add scaling for secret boss fights
+- Fix scaling for biomes 9-12
+
 ## [1.0.2] - 2026-05-18
 
 - Add additional chceks for max biome count allowed when ZJ is installed

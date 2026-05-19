@@ -4,7 +4,7 @@ Hecate =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -16,7 +16,7 @@ Hecate =
 				PlayerMultiplier = 7.15,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -28,7 +28,7 @@ Hecate =
 				PlayerMultiplier = 8.58,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -40,7 +40,7 @@ Hecate =
 				PlayerMultiplier = 10.29,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -52,6 +52,19 @@ Hecate =
 				PlayerMultiplier = 12.34,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 73.4,
+				SpeedMultiplier = 1.4,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 14.8,
+			},
+		},
+	
 	},
 },
 
@@ -59,7 +72,7 @@ HecateCopy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -70,7 +83,7 @@ HecateCopy =
 				PlayerMultiplier = 7.15,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -81,7 +94,7 @@ HecateCopy =
 				PlayerMultiplier = 8.58,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -92,7 +105,7 @@ HecateCopy =
 				PlayerMultiplier = 10.29,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -103,6 +116,18 @@ HecateCopy =
 				PlayerMultiplier = 12.34,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				SpeedMultiplier = 1.4,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 14.8,
+			},
+		},
+	
 	},
 },
 
@@ -110,7 +135,7 @@ HecateCopyEM =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -121,7 +146,7 @@ HecateCopyEM =
 				PlayerMultiplier = 7.15,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -132,7 +157,7 @@ HecateCopyEM =
 				PlayerMultiplier = 8.58,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -143,7 +168,7 @@ HecateCopyEM =
 				PlayerMultiplier = 10.29,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -154,6 +179,18 @@ HecateCopyEM =
 				PlayerMultiplier = 12.34,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				SpeedMultiplier = 1.4,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 14.8,
+			},
+		},
+	
 	},
 },
 
@@ -161,7 +198,7 @@ Scylla =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -173,7 +210,7 @@ Scylla =
 				PlayerMultiplier = 5.7,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -185,7 +222,7 @@ Scylla =
 				PlayerMultiplier = 6.84,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -197,7 +234,7 @@ Scylla =
 				PlayerMultiplier = 8.21,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -209,6 +246,19 @@ Scylla =
 				PlayerMultiplier = 9.85,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 40.71,
+				SpeedMultiplier = 1.2,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 11.82,
+			},
+		},
+	
 	},
 },
 
@@ -216,7 +266,7 @@ SirenDrummer =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -228,7 +278,7 @@ SirenDrummer =
 				PlayerMultiplier = 5.7,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -240,7 +290,7 @@ SirenDrummer =
 				PlayerMultiplier = 6.84,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -252,7 +302,7 @@ SirenDrummer =
 				PlayerMultiplier = 8.21,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -264,6 +314,19 @@ SirenDrummer =
 				PlayerMultiplier = 9.85,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 40.71,
+				SpeedMultiplier = 1.2,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 11.82,
+			},
+		},
+	
 	},
 },
 
@@ -271,7 +334,7 @@ SirenKeytarist =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -283,7 +346,7 @@ SirenKeytarist =
 				PlayerMultiplier = 5.7,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -295,7 +358,7 @@ SirenKeytarist =
 				PlayerMultiplier = 6.84,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -307,7 +370,7 @@ SirenKeytarist =
 				PlayerMultiplier = 8.21,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -319,6 +382,19 @@ SirenKeytarist =
 				PlayerMultiplier = 9.85,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 40.71,
+				SpeedMultiplier = 1.2,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 11.82,
+			},
+		},
+	
 	},
 },
 
@@ -326,7 +402,7 @@ Charybdis_ScyllaFight =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -338,7 +414,7 @@ Charybdis_ScyllaFight =
 				PlayerMultiplier = 5.7,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -350,7 +426,7 @@ Charybdis_ScyllaFight =
 				PlayerMultiplier = 6.84,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -362,7 +438,7 @@ Charybdis_ScyllaFight =
 				PlayerMultiplier = 8.21,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -374,6 +450,19 @@ Charybdis_ScyllaFight =
 				PlayerMultiplier = 9.85,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 40.71,
+				SpeedMultiplier = 1.2,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 11.82,
+			},
+		},
+	
 	},
 },
 
@@ -381,7 +470,7 @@ InfestedCerberus =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -392,7 +481,7 @@ InfestedCerberus =
 				PlayerMultiplier = 2.78,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -403,7 +492,7 @@ InfestedCerberus =
 				PlayerMultiplier = 3.33,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -414,7 +503,7 @@ InfestedCerberus =
 				PlayerMultiplier = 3.99,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -425,6 +514,18 @@ InfestedCerberus =
 				PlayerMultiplier = 4.78,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 22.55,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 5.73,
+			},
+		},
+	
 	},
 },
 
@@ -432,7 +533,7 @@ Chronos =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -444,7 +545,7 @@ Chronos =
 				PlayerMultiplier = 2.5,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -456,7 +557,7 @@ Chronos =
 				PlayerMultiplier = 3,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -468,7 +569,7 @@ Chronos =
 				PlayerMultiplier = 3.61,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -480,6 +581,19 @@ Chronos =
 				PlayerMultiplier = 4.34,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 12.27,
+				HealingMultiplier = 8.67,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 5.22,
+			},
+		},
+	
 	},
 },
 
@@ -487,34 +601,42 @@ Chronos_TyphonFight =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 1.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 2.16,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 2.59,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 3.11,
 			},
 		},
+		[12] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 3.73,
+			},
+		},
+	
 	},
 },
 
@@ -522,7 +644,7 @@ Polyphemus =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -534,7 +656,7 @@ Polyphemus =
 				PlayerMultiplier = 4.91,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -546,7 +668,7 @@ Polyphemus =
 				PlayerMultiplier = 5.89,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -558,7 +680,7 @@ Polyphemus =
 				PlayerMultiplier = 7.07,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -570,6 +692,19 @@ Polyphemus =
 				PlayerMultiplier = 8.49,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 48.87,
+				SpeedMultiplier = 1.4,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 10.2,
+			},
+		},
+	
 	},
 },
 
@@ -577,7 +712,7 @@ Medea =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -588,7 +723,7 @@ Medea =
 				PlayerMultiplier = 4.91,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -599,7 +734,7 @@ Medea =
 				PlayerMultiplier = 5.89,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -610,7 +745,7 @@ Medea =
 				PlayerMultiplier = 7.07,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -621,6 +756,18 @@ Medea =
 				PlayerMultiplier = 8.49,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 48.87,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 10.2,
+			},
+		},
+	
 	},
 },
 
@@ -628,7 +775,7 @@ Eris =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -640,7 +787,7 @@ Eris =
 				PlayerMultiplier = 4.15,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -652,7 +799,7 @@ Eris =
 				PlayerMultiplier = 4.98,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -664,7 +811,7 @@ Eris =
 				PlayerMultiplier = 5.97,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -676,6 +823,19 @@ Eris =
 				PlayerMultiplier = 7.16,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 24.5,
+				SpeedMultiplier = 1.2,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 8.59,
+			},
+		},
+	
 	},
 },
 
@@ -683,7 +843,7 @@ Heracles =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -694,7 +854,7 @@ Heracles =
 				PlayerMultiplier = 2.93,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -705,7 +865,7 @@ Heracles =
 				PlayerMultiplier = 3.52,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -716,7 +876,7 @@ Heracles =
 				PlayerMultiplier = 4.23,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -727,6 +887,18 @@ Heracles =
 				PlayerMultiplier = 5.08,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 14.74,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 6.1,
+			},
+		},
+	
 	},
 },
 
@@ -734,7 +906,7 @@ Prometheus =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -745,7 +917,7 @@ Prometheus =
 				PlayerMultiplier = 2.93,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -756,7 +928,7 @@ Prometheus =
 				PlayerMultiplier = 3.52,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -767,7 +939,7 @@ Prometheus =
 				PlayerMultiplier = 4.23,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -778,6 +950,18 @@ Prometheus =
 				PlayerMultiplier = 5.08,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 14.74,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 6.1,
+			},
+		},
+	
 	},
 },
 
@@ -785,7 +969,7 @@ TyphonHead =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -796,7 +980,7 @@ TyphonHead =
 				PlayerMultiplier = 1.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -807,7 +991,7 @@ TyphonHead =
 				PlayerMultiplier = 2.16,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -818,7 +1002,7 @@ TyphonHead =
 				PlayerMultiplier = 2.59,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -829,6 +1013,18 @@ TyphonHead =
 				PlayerMultiplier = 3.11,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 7.55,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 3.73,
+			},
+		},
+	
 	},
 },
 
@@ -836,7 +1032,7 @@ Eyeball =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -847,7 +1043,7 @@ Eyeball =
 				PlayerMultiplier = 1.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -858,7 +1054,7 @@ Eyeball =
 				PlayerMultiplier = 2.16,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -869,7 +1065,7 @@ Eyeball =
 				PlayerMultiplier = 2.59,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -880,6 +1076,18 @@ Eyeball =
 				PlayerMultiplier = 3.11,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 7.55,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 3.73,
+			},
+		},
+	
 	},
 },
 
@@ -887,7 +1095,7 @@ TyphonEye =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -898,7 +1106,7 @@ TyphonEye =
 				PlayerMultiplier = 1.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -909,7 +1117,7 @@ TyphonEye =
 				PlayerMultiplier = 2.16,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -920,7 +1128,7 @@ TyphonEye =
 				PlayerMultiplier = 2.59,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -931,6 +1139,18 @@ TyphonEye =
 				PlayerMultiplier = 3.11,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 7.55,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 3.73,
+			},
+		},
+	
 	},
 },
 
@@ -938,7 +1158,7 @@ TyphonHeadAdd =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -949,7 +1169,7 @@ TyphonHeadAdd =
 				PlayerMultiplier = 1.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -960,7 +1180,7 @@ TyphonHeadAdd =
 				PlayerMultiplier = 2.16,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -971,7 +1191,7 @@ TyphonHeadAdd =
 				PlayerMultiplier = 2.59,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -982,6 +1202,18 @@ TyphonHeadAdd =
 				PlayerMultiplier = 3.11,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 7.55,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 3.73,
+			},
+		},
+	
 	},
 },
 
@@ -989,7 +1221,7 @@ TyphonTail =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1000,7 +1232,7 @@ TyphonTail =
 				PlayerMultiplier = 1.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1011,7 +1243,7 @@ TyphonTail =
 				PlayerMultiplier = 2.16,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1022,7 +1254,7 @@ TyphonTail =
 				PlayerMultiplier = 2.59,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1033,6 +1265,18 @@ TyphonTail =
 				PlayerMultiplier = 3.11,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 7.55,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 3.73,
+			},
+		},
+	
 	},
 },
 
@@ -1040,7 +1284,7 @@ Harpy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1052,7 +1296,7 @@ Harpy =
 				PlayerMultiplier = 9.74,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1064,7 +1308,7 @@ Harpy =
 				PlayerMultiplier = 11.68,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1076,7 +1320,7 @@ Harpy =
 				PlayerMultiplier = 14.01,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1088,6 +1332,19 @@ Harpy =
 				PlayerMultiplier = 16.81,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 47.28,
+				SpeedMultiplier = 1.25,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 20.17,
+			},
+		},
+	
 	},
 },
 
@@ -1095,7 +1352,7 @@ Harpy2 =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1107,7 +1364,7 @@ Harpy2 =
 				PlayerMultiplier = 9.74,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1119,7 +1376,7 @@ Harpy2 =
 				PlayerMultiplier = 11.68,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1131,7 +1388,7 @@ Harpy2 =
 				PlayerMultiplier = 14.01,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1143,6 +1400,19 @@ Harpy2 =
 				PlayerMultiplier = 16.81,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 47.28,
+				SpeedMultiplier = 1.25,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 20.17,
+			},
+		},
+	
 	},
 },
 
@@ -1150,7 +1420,7 @@ Harpy3 =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1162,7 +1432,7 @@ Harpy3 =
 				PlayerMultiplier = 9.74,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1174,7 +1444,7 @@ Harpy3 =
 				PlayerMultiplier = 11.68,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1186,7 +1456,7 @@ Harpy3 =
 				PlayerMultiplier = 14.01,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1198,6 +1468,19 @@ Harpy3 =
 				PlayerMultiplier = 16.81,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 47.28,
+				SpeedMultiplier = 1.2,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 20.17,
+			},
+		},
+	
 	},
 },
 
@@ -1205,7 +1488,7 @@ HydraHeadImmortal =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1217,7 +1500,7 @@ HydraHeadImmortal =
 				PlayerMultiplier = 7.26,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1229,7 +1512,7 @@ HydraHeadImmortal =
 				PlayerMultiplier = 8.71,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1241,7 +1524,7 @@ HydraHeadImmortal =
 				PlayerMultiplier = 10.45,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1253,6 +1536,19 @@ HydraHeadImmortal =
 				PlayerMultiplier = 12.54,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 22.02,
+				SpeedMultiplier = 1.25,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 15.05,
+			},
+		},
+	
 	},
 },
 
@@ -1260,7 +1556,7 @@ BaseHydraHead =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1272,7 +1568,7 @@ BaseHydraHead =
 				PlayerMultiplier = 7.26,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1284,7 +1580,7 @@ BaseHydraHead =
 				PlayerMultiplier = 8.71,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1296,7 +1592,7 @@ BaseHydraHead =
 				PlayerMultiplier = 10.45,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1308,6 +1604,19 @@ BaseHydraHead =
 				PlayerMultiplier = 12.54,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 22.02,
+				SpeedMultiplier = 1.25,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 15.05,
+			},
+		},
+	
 	},
 },
 
@@ -1315,7 +1624,7 @@ Theseus =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1326,7 +1635,7 @@ Theseus =
 				PlayerMultiplier = 3.73,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1337,7 +1646,7 @@ Theseus =
 				PlayerMultiplier = 4.47,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1348,7 +1657,7 @@ Theseus =
 				PlayerMultiplier = 5.36,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1359,6 +1668,18 @@ Theseus =
 				PlayerMultiplier = 6.43,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 14.74,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 7.71,
+			},
+		},
+	
 	},
 },
 
@@ -1366,7 +1687,7 @@ Minotaur =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1377,7 +1698,7 @@ Minotaur =
 				PlayerMultiplier = 3.73,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1388,7 +1709,7 @@ Minotaur =
 				PlayerMultiplier = 4.47,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1399,7 +1720,7 @@ Minotaur =
 				PlayerMultiplier = 5.36,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1410,6 +1731,18 @@ Minotaur =
 				PlayerMultiplier = 6.43,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 14.74,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 7.71,
+			},
+		},
+	
 	},
 },
 
@@ -1417,7 +1750,7 @@ Hades =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1429,7 +1762,7 @@ Hades =
 				PlayerMultiplier = 2.9,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1441,7 +1774,7 @@ Hades =
 				PlayerMultiplier = 3.48,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1453,7 +1786,7 @@ Hades =
 				PlayerMultiplier = 4.17,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1465,6 +1798,19 @@ Hades =
 				PlayerMultiplier = 5,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 11.36,
+				HealingMultiplier = 8.67,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 5,
+			},
+		},
+	
 	},
 },
 
@@ -1472,7 +1818,7 @@ BaseFEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1485,7 +1831,7 @@ BaseFEnemy =
 				PlayerMultiplier = 6.22,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1498,7 +1844,7 @@ BaseFEnemy =
 				PlayerMultiplier = 7.47,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1511,7 +1857,7 @@ BaseFEnemy =
 				PlayerMultiplier = 8.97,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1524,6 +1870,20 @@ BaseFEnemy =
 				PlayerMultiplier = 10.77,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 73.4,
+				SpeedMultiplier = 1.4,
+				MoneyMultiplier = 10.7,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 12.93,
+			},
+		},
+	
 	},
 },
 
@@ -1531,7 +1891,7 @@ BaseGEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1544,7 +1904,7 @@ BaseGEnemy =
 				PlayerMultiplier = 4.15,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1557,7 +1917,7 @@ BaseGEnemy =
 				PlayerMultiplier = 4.98,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1570,7 +1930,7 @@ BaseGEnemy =
 				PlayerMultiplier = 5.97,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1583,6 +1943,20 @@ BaseGEnemy =
 				PlayerMultiplier = 7.16,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 40.71,
+				SpeedMultiplier = 1.2,
+				MoneyMultiplier = 9.23,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 8.59,
+			},
+		},
+	
 	},
 },
 
@@ -1590,7 +1964,7 @@ BaseHEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1602,7 +1976,7 @@ BaseHEnemy =
 				PlayerMultiplier = 3.11,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1614,7 +1988,7 @@ BaseHEnemy =
 				PlayerMultiplier = 3.73,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1626,7 +2000,7 @@ BaseHEnemy =
 				PlayerMultiplier = 4.48,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1638,6 +2012,19 @@ BaseHEnemy =
 				PlayerMultiplier = 5.38,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 22.55,
+				MoneyMultiplier = 5.82,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 6.46,
+			},
+		},
+	
 	},
 },
 
@@ -1645,7 +2032,7 @@ BaseIEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1658,7 +2045,7 @@ BaseIEnemy =
 				PlayerMultiplier = 2.8,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1671,7 +2058,7 @@ BaseIEnemy =
 				PlayerMultiplier = 3.36,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1684,7 +2071,7 @@ BaseIEnemy =
 				PlayerMultiplier = 4.04,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1697,6 +2084,20 @@ BaseIEnemy =
 				PlayerMultiplier = 4.85,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 12.27,
+				HealingMultiplier = 8.67,
+				MoneyMultiplier = 0.7,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 5.82,
+			},
+		},
+	
 	},
 },
 
@@ -1704,7 +2105,7 @@ BaseNEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1717,7 +2118,7 @@ BaseNEnemy =
 				PlayerMultiplier = 4.15,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1730,7 +2131,7 @@ BaseNEnemy =
 				PlayerMultiplier = 4.98,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1743,7 +2144,7 @@ BaseNEnemy =
 				PlayerMultiplier = 5.97,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1756,6 +2157,20 @@ BaseNEnemy =
 				PlayerMultiplier = 7.16,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 48.87,
+				SpeedMultiplier = 1.4,
+				MoneyMultiplier = 10.7,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 8.59,
+			},
+		},
+	
 	},
 },
 
@@ -1763,7 +2178,7 @@ BaseOEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1776,7 +2191,7 @@ BaseOEnemy =
 				PlayerMultiplier = 2.69,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1789,7 +2204,7 @@ BaseOEnemy =
 				PlayerMultiplier = 3.23,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1802,7 +2217,7 @@ BaseOEnemy =
 				PlayerMultiplier = 3.88,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1815,6 +2230,20 @@ BaseOEnemy =
 				PlayerMultiplier = 4.66,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 27.0,
+				SpeedMultiplier = 1.2,
+				MoneyMultiplier = 9.23,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 5.6,
+			},
+		},
+	
 	},
 },
 
@@ -1822,7 +2251,7 @@ BasePEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1834,7 +2263,7 @@ BasePEnemy =
 				PlayerMultiplier = 3.38,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1846,7 +2275,7 @@ BasePEnemy =
 				PlayerMultiplier = 4.05,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1858,7 +2287,7 @@ BasePEnemy =
 				PlayerMultiplier = 4.85,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1870,6 +2299,19 @@ BasePEnemy =
 				PlayerMultiplier = 5.81,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 14.74,
+				MoneyMultiplier = 5.36,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 6.96,
+			},
+		},
+	
 	},
 },
 
@@ -1877,7 +2319,7 @@ BaseQEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1889,7 +2331,7 @@ BaseQEnemy =
 				PlayerMultiplier = 3.38,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1901,7 +2343,7 @@ BaseQEnemy =
 				PlayerMultiplier = 4.05,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1913,7 +2355,7 @@ BaseQEnemy =
 				PlayerMultiplier = 4.85,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1925,6 +2367,19 @@ BaseQEnemy =
 				PlayerMultiplier = 5.81,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 9.78,
+				MoneyMultiplier = 3.83,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 6.96,
+			},
+		},
+	
 	},
 },
 
@@ -1932,7 +2387,7 @@ BaseTartarusEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -1945,7 +2400,7 @@ BaseTartarusEnemy =
 				PlayerMultiplier = 7.26,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -1958,7 +2413,7 @@ BaseTartarusEnemy =
 				PlayerMultiplier = 8.71,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -1971,7 +2426,7 @@ BaseTartarusEnemy =
 				PlayerMultiplier = 10.45,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -1984,6 +2439,20 @@ BaseTartarusEnemy =
 				PlayerMultiplier = 12.54,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 61.14,
+				SpeedMultiplier = 1.45,
+				MoneyMultiplier = 10.7,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 15.05,
+			},
+		},
+	
 	},
 },
 
@@ -1991,7 +2460,7 @@ BaseAsphodelEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2004,7 +2473,7 @@ BaseAsphodelEnemy =
 				PlayerMultiplier = 4.87,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2017,7 +2486,7 @@ BaseAsphodelEnemy =
 				PlayerMultiplier = 5.84,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2030,7 +2499,7 @@ BaseAsphodelEnemy =
 				PlayerMultiplier = 7.01,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2043,6 +2512,20 @@ BaseAsphodelEnemy =
 				PlayerMultiplier = 8.41,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 34.29,
+				SpeedMultiplier = 1.25,
+				MoneyMultiplier = 9.23,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 10.09,
+			},
+		},
+	
 	},
 },
 
@@ -2050,7 +2533,7 @@ BaseElysiumEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2062,7 +2545,7 @@ BaseElysiumEnemy =
 				PlayerMultiplier = 3.62,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2074,7 +2557,7 @@ BaseElysiumEnemy =
 				PlayerMultiplier = 4.34,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2086,7 +2569,7 @@ BaseElysiumEnemy =
 				PlayerMultiplier = 5.2,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2098,6 +2581,19 @@ BaseElysiumEnemy =
 				PlayerMultiplier = 6.23,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 19.56,
+				MoneyMultiplier = 5.82,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 7.46,
+			},
+		},
+	
 	},
 },
 
@@ -2105,7 +2601,7 @@ BaseStyxEnemy =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2117,7 +2613,7 @@ BaseStyxEnemy =
 				PlayerMultiplier = 3.22,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2129,7 +2625,7 @@ BaseStyxEnemy =
 				PlayerMultiplier = 3.87,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2141,7 +2637,7 @@ BaseStyxEnemy =
 				PlayerMultiplier = 4.65,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2153,6 +2649,19 @@ BaseStyxEnemy =
 				PlayerMultiplier = 5.59,
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				HealthMultiplier = 11.01,
+				MoneyMultiplier = 0.7,
+			},
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 6.72,
+			},
+		},
+	
 	},
 },
 
@@ -2160,7 +2669,7 @@ DestructibleTree =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2175,7 +2684,7 @@ DestructibleTree =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2190,7 +2699,7 @@ DestructibleTree =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2205,7 +2714,7 @@ DestructibleTree =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2220,6 +2729,22 @@ DestructibleTree =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 64.47,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2227,7 +2752,7 @@ SteamTrap =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2242,7 +2767,7 @@ SteamTrap =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2257,7 +2782,7 @@ SteamTrap =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2272,7 +2797,7 @@ SteamTrap =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2287,6 +2812,22 @@ SteamTrap =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 8.59,
+					},
+					{
+						NonPlayerMultiplier = 429.98,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2294,7 +2835,7 @@ SteamWallTrap =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2309,7 +2850,7 @@ SteamWallTrap =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2324,7 +2865,7 @@ SteamWallTrap =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2339,7 +2880,7 @@ SteamWallTrap =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2354,6 +2895,22 @@ SteamWallTrap =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 8.59,
+					},
+					{
+						NonPlayerMultiplier = 429.98,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2361,7 +2918,7 @@ SteamCubeFused =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2376,7 +2933,7 @@ SteamCubeFused =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2391,7 +2948,7 @@ SteamCubeFused =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2406,7 +2963,7 @@ SteamCubeFused =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2421,6 +2978,22 @@ SteamCubeFused =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 8.59,
+					},
+					{
+						NonPlayerMultiplier = 429.98,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2428,7 +3001,7 @@ ThornTree =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2443,7 +3016,7 @@ ThornTree =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2458,7 +3031,7 @@ ThornTree =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2473,7 +3046,7 @@ ThornTree =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2488,6 +3061,22 @@ ThornTree =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 6.46,
+					},
+					{
+						NonPlayerMultiplier = 258.03,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2495,7 +3084,7 @@ SpikeTrapClockwork =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2510,7 +3099,7 @@ SpikeTrapClockwork =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2525,7 +3114,7 @@ SpikeTrapClockwork =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2540,7 +3129,7 @@ SpikeTrapClockwork =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2555,6 +3144,22 @@ SpikeTrapClockwork =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 6.46,
+					},
+					{
+						NonPlayerMultiplier = 193.47,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2562,7 +3167,7 @@ BeamTrap =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2577,7 +3182,7 @@ BeamTrap =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2592,7 +3197,7 @@ BeamTrap =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2607,7 +3212,7 @@ BeamTrap =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2622,6 +3227,22 @@ BeamTrap =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 6.46,
+					},
+					{
+						NonPlayerMultiplier = 12.93,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2629,7 +3250,7 @@ SoulPylon =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2644,7 +3265,7 @@ SoulPylon =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2659,7 +3280,7 @@ SoulPylon =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2674,7 +3295,7 @@ SoulPylon =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2689,6 +3310,22 @@ SoulPylon =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 0,
+					},
+					{
+						NonPlayerMultiplier = 8.59,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2696,7 +3333,7 @@ FireBarrel =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2711,7 +3348,7 @@ FireBarrel =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2726,7 +3363,7 @@ FireBarrel =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2741,7 +3378,7 @@ FireBarrel =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2756,6 +3393,22 @@ FireBarrel =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 8.59,
+					},
+					{
+						NonPlayerMultiplier = 429.98,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2763,7 +3416,7 @@ FireBarrelShips =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2778,7 +3431,7 @@ FireBarrelShips =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2793,7 +3446,7 @@ FireBarrelShips =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2808,7 +3461,7 @@ FireBarrelShips =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2823,6 +3476,22 @@ FireBarrelShips =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 5.61,
+					},
+					{
+						NonPlayerMultiplier = 279.45,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2830,7 +3499,7 @@ TyphonEgg =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2845,7 +3514,7 @@ TyphonEgg =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2860,7 +3529,7 @@ TyphonEgg =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2875,7 +3544,7 @@ TyphonEgg =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2890,6 +3559,22 @@ TyphonEgg =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 4.24,
+					},
+					{
+						NonPlayerMultiplier = 129.0,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2897,7 +3582,7 @@ TyphonMine =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			DataOverrides =
 			{
@@ -2912,7 +3597,7 @@ TyphonMine =
 				},
 			},
 		},
-		[10] =
+		[9] =
 		{
 			DataOverrides =
 			{
@@ -2927,7 +3612,7 @@ TyphonMine =
 				},
 			},
 		},
-		[11] =
+		[10] =
 		{
 			DataOverrides =
 			{
@@ -2942,7 +3627,7 @@ TyphonMine =
 				},
 			},
 		},
-		[12] =
+		[11] =
 		{
 			DataOverrides =
 			{
@@ -2957,6 +3642,22 @@ TyphonMine =
 				},
 			},
 		},
+		[12] =
+		{
+			DataOverrides =
+			{
+				OutgoingDamageModifiers =
+				{
+					{
+						PlayerMultiplier = 4.24,
+					},
+					{
+						NonPlayerMultiplier = 129.0,
+					},
+				},
+			},
+		},
+	
 	},
 },
 
@@ -2964,34 +3665,42 @@ GunBombUnit =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 2.7,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 3.24,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 3.89,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 4.67,
 			},
 		},
+		[12] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 5.61,
+			},
+		},
+	
 	},
 },
 
@@ -2999,34 +3708,42 @@ TyphonEggLarge =
 {
 	DreamBiomeData =
 	{
-		[9] =
+		[8] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 2.07,
 			},
 		},
-		[10] =
+		[9] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 2.48,
 			},
 		},
-		[11] =
+		[10] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 2.97,
 			},
 		},
-		[12] =
+		[11] =
 		{
 			AddOutgoingDamageModifier =
 			{
 				PlayerMultiplier = 3.55,
 			},
 		},
+		[12] =
+		{
+			AddOutgoingDamageModifier =
+			{
+				PlayerMultiplier = 4.24,
+			},
+		},
+	
 	},
 },
 

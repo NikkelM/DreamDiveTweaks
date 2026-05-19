@@ -1,6 +1,37 @@
+local original_scaled_count = 0
+for enemy, data in pairs(game.EnemyData) do
+    if data.DreamBiomeData then
+        original_scaled_count = original_scaled_count + 1
+    end
+end
+print("enemies with scaling data", original_scaled_count)
+
+
 import 'EnemyScalingData.lua'
 import 'EnemyScalingData12.lua'
+
+local count = 0
+local count2 = 0
+for enemy, data in pairs(game.EnemyData) do
+    if data.DreamBiomeData and not (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
+        print(enemy)
+        count = count + 1
+    elseif data.DreamBiomeData and (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
+        count2 = count2 + 1
+    end
+end
+print("unpatched enemies remainaing", count,"/", count2+count)
+
+import 'NewEnemyScalingData.lua'
 import 'EncounterScalingLogic.lua'
+
+count2 = 0
+for enemy, data in pairs(game.EnemyData) do
+    if data.DreamBiomeData and (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
+        count2 = count2 + 1
+    end
+end
+print("new scaling data added for", count2 - original_scaled_count, "enemies")
 
 --#region Basic runlength changes
 
