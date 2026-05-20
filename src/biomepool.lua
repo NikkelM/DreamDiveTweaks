@@ -304,6 +304,14 @@ if not WrappedNextDream then
             game.CurrentRun.CurrentRoom.NextRoomSet = { game.RemoveRandomValue( game.CurrentRun.DreamBiomePool ) }
         end
     end)
+
+    table.insert(game.EncounterData.OpeningEmpty.GameStateRequirements.OrRequirements[2],
+    {
+        Path = { "CurrentRun", "EnteredBiomes" },
+        Comparison = ">",
+        Value = 0
+    })
+
     WrappedNextDream = true
 end
 
@@ -431,10 +439,3 @@ end
 -- for i = 1, 100 do
 --     TestRouteGeneration()
 -- end
-
-table.insert(game.EncounterData.OpeningEmpty.GameStateRequirements.OrRequirements[2],
-{
-    Path = { "CurrentRun", "EnteredBiomes" },
-    Comparison = ">",
-    Value = 0
-})
