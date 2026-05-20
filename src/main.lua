@@ -78,6 +78,14 @@ local function compareSemver(a, b)
     return 0
 end
 
+function xor(a,b)
+    return (a and not b) or (b and not a)
+end
+
+function xnor(a,b)
+    return (a and b) or ((not a) and (not b))
+end
+
 local function on_ready()
     -- what to do when we are ready, but not re-do on reload.
     if config.enabled == false then return end
@@ -128,6 +136,7 @@ local function on_reload()
     -- only do things that are safe to run over and over.
     if config.enabled == false then return end
     import 'imgui.lua'
+    import 'biomepool.lua'
 end
 
 local function on_ready_late()

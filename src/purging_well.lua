@@ -41,7 +41,7 @@ function mod.SpawnSellShop(destId, offsetX, offsetY, shopType, flipped)
     local shopData = mod.ShopTypes[shopType] or mod.ShopTypes.Sell
     local shop = game.DeepCopyTable(game.ObstacleData[shopData.ObstacleName])
 
-    shop.ObjectId = game.SpawnObstacle({Name="ChallengeSwitchBase", DestinationId=destId, OffsetY=offsetY, OffsetX = offsetX, Group = "Standing"})
+    shop.ObjectId = game.SpawnObstacle({Name = "ChallengeSwitchBase", DestinationId = destId, OffsetY = offsetY, OffsetX = offsetX, Group = "Standing"})
     game.SetupObstacle(shop)
     shop.ReadyToUse = false
     game.RefreshUseButton( shop.ObjectId, shop )

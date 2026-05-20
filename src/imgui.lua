@@ -1,6 +1,6 @@
 print(game.GameData.FullRunBiomeCount)
 
-local previousConfig = {}
+local previousConfig = {biome_pool = {custom_order_data = {}}}
 
 rom.gui.add_imgui(function()
     if rom.ImGui.Begin("Dream Dive Tweaks") then
@@ -90,4 +90,32 @@ function DrawMenu()
     if checked then
         config.purging_well = value
     end
+
+    rom.ImGui.Separator()
+
+    DrawCustomOrderOptions()
+
+    if not config.biome_pool.custom_order then
+        value, checked = rom.ImGui.Checkbox("Deterministic biome order (Undo Night will preserve the current biome order)", config.biome_pool.deterministic_biome_order)
+        if checked then
+            config.biome_pool.deterministic_biome_order = value
+        end
+
+        value, checked = rom.ImGui.Checkbox("Allow Erebus, Ephyra and Tartarus (H1) as the first random biome", config.biome_pool.larger_starting_pool)
+        if checked then
+            config.biome_pool.larger_starting_pool = value
+        end
+
+        value, checked = rom.ImGui.Checkbox("Easy first biome", config.biome_pool.easy_first_biome)
+        if checked then
+            config.biome_pool.easy_first_biome = value
+        end
+
+        value, checked = rom.ImGui.Checkbox("Hard final biome", config.biome_pool.hard_last_biome)
+        if checked then
+            config.biome_pool.hard_last_biome = value
+        end
+    end
 end
+
+-- print(dump(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]))

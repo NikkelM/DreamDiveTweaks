@@ -4,10 +4,27 @@ local config = {
     voice = true,
     model = true,
   },
-  -- easy_first_biome = false,
-  -- hard_last_biome = false,
-  -- larger_starting_pool = true,
-  -- deterministic_biome_order = false,
+  biome_pool = {
+    easy_first_biome = false,
+    hard_last_biome = false,
+    larger_starting_pool = false,
+    deterministic_biome_order = false,
+    custom_order = false,
+    custom_order_data = {
+      ["1"] = "F",
+      ["2"] = "G",
+      ["3"] = "H",
+      ["4"] = "I",
+      ["5"] = "N",
+      ["6"] = "O",
+      ["7"] = "P",
+      ["8"] = "Q",
+      ["9"] = "Tartarus",
+      ["10"] = "Asphodel",
+      ["11"] = "Elysium",
+      ["12"] = "Styx",
+    }
+  },
   meta_reward_fix = true,
   meta_reward_fix_chance_cap = 50,
   dream_resources = true,
@@ -25,13 +42,13 @@ local configDesc = {
     model = "Disable Visage Form models/textures",
   },
   meta_reward_fix = "Fix final biomes having too many meta progression rewards",
-  meta_reward_fix_chance_cap = "% chance of having meta progression reward will be capped to this value",
+  meta_reward_fix_chance_cap = "The % chance of getting a meta progression reward will be capped to this value",
   dream_resources = "Allow harvestable resources to spawn in Dream Dives",
   early_unlock = "Unlock Dream Dives earlier than intended, requires both Chronos and Typhon to be fought at least once",
   shop_music_fix = "Fix shop music being absent in Dream Dives",
   purging_well = "Spawn a purging well along with the well shop at rest spots",
-  hermes_shrine_chance = "% chance of spawning a Hermes Shrine instead of Well Shop in post boss rooms",
-  biome_count = "Set a longer/shorter number of Regions (2-8)"
+  hermes_shrine_chance = "The % chance of spawning a Hermes Shrine instead of a Well Shop in post boss rooms",
+  biome_count = "Set a longer/shorter number of Regions (2-12)"
 }
 
 return config, configDesc

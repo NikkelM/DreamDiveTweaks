@@ -59,21 +59,6 @@ game.ConcatTableValuesIPairs(game.RoomSets.Dream,{
     "Dream_PostBoss03",
 })
 
-modutil.mod.Path.Wrap("SelectNextDreamBiome", function (base, source, args)
-    -- clamp max biome count and configured biome count if we detect ZJ doesn't have its requirements met
-    if mod.IsZag and (game.GameState.ModsNikkelMHadesBiomesClearedRunsCache or 0) < 1 then
-        mod.MaxAllowedBiomeCount = 8
-        config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
-        game.GameData.FullRunBiomeCount = config.biome_count
-    elseif mod.IsZag then
-        mod.MaxAllowedBiomeCount = 12
-    end
-    base(source,args)
-    if game.CurrentRun.CurrentRoom.NextRoomSet[1] == nil then
-        game.CurrentRun.CurrentRoom.NextRoomSet = { game.RemoveRandomValue( game.CurrentRun.DreamBiomePool ) }
-    end
-end)
-
 function mod.SanitizeKeepsakeCache()
     local shortenedKeepsakes = {}
     for i = 1, 4 do
