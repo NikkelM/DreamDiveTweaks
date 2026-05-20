@@ -431,3 +431,10 @@ end
 -- for i = 1, 100 do
 --     TestRouteGeneration()
 -- end
+
+table.insert(game.EncounterData.OpeningEmpty.GameStateRequirements.OrRequirements[2],
+{
+    Path = { "CurrentRun", "EnteredBiomes" },
+    Comparison = ">",
+    Value = 0
+})
