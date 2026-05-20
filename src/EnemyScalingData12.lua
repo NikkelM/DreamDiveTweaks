@@ -1807,7 +1807,7 @@ Hades =
 			},
 			AddOutgoingDamageModifier =
 			{
-				PlayerMultiplier = 5,
+				PlayerMultiplier = 6,
 			},
 		},
 	
@@ -3748,6 +3748,24 @@ TyphonEggLarge =
 },
 
 }
+
+for enemy, data in pairs(enemyScalingData) do
+	for biome, value in pairs(data.DreamBiomeData) do
+		if value.AddOutgoingDamageModifier and value.AddOutgoingDamageModifier.PlayerMultiplier then
+			value.AddOutgoingDamageModifier.PlayerMultiplier = value.AddOutgoingDamageModifier.PlayerMultiplier * (1.15 ^ (biome-8))
+		end
+		if value.DataOverrides and value.DataOverrides.HealthMultiplier then
+			value.DataOverrides.HealthMultiplier = value.DataOverrides.HealthMultiplier * (0.93 ^ (biome-8))
+		end
+		if value.DataOverrides and value.DataOverrides.HealingMultiplier then
+			value.DataOverrides.HealingMultiplier = value.DataOverrides.HealingMultiplier * (0.93 ^ (biome-8))
+		end
+		if value.DataOverrides and value.DataOverrides.OutgoingDamageModifiers then
+			value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier * (1.15 ^ (biome-8))
+			value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier * (0.93 ^ (biome-8))
+		end
+	end
+end
 
 for enemy, data in pairs(enemyScalingData) do
     if game.EnemyData[enemy] then

@@ -401,3 +401,14 @@ else
 end
 
 --endregion
+
+modutil.mod.Path.Wrap("ZagreusDeathDefiancePresentation", function (base, boss, currentRun, aiStage)
+    boss.MaxHealth = aiStage.NewMaxHealth or boss.MaxHealth
+	if currentRun.IsDreamRun and boss.DreamBiomeData ~= nil then
+		local dreamBiomeData = boss.DreamBiomeData[currentRun.EnteredBiomes]
+		if dreamBiomeData ~= nil and dreamBiomeData.DataOverrides ~= nil and dreamBiomeData.DataOverrides.HealthMultiplier ~= nil then
+			boss.MaxHealth = boss.MaxHealth / dreamBiomeData.DataOverrides.HealthMultiplier
+		end
+	end
+    return base(boss, currentRun, aiStage)
+end)

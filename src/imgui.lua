@@ -91,15 +91,3 @@ function DrawMenu()
         config.purging_well = value
     end
 end
-
-local count = 0
-local count2 = 0
-for enemy, data in pairs(game.EnemyData) do
-    if data.DreamBiomeData and not (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
-        print(enemy)
-        count = count + 1
-    elseif data.DreamBiomeData and (data.DreamBiomeData[12] and data.DreamBiomeData[8]) then
-        count2 = count2 + 1
-    end
-end
-print("unpatched enemies remainaing", count,"/", count2+count)
