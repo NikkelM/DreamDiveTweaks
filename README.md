@@ -12,9 +12,9 @@ It is recommended to backup your save from `%USERPROFILE%\Saved Games\Hades II\P
 
 Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training grounds.
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="images/imgui1.png" alt="imgui1" width="49.7%">
-  <img src="images/imgui2.png" alt="imgui2" width="49.7%">
+<div style="display: flex; align-items: flex-start; gap: 5px;">
+  <img src="images/imgui1.png" alt="imgui1">
+  <img src="images/imgui2.png" alt="imgui2">
 </div>
 
 ## Some permanent tweaks and interactions

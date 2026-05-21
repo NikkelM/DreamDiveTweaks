@@ -3,7 +3,9 @@
 ## [Unreleased]
 
 - Add scaling for secret boss fights
+- Add more options to configure random biome pool selection behavior
 - Fix scaling for biomes 9-12
+- Fix mod not working if Zagreus' Journey is not installed
 
 ## [1.0.2] - 2026-05-18
 
