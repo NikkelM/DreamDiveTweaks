@@ -249,7 +249,7 @@ function GenerateRoute()
             end
         end
     end
-    -- print("GeneratedRoute", dump(route))
+    print("GeneratedRoute", dump(route))
     return route
 end
 

@@ -116,7 +116,7 @@ function DrawMenu()
         rom.ImGui.Text("  Unblock Erebus and Ephyra from 1st biome: "..tostring(config.biome_pool.larger_starting_pool))
         rom.ImGui.Text("  Easy first biome: "..tostring(config.biome_pool.easy_first_biome))
         rom.ImGui.Text("  Hard last biome: "..tostring(config.biome_pool.hard_last_biome))
+        rom.ImGui.Text("  Custom order: "..tostring(config.biome_pool.custom_order))
         rom.ImGui.Text("These settings can only be configured at the Crossroads")
     end
-
 end
