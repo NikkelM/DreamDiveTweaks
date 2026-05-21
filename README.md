@@ -12,7 +12,18 @@ It is recommended to backup your save from `%USERPROFILE%\Saved Games\Hades II\P
 
 Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training grounds.
 
-![Imgui menu](images/imgui.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="images/imgui1.png" alt="imgui1" width="49.7%">
+  <img src="images/imgui2.png" alt="imgui2" width="49.7%">
+</div>
+
+## Some permanent tweaks and interactions
+
+- Hermes shrine rewards (if any) will show up in the final shop of the final region.
+- A 5th god, 3rd hammer and 3rd Hermes boon will become available after 4 biomes have been completed.
+- If harvesting points are enabled Plentiful Forage will also become elligible in Dream Dives.
+- Secret bosses will start scaling up from the 4th biome.
+- Vow or Rivals scales proportionally to the number of biomes, so an 8 biome run with VoR set to 2 will have the first 4 bosses be Unrivaled.
 
 ## Issues and feedback
 

@@ -287,7 +287,7 @@ if not WrappedNextDream then
             if game.IsEmpty( game.CurrentRun.DreamBiomePool ) then
                 game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"] = GenerateRoute()
                 nextRoomSet = game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"][1]
-                game.CurrentRun.DreamBiomePool = game.DeepCopyTable(starting_biomes)
+                game.CurrentRun.DreamBiomePool = game.DeepCopyTable(all_biomes)
             else
                 nextRoomSet = game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"][game.CurrentRun.EnteredBiomes + 1]
             end
@@ -384,58 +384,77 @@ function DrawCustomOrderOptions()
     end
 end
 
-function ValidateTestRoute(route)
-    local printRoute
-    if config.biome_pool.easy_first_biome and not game.Contains({"F","G","O","H","N","Tartarus","Asphodel"}, route[1]) then
-        printRoute = true
-        print("easy test failed", route[1])
-    end
-    if config.biome_pool.hard_last_biome and not game.Contains({"I", "Q", "P", "Styx", "Elysium"}, route[#route]) then
-        printRoute = true
-        print("hard test failed", route[#route])
-    end
-    if not config.biome_pool.larger_starting_pool and game.Contains({"F", "N", "Tartarus"}, route[1]) then
-        printRoute = true
-        print("large pool test failed", route[1])
-    end
-    if printRoute then
-        print(dump(route))
-    end
-end
+-- function ValidateTestRoute(route)
+--     local printRoute
+--     if config.biome_pool.easy_first_biome and not game.Contains({"F","G","O","H","N","Tartarus","Asphodel"}, route[1]) then
+--         printRoute = true
+--         print("easy test failed", route[1])
+--     end
+--     if config.biome_pool.hard_last_biome and not game.Contains({"I", "Q", "P", "Styx", "Elysium"}, route[#route]) then
+--         printRoute = true
+--         print("hard test failed", route[#route])
+--     end
+--     if not config.biome_pool.larger_starting_pool and game.Contains({"F", "N", "Tartarus"}, route[1]) then
+--         printRoute = true
+--         print("large pool test failed", route[1])
+--     end
+--     if printRoute then
+--         print(dump(route))
+--     end
+-- end
 
-function TestRouteGeneration()
-    config.biome_pool.easy_first_biome = true
-    config.biome_pool.hard_last_biome = true
-    config.biome_pool.larger_starting_pool = true
-    config.biome_pool.deterministic_biome_order = false
+-- function TestRouteGeneration()
+--     config.biome_pool.easy_first_biome = true
+--     config.biome_pool.hard_last_biome = true
+--     config.biome_pool.larger_starting_pool = true
+--     config.biome_pool.deterministic_biome_order = false
 
-    for i = 1, 2 do
-        for j = 1, 2 do
-            for k = 1, 2 do
-                PurgeZagBiomeSets()
-                if mod.MaxAllowedBiomeCount == 12 then
-                    UpdateZagBiomeSets()
-                end
+--     for i = 1, 2 do
+--         for j = 1, 2 do
+--             for k = 1, 2 do
+--                 PurgeZagBiomeSets()
+--                 if mod.MaxAllowedBiomeCount == 12 then
+--                     UpdateZagBiomeSets()
+--                 end
 
-                PurgeEasyBiome()
-                if config.biome_pool.larger_starting_pool then
-                    UpdateEasyBiome()
-                end
+--                 PurgeEasyBiome()
+--                 if config.biome_pool.larger_starting_pool then
+--                     UpdateEasyBiome()
+--                 end
 
-                PurgeEasyBiomeZag()
-                if config.biome_pool.larger_starting_pool and mod.MaxAllowedBiomeCount == 12 then
-                    UpdateEasyBiomeZag()
-                end
-                print(config.biome_pool.easy_first_biome, config.biome_pool.hard_last_biome, config.biome_pool.larger_starting_pool)
-                ValidateTestRoute(GenerateRoute())
-                config.biome_pool.larger_starting_pool = not config.biome_pool.larger_starting_pool
-            end
-            config.biome_pool.hard_last_biome = not config.biome_pool.hard_last_biome
-        end
-        config.biome_pool.easy_first_biome = not config.biome_pool.easy_first_biome
-    end
-end
+--                 PurgeEasyBiomeZag()
+--                 if config.biome_pool.larger_starting_pool and mod.MaxAllowedBiomeCount == 12 then
+--                     UpdateEasyBiomeZag()
+--                 end
+--                 print(config.biome_pool.easy_first_biome, config.biome_pool.hard_last_biome, config.biome_pool.larger_starting_pool)
+--                 for test_length = 2, mod.MaxAllowedBiomeCount do
+--                     game.CurrentRun.DreamBiomePool = {}
+--                     game.CurrentRun.EnteredBiomes = 0
+--                     game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"] = nil
+--                     config.biome_count = test_length
+--                     game.GameData.FullRunBiomeCount = config.biome_count
+--                     game.SelectNextDreamBiome()
+--                     local route = {game.CurrentRun.CurrentRoom.NextRoomSet[1]}
+--                     for _ = 2, test_length do
+--                         game.CurrentRun.EnteredBiomes = game.CurrentRun.EnteredBiomes + 1
+--                         game.SelectNextDreamBiome()
+--                         table.insert(route, game.CurrentRun.CurrentRoom.NextRoomSet[1])
+--                     end
+--                     ValidateTestRoute(route)
+--                     if table.concat(route) ~= table.concat(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]) then
+--                         print("route mismatch", dump(route), dump(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]))
+--                     else
+--                         print("passed", test_length)
+--                     end
+--                 end
+--                 config.biome_pool.larger_starting_pool = not config.biome_pool.larger_starting_pool
+--             end
+--             config.biome_pool.hard_last_biome = not config.biome_pool.hard_last_biome
+--         end
+--         config.biome_pool.easy_first_biome = not config.biome_pool.easy_first_biome
+--     end
+-- end
 
--- for i = 1, 100 do
+-- for _ = 1, 100 do
 --     TestRouteGeneration()
 -- end

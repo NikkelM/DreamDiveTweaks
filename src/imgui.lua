@@ -1,4 +1,4 @@
-print(game.GameData.FullRunBiomeCount)
+print("current run length", game.GameData.FullRunBiomeCount)
 
 local previousConfig = {biome_pool = {custom_order_data = {}}}
 
@@ -44,22 +44,6 @@ function DrawMenu()
 
     rom.ImGui.Separator()
 
-    rom.ImGui.Text(string.gsub("Set a longer/shorter number of Regions (2-MaxBiomeCount)", "MaxBiomeCount", mod.MaxAllowedBiomeCount))
-    if game.CurrentHubRoom or (game.CurrentRun and game.CurrentRun.CurrentRoom and game.CurrentRun.CurrentRoom.Name == "Dream_Intro") then
-        local selected
-        value, selected = rom.ImGui.SliderInt("Regions", config.biome_count, 2, mod.MaxAllowedBiomeCount, '%d%')
-        if selected and value ~= previousConfig.biome_count then
-            config.biome_count = value
-            previousConfig.biome_count = value
-            game.GameData.FullRunBiomeCount = config.biome_count
-        end
-    else
-        rom.ImGui.Text("Currently configured number of Regions: " .. config.biome_count)
-        rom.ImGui.Text("This can only be configured at the Crossroads")
-    end
-
-    rom.ImGui.Separator()
-
     value, checked = rom.ImGui.Checkbox("Fix final biomes having too many meta rewards", config.meta_reward_fix)
     if checked then
         config.meta_reward_fix = value
@@ -93,29 +77,46 @@ function DrawMenu()
 
     rom.ImGui.Separator()
 
-    DrawCustomOrderOptions()
-
-    if not config.biome_pool.custom_order then
-        value, checked = rom.ImGui.Checkbox("Deterministic biome order (Undo Night will preserve the current biome order)", config.biome_pool.deterministic_biome_order)
-        if checked then
-            config.biome_pool.deterministic_biome_order = value
+    if game.CurrentHubRoom then
+        rom.ImGui.Text(string.gsub("Set a longer/shorter number of Regions (2-MaxBiomeCount)", "MaxBiomeCount", mod.MaxAllowedBiomeCount))
+        local selected
+        value, selected = rom.ImGui.SliderInt("Regions", config.biome_count, 2, mod.MaxAllowedBiomeCount, '%d%')
+        if selected and value ~= previousConfig.biome_count then
+            config.biome_count = value
+            previousConfig.biome_count = value
+            game.GameData.FullRunBiomeCount = config.biome_count
         end
+        DrawCustomOrderOptions()
 
-        value, checked = rom.ImGui.Checkbox("Allow Erebus, Ephyra and Tartarus (H1) as the first random biome", config.biome_pool.larger_starting_pool)
-        if checked then
-            config.biome_pool.larger_starting_pool = value
-        end
+        if not config.biome_pool.custom_order then
+            value, checked = rom.ImGui.Checkbox("Deterministic biome order (Undo Night will preserve the current biome order)", config.biome_pool.deterministic_biome_order)
+            if checked then
+                config.biome_pool.deterministic_biome_order = value
+            end
 
-        value, checked = rom.ImGui.Checkbox("Easy first biome", config.biome_pool.easy_first_biome)
-        if checked then
-            config.biome_pool.easy_first_biome = value
-        end
+            value, checked = rom.ImGui.Checkbox("Allow Erebus, Ephyra and Tartarus (H1) as the first random biome", config.biome_pool.larger_starting_pool)
+            if checked then
+                config.biome_pool.larger_starting_pool = value
+            end
 
-        value, checked = rom.ImGui.Checkbox("Hard final biome", config.biome_pool.hard_last_biome)
-        if checked then
-            config.biome_pool.hard_last_biome = value
+            value, checked = rom.ImGui.Checkbox("Easy first biome (no Tartarus, Summit, Elysium, Styx or Olympus)", config.biome_pool.easy_first_biome)
+            if checked then
+                config.biome_pool.easy_first_biome = value
+            end
+
+            value, checked = rom.ImGui.Checkbox("Hard final biome (one of Tartarus, Summit, Elysium, Styx or Olympus)", config.biome_pool.hard_last_biome)
+            if checked then
+                config.biome_pool.hard_last_biome = value
+            end
         end
+    else
+        rom.ImGui.Text("Current Biome Pool configuration")
+        rom.ImGui.Text("  Number of Regions: " .. config.biome_count)
+        rom.ImGui.Text("  Deterministic biome order: "..tostring(config.biome_pool.deterministic_biome_order))
+        rom.ImGui.Text("  Unblock Erebus and Ephyra from 1st biome: "..tostring(config.biome_pool.larger_starting_pool))
+        rom.ImGui.Text("  Easy first biome: "..tostring(config.biome_pool.easy_first_biome))
+        rom.ImGui.Text("  Hard last biome: "..tostring(config.biome_pool.hard_last_biome))
+        rom.ImGui.Text("These settings can only be configured at the Crossroads")
     end
-end
 
--- print(dump(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]))
+end
