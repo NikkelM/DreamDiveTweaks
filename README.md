@@ -14,6 +14,7 @@ Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training g
 
 <div style="display: flex; align-items: flex-start; gap: 5px;">
   <img src="images/imgui1.png" alt="imgui1">
+  <br>
   <img src="images/imgui2.png" alt="imgui2">
 </div>
 
