@@ -129,6 +129,7 @@ local function on_ready()
     import 'metareward.lua'
     import 'hermes_shrine.lua'
     import 'purging_well.lua'
+    import 'bounty.lua'
 end
 
 local function on_reload()
