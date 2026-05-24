@@ -2,7 +2,11 @@
 
 ## [Unreleased]
 
+- Adjust scaling for various enemies
+
 ## [1.1.1] - 2026-05-21
+
+- Fix readme
 
 ## [1.1.0] - 2026-05-21
 
