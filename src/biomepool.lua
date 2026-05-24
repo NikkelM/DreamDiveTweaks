@@ -279,6 +279,12 @@ if not WrappedNextDream then
             UpdateEasyBiomeZag()
         end
 
+        -- on getting a pre generated route from elsewhere
+        if not game.IsEmpty(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]) and (game.CurrentRun.EnteredBiomes or 0) == 0 then
+            config.biome_count = #game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]
+            game.GameData.FullRunBiomeCount = config.biome_count
+        end
+
         -- only run this if starting a new run or in the middle of a DreamDiveTweaks modded run
         if game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"] or (game.CurrentRun.EnteredBiomes or 0) == 0 then
             args = args or {}
@@ -289,6 +295,7 @@ if not WrappedNextDream then
                 nextRoomSet = game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"][1]
                 game.CurrentRun.DreamBiomePool = game.DeepCopyTable(all_biomes)
             else
+                game.CurrentRun.EnteredBiomes = game.CurrentRun.EnteredBiomes or 0
                 nextRoomSet = game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"][game.CurrentRun.EnteredBiomes + 1]
             end
 
@@ -458,3 +465,5 @@ end
 -- for _ = 1, 100 do
 --     TestRouteGeneration()
 -- end
+
+-- print(dump(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]))

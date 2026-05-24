@@ -39,108 +39,108 @@ local newScalingData = {
 			{
                 DataOverrides =
                 {
-                    HealthMultiplier = 6.5,
-                    SpeedMultiplier = 1.2,
+                    HealthMultiplier = 3,
+                    SpeedMultiplier = 1,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 3.3,
+                    PlayerMultiplier = 3,
                 },
             },
             [5] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 6.5,
-                    SpeedMultiplier = 1.2,
+                    HealthMultiplier = 3,
+                    SpeedMultiplier = 1,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 3.3,
+                    PlayerMultiplier = 3,
                 },
             },
             [6] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 6.5,
-                    SpeedMultiplier = 1.2,
+                    HealthMultiplier = 3,
+                    SpeedMultiplier = 1,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 3.3,
+                    PlayerMultiplier = 3,
                 },
             },
             [7] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 14.27,
+                    HealthMultiplier = 5,
                     SpeedMultiplier = 1.2,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 5.7,
+                    PlayerMultiplier = 5,
                 },
             },
             [8] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 14.27,
+                    HealthMultiplier = 5,
                     SpeedMultiplier = 1.2,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 5.7,
+                    PlayerMultiplier = 5,
                 },
             },
             [9] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 14.27,
+                    HealthMultiplier = 5,
                     SpeedMultiplier = 1.2,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 5.7,
+                    PlayerMultiplier = 5,
                 },
             },
             [10] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 31.33,
-                    SpeedMultiplier = 1.2,
+                    HealthMultiplier = 15,
+                    SpeedMultiplier = 1.3,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 9.85,
+                    PlayerMultiplier = 7,
                 },
             },
             [11] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 31.33,
-                    SpeedMultiplier = 1.2,
+                    HealthMultiplier = 15,
+                    SpeedMultiplier = 1.3,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 9.85,
+                    PlayerMultiplier = 7,
                 },
             },
             [12] =
             {
                 DataOverrides =
                 {
-                    HealthMultiplier = 31.33,
-                    SpeedMultiplier = 1.2,
+                    HealthMultiplier = 15,
+                    SpeedMultiplier = 1.3,
                 },
                 AddOutgoingDamageModifier =
                 {
-                    PlayerMultiplier = 9.85,
+                    PlayerMultiplier = 7,
                 },
             },
         }

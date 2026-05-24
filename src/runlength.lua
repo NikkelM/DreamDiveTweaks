@@ -6,7 +6,6 @@ for enemy, data in pairs(game.EnemyData) do
 end
 print("enemies with scaling data", original_scaled_count)
 
-
 import 'EnemyScalingData.lua'
 import 'EnemyScalingData12.lua'
 
@@ -20,7 +19,7 @@ for enemy, data in pairs(game.EnemyData) do
         count2 = count2 + 1
     end
 end
-print("unpatched enemies remainaing", count,"/", count2+count)
+print("unpatched enemies remainaing", count, "/", count2 + count)
 
 import 'NewEnemyScalingData.lua'
 import 'EncounterScalingLogic.lua'
@@ -44,7 +43,7 @@ end
 
 game.GameData.FullRunBiomeCount = config.biome_count
 
-game.ConcatTableValuesIPairs(game.RoomSets.Dream,{
+game.ConcatTableValuesIPairs(game.RoomSets.Dream, {
     "Dream_PostBoss01",
     "Dream_PostBoss02",
     "Dream_PostBoss03",

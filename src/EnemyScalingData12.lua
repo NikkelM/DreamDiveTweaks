@@ -973,7 +973,7 @@ TyphonHead =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 2.65,
+				HealthMultiplier = 3.5,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -984,7 +984,7 @@ TyphonHead =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 3.44,
+				HealthMultiplier = 4,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -995,7 +995,7 @@ TyphonHead =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 4.47,
+				HealthMultiplier = 4.8,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1047,7 +1047,7 @@ Eyeball =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 3.44,
+				HealthMultiplier = 4,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1058,7 +1058,7 @@ Eyeball =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 4.47,
+				HealthMultiplier = 4.8,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1110,7 +1110,7 @@ TyphonEye =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 3.44,
+				HealthMultiplier = 3.6,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1121,7 +1121,7 @@ TyphonEye =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 4.47,
+				HealthMultiplier = 4.8,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1173,7 +1173,7 @@ TyphonHeadAdd =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 3.44,
+				HealthMultiplier = 3.6,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1184,7 +1184,7 @@ TyphonHeadAdd =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 4.47,
+				HealthMultiplier = 4.8,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1236,7 +1236,7 @@ TyphonTail =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 3.44,
+				HealthMultiplier = 3.6,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -1247,7 +1247,7 @@ TyphonTail =
 		{
 			DataOverrides =
 			{
-				HealthMultiplier = 4.47,
+				HealthMultiplier = 4.8,
 			},
 			AddOutgoingDamageModifier =
 			{
@@ -3752,16 +3752,16 @@ TyphonEggLarge =
 for enemy, data in pairs(enemyScalingData) do
 	for biome, value in pairs(data.DreamBiomeData) do
 		if value.AddOutgoingDamageModifier and value.AddOutgoingDamageModifier.PlayerMultiplier then
-			value.AddOutgoingDamageModifier.PlayerMultiplier = value.AddOutgoingDamageModifier.PlayerMultiplier * (1.15 ^ (biome-8))
+			value.AddOutgoingDamageModifier.PlayerMultiplier = value.AddOutgoingDamageModifier.PlayerMultiplier * (1.12 ^ (biome-4))
 		end
 		if value.DataOverrides and value.DataOverrides.HealthMultiplier then
-			value.DataOverrides.HealthMultiplier = value.DataOverrides.HealthMultiplier * (0.93 ^ (biome-8))
+			value.DataOverrides.HealthMultiplier = value.DataOverrides.HealthMultiplier * (0.95 ^ (biome-8))
 		end
 		if value.DataOverrides and value.DataOverrides.HealingMultiplier then
-			value.DataOverrides.HealingMultiplier = value.DataOverrides.HealingMultiplier * (0.93 ^ (biome-8))
+			value.DataOverrides.HealingMultiplier = value.DataOverrides.HealingMultiplier * (0.95 ^ (biome-8))
 		end
 		if value.DataOverrides and value.DataOverrides.OutgoingDamageModifiers then
-			value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier * (1.15 ^ (biome-8))
+			value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier * (1.12 ^ (biome-4))
 			value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier * (0.93 ^ (biome-8))
 		end
 	end
