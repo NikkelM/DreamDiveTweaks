@@ -1,5 +1,5 @@
 modutil.mod.Path.Wrap("StartOver", function (base, args)
-    if args.ActiveBounty then
+    if args.ActiveBounty and game.BountyData[args.ActiveBounty] then
         args.StartingRoomName = game.BountyData[args.ActiveBounty].StartingRoomName
     end
     return base(args)

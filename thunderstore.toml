@@ -1,7 +1,6 @@
 [config]
 schemaVersion = "0.0.1"
 
-
 [package]
 namespace = "zerp"
 name = "DreamDiveTweaks"
@@ -47,11 +46,3 @@ communities = [ "hades-ii", ]
 
 [publish.categories]
 hades-ii = [ "mods", ]
-
-
-
-
-
-
-
-
