@@ -281,6 +281,7 @@ if not WrappedNextDream then
 
         -- on getting a pre generated route from elsewhere
         if not game.IsEmpty(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]) and (game.CurrentRun.EnteredBiomes or 0) == 0 then
+            game.CurrentRun[_PLUGIN.guid .. "StoredFullBiomeCount"] = config.biome_count
             config.biome_count = #game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]
             game.GameData.FullRunBiomeCount = config.biome_count
         end
