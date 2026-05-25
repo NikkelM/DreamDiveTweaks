@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Adjust scaling for various enemies
+- Support for Dream Dives x Chaos Trials
 
 ## [1.1.1] - 2026-05-21
 
