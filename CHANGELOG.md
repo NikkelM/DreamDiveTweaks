@@ -3,7 +3,8 @@
 ## [Unreleased]
 
 - Adjust scaling for various enemies
-- Support for Dream Dives x Chaos Trials
+- Add 6th god and 4th hammer after 8 regions
+- Initial support for future Dream Dives x Chaos Trials
 
 ## [1.1.1] - 2026-05-21
 

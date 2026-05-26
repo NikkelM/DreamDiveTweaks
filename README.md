@@ -22,6 +22,7 @@ Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training g
 
 - Hermes shrine rewards (if any) will show up in the final shop of the final region.
 - A 5th god, 3rd hammer and 3rd Hermes boon will become available after 4 biomes have been completed.
+- A 6th god and 4th hammer will become available after 8 biomes have been completed.
 - If harvesting points are enabled Plentiful Forage will also become elligible in Dream Dives.
 - Secret bosses will start scaling up from the 4th biome.
 - Vow or Rivals scales proportionally to the number of biomes, so an 8 biome run with VoR set to 2 will have the first 4 bosses be Unrivaled.

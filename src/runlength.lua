@@ -396,7 +396,7 @@ modutil.mod.Path.Wrap("StartRoom", function (base, currentRun, currentRoom)
     if currentRun.IsDreamRun and currentRun.EnteredBiomes == 5 and currentRoom.BiomeStartRoom then
         game.CurrentRun.MaxGodsPerRun = 5
     end
-    if currentRun.IsDreamRun and currentRun.EnteredBiomes >= 9 and currentRoom.BiomeStartRoom then
+    if currentRun.IsDreamRun and currentRun.EnteredBiomes == 9 and currentRoom.BiomeStartRoom then
         game.CurrentRun.MaxGodsPerRun = 6
     end
 end)
