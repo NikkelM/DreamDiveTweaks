@@ -10,7 +10,7 @@ It is recommended to backup your save from `%USERPROFILE%\Saved Games\Hades II\P
 
 ## Usage
 
-Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training grounds.
+Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training grounds. If the ImGui windows seem unresponsive try disabling V-sync and external frame limiters if any.
 
 ![imgui1](images/imgui1.png)
 
