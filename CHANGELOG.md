@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-05-26
+
 - Adjust scaling for various enemies
 - Add 6th god and 4th hammer after 8 regions
 - Initial support for future Dream Dives x Chaos Trials
@@ -30,7 +32,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.1.1...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.1.1...1.2.0
 [1.1.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.2...1.1.0
 [1.0.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.1...1.0.2
