@@ -466,5 +466,3 @@ end
 -- for _ = 1, 100 do
 --     TestRouteGeneration()
 -- end
-
--- print(dump(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]))
