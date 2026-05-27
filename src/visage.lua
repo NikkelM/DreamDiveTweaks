@@ -89,8 +89,6 @@ for unitName, unitData in pairs(game.EnemyData) do
     end
 end
 
-print(dump(game.EnemyData.Eris.SetupEvents))
-
 modutil.mod.Path.Wrap("SetAudioEffectState", function (base, args)
     args = args or {}
     if args.Name == "Dream" and config.disable_visage_forms.voice then
