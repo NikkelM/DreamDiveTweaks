@@ -130,6 +130,7 @@ local function on_ready()
     import 'hermes_shrine.lua'
     import 'purging_well.lua'
     import 'bounty.lua'
+    import 'npc_scaling.lua'
 end
 
 local function on_reload()

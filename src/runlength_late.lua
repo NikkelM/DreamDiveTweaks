@@ -24,9 +24,14 @@ end)
 --#region NPC scaling fix
 
 function mod.OpenUpgradeChoiceMenu_NPC(base, source, args)
-    if game.CurrentRun.EnteredBiomes > 4 then
+    if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 8 then
         for _, item in pairs(source.UpgradeOptions) do
-			item.Rarity = game.TraitRarityData.RarityUpgradeOrder[4]
+			item.Rarity = _PLUGIN.guid .. "RarityBiome1"
+		end
+    end
+    if game.CurrentRun.EnteredBiomes > 8 then
+        for _, item in pairs(source.UpgradeOptions) do
+			item.Rarity = _PLUGIN.guid .. "RarityBiome2"
 		end
     end
     return base(source, args)
