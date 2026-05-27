@@ -36,7 +36,6 @@ for unitName, unitData in pairs(game.EnemyData) do
             end
             if functionData.FunctionName == "GenericPresentation" and functionData.Args and
                functionData.Args.SetModel and GameStateRequirementHasFalseIsDreamRun(functionData.GameStateRequirements) then
-                print(unitName, "lucifer check")
                 local req_index = GameStateRequirementHasFalseIsDreamRun(functionData.GameStateRequirements)
                 functionData.GameStateRequirements[req_index] = {}
                 functionData.GameStateRequirements.OrRequirements = functionData.GameStateRequirements.OrRequirements or {}
