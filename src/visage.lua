@@ -30,9 +30,26 @@ for unitName, unitData in pairs(game.EnemyData) do
                 changeRequirement = true
             end
             if functionData.FunctionName == "GenericPresentation" and functionData.Args and
-               functionData.Args.SetModel and string.match(functionData.Args.SetModel, "Dream.*Mesh") then
+               functionData.Args.SetModel and string.match(functionData.Args.SetModel, "Dream.*Mesh") and GameStateRequirementHasIsDreamRun(functionData.GameStateRequirements) then
                 functionData.GameStateRequirements = functionData.GameStateRequirements or {}
                 changeRequirement = true
+            end
+            if functionData.FunctionName == "GenericPresentation" and functionData.Args and
+               functionData.Args.SetModel and GameStateRequirementHasFalseIsDreamRun(functionData.GameStateRequirements) then
+                print(unitName, "lucifer check")
+                local req_index = GameStateRequirementHasFalseIsDreamRun(functionData.GameStateRequirements)
+                functionData.GameStateRequirements[req_index] = {}
+                functionData.GameStateRequirements.OrRequirements = functionData.GameStateRequirements.OrRequirements or {}
+                table.insert(functionData.GameStateRequirements.OrRequirements, {
+                    {
+                        PathFalse = { "CurrentRun", "IsDreamRun" },
+                    }
+                })
+                table.insert(functionData.GameStateRequirements.OrRequirements, {
+                    {
+                        PathTrue = {_PLUGIN.guid, "config", "disable_visage_forms", "model"}
+                    }
+                })
             end
             if functionData.FunctionName == "OverwriteSelf" and functionData.Args and
                functionData.Args.GrannyAttachmentTexture and functionData.Args.GrannyAttachmentTexture.GrannyTexture and
@@ -71,6 +88,8 @@ for unitName, unitData in pairs(game.EnemyData) do
         end
     end
 end
+
+print(dump(game.EnemyData.Eris.SetupEvents))
 
 modutil.mod.Path.Wrap("SetAudioEffectState", function (base, args)
     args = args or {}

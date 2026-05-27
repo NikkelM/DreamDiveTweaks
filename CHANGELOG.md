@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix Unrivaled Eris not equipping the correct rail model when visage forms are disabled
+
 ## [1.2.0] - 2026-05-26
 
 - Adjust scaling for various enemies
