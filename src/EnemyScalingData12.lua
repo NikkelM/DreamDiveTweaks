@@ -3743,7 +3743,6 @@ TyphonEggLarge =
 				PlayerMultiplier = 4.24,
 			},
 		},
-	
 	},
 },
 
@@ -3755,14 +3754,14 @@ for enemy, data in pairs(enemyScalingData) do
 			value.AddOutgoingDamageModifier.PlayerMultiplier = value.AddOutgoingDamageModifier.PlayerMultiplier * (1.12 ^ (biome-4))
 		end
 		if value.DataOverrides and value.DataOverrides.HealthMultiplier then
-			value.DataOverrides.HealthMultiplier = value.DataOverrides.HealthMultiplier * (0.95 ^ (biome-8))
+			value.DataOverrides.HealthMultiplier = value.DataOverrides.HealthMultiplier * (0.96 ^ (biome-8))
 		end
 		if value.DataOverrides and value.DataOverrides.HealingMultiplier then
-			value.DataOverrides.HealingMultiplier = value.DataOverrides.HealingMultiplier * (0.95 ^ (biome-8))
+			value.DataOverrides.HealingMultiplier = value.DataOverrides.HealingMultiplier * (0.96 ^ (biome-8))
 		end
 		if value.DataOverrides and value.DataOverrides.OutgoingDamageModifiers then
 			value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[1].PlayerMultiplier * (1.12 ^ (biome-4))
-			value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier * (0.93 ^ (biome-8))
+			value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier = value.DataOverrides.OutgoingDamageModifiers[2].NonPlayerMultiplier * (0.96 ^ (biome-8))
 		end
 	end
 end
