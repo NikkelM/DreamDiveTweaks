@@ -76,6 +76,22 @@ local rarityOverrideData = {
             Multiplier = 0.9/0.6,
         }
     },
+    FocusAttackDamageTrait = {
+        [_PLUGIN.guid .. "RarityBiome" .. 1] = {
+            Multiplier = 6/3,
+        },
+        [_PLUGIN.guid .. "RarityBiome" .. 2] = {
+            Multiplier = 7/3,
+        }
+    },
+    FocusSpecialDamageTrait = {
+        [_PLUGIN.guid .. "RarityBiome" .. 1] = {
+            Multiplier = 6/3,
+        },
+        [_PLUGIN.guid .. "RarityBiome" .. 2] = {
+            Multiplier = 7/3,
+        }
+    },
     ModsNikkelMHadesBiomesBuffFutureBoonRarity = {
          [_PLUGIN.guid .. "RarityBiome" .. 1] = {
             Multiplier = 5/3,
@@ -145,7 +161,14 @@ end
 
 if mod.IsZag then
     modutil.mod.Path.Wrap("NikkelM-Zagreus_Journey".. "." .. "ScaleNPCTraitsForDreamRun", function (base, upgradeOptions)
-        if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 8 then
+        if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 6 then
+            for _, item in pairs(upgradeOptions) do
+                if (game.TraitData[item.ItemName].RarityLevels or {})["Heroic"] then
+                    item.Rarity = "Heroic"
+                end
+            end
+        end
+        if game.CurrentRun.EnteredBiomes > 6 and game.CurrentRun.EnteredBiomes <= 10 then
             for _, item in pairs(upgradeOptions) do
                 if (game.TraitData[item.ItemName].RarityLevels or {})[_PLUGIN.guid .. "RarityBiome1"] then
                     print("overriding rarity for", item.ItemName)
@@ -155,7 +178,7 @@ if mod.IsZag then
                 end
             end
         end
-        if game.CurrentRun.EnteredBiomes > 8 then
+        if game.CurrentRun.EnteredBiomes > 10 then
             for _, item in pairs(upgradeOptions) do
                 if (game.TraitData[item.ItemName].RarityLevels or {})[_PLUGIN.guid .. "RarityBiome2"] then
                     print("overriding rarity for", item.ItemName)

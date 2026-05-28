@@ -24,7 +24,14 @@ end)
 --#region NPC scaling
 
 function mod.OpenUpgradeChoiceMenu_NPC(base, source, args)
-    if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 8 then
+    if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 6 then
+        for _, item in pairs(source.UpgradeOptions) do
+            if (game.TraitData[item.ItemName].RarityLevels or {})["Heroic"] then
+                item.Rarity = "Heroic"
+            end
+		end
+    end
+    if game.CurrentRun.EnteredBiomes > 6 and game.CurrentRun.EnteredBiomes <= 10 then
         for _, item in pairs(source.UpgradeOptions) do
             if (game.TraitData[item.ItemName].RarityLevels or {})[_PLUGIN.guid .. "RarityBiome1"] then
 			    item.Rarity = _PLUGIN.guid .. "RarityBiome1"
@@ -33,7 +40,7 @@ function mod.OpenUpgradeChoiceMenu_NPC(base, source, args)
             end
 		end
     end
-    if game.CurrentRun.EnteredBiomes > 8 then
+    if game.CurrentRun.EnteredBiomes > 10 then
         for _, item in pairs(source.UpgradeOptions) do
             if (game.TraitData[item.ItemName].RarityLevels or {})[_PLUGIN.guid .. "RarityBiome2"] then
 			    item.Rarity = _PLUGIN.guid .. "RarityBiome2"
