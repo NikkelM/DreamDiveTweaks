@@ -21,6 +21,18 @@ local npcsToScale = {
         ScalingKeyHeroic = "Epic",
         ScalingKeyEpic = "Rare",
     },
+
+    -- ZJ NPCs
+    NPC_Sisyphus_01 = {
+        ScalingKeyHeroic = "Epic",
+        ScalingKeyEpic = "Rare",
+    },
+    NPC_Eurydice_01 = {
+
+    },
+    NPC_Patroclus_01 = {
+
+    }
 }
 
 local rarityOverrideData = {
@@ -62,6 +74,14 @@ local rarityOverrideData = {
         },
         [_PLUGIN.guid .. "RarityBiome" .. 2] = {
             Multiplier = 0.9/0.6,
+        }
+    },
+    ModsNikkelMHadesBiomesBuffFutureBoonRarity = {
+         [_PLUGIN.guid .. "RarityBiome" .. 1] = {
+            Multiplier = 5/3,
+        },
+        [_PLUGIN.guid .. "RarityBiome" .. 2] = {
+            Multiplier = 5/3,
         }
     }
 }
@@ -121,4 +141,30 @@ for npc, _ in pairs(npcsToScale) do
             print(traitName, dump(rarityData), dump(customRarityData))
         end
     end
+end
+
+if mod.IsZag then
+    modutil.mod.Path.Wrap("NikkelM-Zagreus_Journey".. "." .. "ScaleNPCTraitsForDreamRun", function (base, upgradeOptions)
+        if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 8 then
+            for _, item in pairs(upgradeOptions) do
+                if (game.TraitData[item.ItemName].RarityLevels or {})[_PLUGIN.guid .. "RarityBiome1"] then
+                    print("overriding rarity for", item.ItemName)
+                    item.Rarity = _PLUGIN.guid .. "RarityBiome1"
+                else
+                    item.Rarity = "Heroic"
+                end
+            end
+        end
+        if game.CurrentRun.EnteredBiomes > 8 then
+            for _, item in pairs(upgradeOptions) do
+                if (game.TraitData[item.ItemName].RarityLevels or {})[_PLUGIN.guid .. "RarityBiome2"] then
+                    print("overriding rarity for", item.ItemName)
+                    item.Rarity = _PLUGIN.guid .. "RarityBiome2"
+                else
+                    item.Rarity = "Heroic"
+                end
+            end
+        end
+        return base(upgradeOptions)
+    end)
 end

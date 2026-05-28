@@ -21,7 +21,7 @@ end)
 
 --#endregion
 
---#region NPC scaling fix
+--#region NPC scaling
 
 function mod.OpenUpgradeChoiceMenu_NPC(base, source, args)
     if game.CurrentRun.EnteredBiomes > 4 and game.CurrentRun.EnteredBiomes <= 8 then
