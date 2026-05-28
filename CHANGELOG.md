@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-05-28
+
 - Add NPC boon scaling for biomes 5-12
 - Fix Unrivaled Eris not equipping the correct rail model when visage forms are disabled
 
@@ -35,7 +37,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.2.0...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.1.1...1.2.0
 [1.1.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.0.2...1.1.0
