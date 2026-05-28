@@ -53,9 +53,17 @@ local rarityOverrideData = {
             Multiplier = 0.75/0.5,
         },
         [_PLUGIN.guid .. "RarityBiome" .. 2] = {
-            Multiplier = 0.8/0.5,
+            Multiplier = 0.75/0.5,
         }
     },
+    DiminishingHealthAndManaBoon = {
+        [_PLUGIN.guid .. "RarityBiome" .. 1] = {
+            Multiplier = 0.85/0.6,
+        },
+        [_PLUGIN.guid .. "RarityBiome" .. 2] = {
+            Multiplier = 0.9/0.6,
+        }
+    }
 }
 
 function mod.GetPath(tbl, path)
