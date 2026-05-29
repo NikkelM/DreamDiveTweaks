@@ -116,7 +116,6 @@ function mod.GetPath(tbl, path)
             return nil
         end
     end
-    print("Getpath", path[1])
     return current
 end
 
@@ -154,7 +153,7 @@ for npc, _ in pairs(npcsToScale) do
             if customRarityData then
                 scaleNPCTrait(customRarityData, npc)
             end
-            print(traitName, dump(rarityData), dump(customRarityData))
+            -- print(traitName, dump(rarityData), dump(customRarityData))
         end
     end
 end
