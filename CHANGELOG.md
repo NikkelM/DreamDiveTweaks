@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix HUD being disabled during Typhon tiny Mel phase
+
 ## [1.3.0] - 2026-05-28
 
 - Add NPC boon scaling for biomes 5-12
