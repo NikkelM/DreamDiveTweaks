@@ -209,6 +209,7 @@ function GetCustomOrder()
     for i = 1, config.biome_count do
         route[i] = config.biome_pool.custom_order_data[i..""]
     end
+    print("custom GeneratedRoute", dump(route))
     return route
 end
 
