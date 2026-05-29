@@ -200,7 +200,7 @@ end
 
 function GetCustomOrder()
     if not CheckOrderValid() then
-        game.thread(game.InCombatText, game.CurrentRun.Hero.ObjectId, "Invalid custom order, resetting to default order", 1.6, { OffsetY = -60 })
+        game.thread(game.InCombatText, game.CurrentRun.Hero.ObjectId, "Invalid custom order, resetting to default order", 3, { OffsetY = -60, SkipRise = true })
         config.biome_pool.custom_order_data = default_order
         config.biome_count = mod.MaxAllowedBiomeCount
         game.GameData.FullRunBiomeCount = config.biome_count
@@ -257,6 +257,11 @@ if not WrappedNextDream then
     modutil.mod.Path.Wrap("SelectNextDreamBiome", function (base, source, args)
         -- clamp max biome count and configured biome count if we detect ZJ doesn't have its requirements met
         if mod.IsZag and (game.GameState.ModsNikkelMHadesBiomesClearedRunsCache or 0) < 1 then
+            if config.biome_count > 8 then
+                game.thread(game.InCombatText, game.CurrentRun.Hero.ObjectId, "Complete a vanilla ZJ run to enable them for Dream Dives", 6, { OffsetY = -120, UseProgressiveStack = true, PreDelay = 0.6, SkipRise = true })
+                game.wait(0.01)
+                game.thread(game.InCombatText, game.CurrentRun.Hero.ObjectId, "Zagreus Journey biomes requirement not met", 6, { OffsetY = -120, UseProgressiveStack = true, PreDelay = 0.6, SkipRise = true })
+            end
             mod.MaxAllowedBiomeCount = 8
             config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
             game.GameData.FullRunBiomeCount = config.biome_count
