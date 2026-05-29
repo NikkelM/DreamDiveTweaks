@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Fix HUD being disabled during Typhon tiny Mel phase
+- Give better feedback whenever a config is automatically changed when certain requirements are not met
 
 ## [1.3.0] - 2026-05-28
 
