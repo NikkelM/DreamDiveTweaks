@@ -136,6 +136,7 @@ local function on_ready()
     import 'purging_well.lua'
     import 'bounty.lua'
     import 'npc_scaling.lua'
+    import 'dodge.lua'
 end
 
 local function on_reload()
