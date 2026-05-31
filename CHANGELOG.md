@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Plentiful Forage overrides now part of Resources_In_Chaos_Trials
+
 ## [1.3.1] - 2026-05-29
 
 - Fix HUD being disabled during Typhon tiny Mel phase
