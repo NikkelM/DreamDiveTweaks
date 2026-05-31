@@ -1,6 +1,6 @@
 ## Dream Dive Tweaks
 
-Hades II mod offering multiple configurable tweaks for Dream Dives.
+Hades II mod offering multiple configurable tweaks for Dream Dives. Including but not limited to longer runs (upto a total of 12 biomes with Zagreus Journey installed), disabling visage forms, some minor fixes and more.
 
 ## Installation
 
