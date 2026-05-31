@@ -112,16 +112,13 @@ local function on_ready()
         return returnTable
     end
 
-    mod.IsZag = rom.mods["NikkelM-Zagreus_Journey"] and
-                rom.mods["NikkelM-Zagreus_Journey"].config and
-                rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
-                not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives and
-                compareSemver(rom.mods["NikkelM-Zagreus_Journey"]._PLUGIN.version, "1.1.0") >= 0
-
     mod.IsZagAvailable = rom.mods["NikkelM-Zagreus_Journey"] and
                          rom.mods["NikkelM-Zagreus_Journey"].config and
                          rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
+                         not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives and
                          compareSemver(rom.mods["NikkelM-Zagreus_Journey"]._PLUGIN.version, "1.1.0") >= 0
+
+    mod.IsZag = mod.IsZagAvailable and (not config.biome_pool.disable_zag_biomes)
 
     mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
 

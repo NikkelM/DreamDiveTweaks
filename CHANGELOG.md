@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add toggle for H1 biomes to appear in dream dives.
+- Add a soft cap to Wisply Wiles and Hasty Retreat during long Dream Dives.
+
 ## [1.3.2] - 2026-05-31
 
 - Plentiful Forage overrides now part of Resources_In_Chaos_Trials

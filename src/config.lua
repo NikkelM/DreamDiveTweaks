@@ -9,6 +9,7 @@ local config = {
     hard_last_biome = false,
     larger_starting_pool = false,
     deterministic_biome_order = false,
+    disable_zag_biomes = false,
     custom_order = false,
     custom_order_data = {
       ["1"] = "F",
@@ -48,7 +49,7 @@ local configDesc = {
   shop_music_fix = "Fix shop music being absent in Dream Dives",
   purging_well = "Spawn a purging well along with the well shop at rest spots",
   hermes_shrine_chance = "The % chance of spawning a Hermes Shrine instead of a Well Shop in post boss rooms",
-  biome_count = "Set a longer/shorter number of Regions (2-12)"
+  biome_count = "Set a longer/shorter number of Regions (2-12)",
 }
 
 return config, configDesc

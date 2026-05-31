@@ -87,10 +87,10 @@ function DrawMenu()
         end
 
         if mod.IsZagAvailable then
-            value, checked = rom.ImGui.Checkbox("Toggle Zagreus' Journey (Hades 1) biomes in Dream Dives", not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives)
+            value, checked = rom.ImGui.Checkbox("Disable Zagreus' Journey (Hades 1) biomes in Dream Dives", config.biome_pool.disable_zag_biomes)
             if checked then
-                rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives = not value
-                mod.IsZag = value
+                config.biome_pool.disable_zag_biomes = value
+                mod.IsZag = not value
                 mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
                 config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
                 game.GameData.FullRunBiomeCount = config.biome_count
@@ -124,7 +124,7 @@ function DrawMenu()
         rom.ImGui.Text("Current Biome Pool configuration")
         rom.ImGui.Text("  Number of Regions: " .. config.biome_count)
         if mod.IsZagAvailable then
-            rom.ImGui.Text("  Zagreus' Journey (Hades 1) biomes: " .. tostring(not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives))
+            rom.ImGui.Text("  Zagreus' Journey (Hades 1) biomes: " .. tostring(not config.biome_pool.disable_zag_biomes))
         end
         rom.ImGui.Text("  Deterministic biome order: "..tostring(config.biome_pool.deterministic_biome_order))
         rom.ImGui.Text("  Unblock Erebus and Ephyra from 1st biome: "..tostring(config.biome_pool.larger_starting_pool))
