@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-05-31
+
+- Plentiful Forage overrides now part of Resources_In_Chaos_Trials
+
 ## [1.3.1] - 2026-05-29
 
 - Fix HUD being disabled during Typhon tiny Mel phase
@@ -42,7 +46,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.1...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.2...HEAD
+[1.3.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.1...1.3.2
 [1.3.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.1.1...1.2.0
