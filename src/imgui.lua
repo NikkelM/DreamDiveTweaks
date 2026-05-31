@@ -79,13 +79,24 @@ function DrawMenu()
 
     if game.CurrentHubRoom then
         rom.ImGui.Text(string.gsub("Set a longer/shorter number of Regions (2-MaxBiomeCount)", "MaxBiomeCount", mod.MaxAllowedBiomeCount))
-        local selected
         value, selected = rom.ImGui.SliderInt("Regions", config.biome_count, 2, mod.MaxAllowedBiomeCount, '%d%')
         if selected and value ~= previousConfig.biome_count then
             config.biome_count = value
             previousConfig.biome_count = value
             game.GameData.FullRunBiomeCount = config.biome_count
         end
+
+        if mod.IsZagAvailable then
+            value, checked = rom.ImGui.Checkbox("Toggle Zagreus' Journey (Hades 1) biomes in Dream Dives", not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives)
+            if checked then
+                rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives = not value
+                mod.IsZag = value
+                mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
+                config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
+                game.GameData.FullRunBiomeCount = config.biome_count
+            end
+        end
+
         DrawCustomOrderOptions()
 
         if not config.biome_pool.custom_order then
@@ -112,6 +123,9 @@ function DrawMenu()
     else
         rom.ImGui.Text("Current Biome Pool configuration")
         rom.ImGui.Text("  Number of Regions: " .. config.biome_count)
+        if mod.IsZagAvailable then
+            rom.ImGui.Text("  Zagreus' Journey (Hades 1) biomes: " .. tostring(not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives))
+        end
         rom.ImGui.Text("  Deterministic biome order: "..tostring(config.biome_pool.deterministic_biome_order))
         rom.ImGui.Text("  Unblock Erebus and Ephyra from 1st biome: "..tostring(config.biome_pool.larger_starting_pool))
         rom.ImGui.Text("  Easy first biome: "..tostring(config.biome_pool.easy_first_biome))

@@ -118,6 +118,11 @@ local function on_ready()
                 not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives and
                 compareSemver(rom.mods["NikkelM-Zagreus_Journey"]._PLUGIN.version, "1.1.0") >= 0
 
+    mod.IsZagAvailable = rom.mods["NikkelM-Zagreus_Journey"] and
+                         rom.mods["NikkelM-Zagreus_Journey"].config and
+                         rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
+                         compareSemver(rom.mods["NikkelM-Zagreus_Journey"]._PLUGIN.version, "1.1.0") >= 0
+
     mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
 
     import 'visage.lua'
