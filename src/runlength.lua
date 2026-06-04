@@ -405,20 +405,6 @@ end)
 
 --#region Hermes early spawn
 
-function mod.SpawnShopItemsEarly()
-    if game.CurrentRun.IsDreamRun and game.CurrentRun.EnteredBiomes == game.GameData.FullRunBiomeCount then
-        local hermesTraits = {}
-        for _, trait in pairs( game.CurrentRun.Hero.Traits ) do
-            if trait.OnExpire and trait.OnExpire.SpawnShopItem then
-                table.insert( hermesTraits, trait )
-            end
-        end
-        for _, trait in pairs( hermesTraits ) do
-		    game.RemoveTraitData( game.CurrentRun.Hero, trait, { Silent = true })
-        end
-    end
-end
-
 local shopRooms = {
     "F_PreBoss01",
     "G_PreBoss01",
@@ -435,24 +421,56 @@ local shopRooms = {
     "Y_PreBoss01",
 }
 
-for _, roomName in ipairs(shopRooms) do
-    local roomData = game.RoomData[roomName]
-    if roomData then
-        roomData.StartThreadedEvents = roomData.StartThreadedEvents or {}
-        table.insert(roomData.StartThreadedEvents, {
-            FunctionName = _PLUGIN.guid .. "." .. "SpawnShopItemsEarly"
-        })
+local function getEventIndex(events, functionName)
+    for index, event in ipairs(events) do
+        if event.FunctionName == functionName then
+            return index
+        end
     end
 end
 
 function mod.CheckLastBiome(source, args)
+    return (game.CurrentRun.EnteredBiomes == game.GameData.FullRunBiomeCount)
+end
+
+for _, roomName in ipairs(shopRooms) do
+    local roomData = game.RoomData[roomName]
+    if roomData then
+        roomData.StartUnthreadedEvents = roomData.StartUnthreadedEvents or {}
+        local eventIndex = getEventIndex(roomData.StartUnthreadedEvents, "CompleteSurfaceShopItems")
+        if eventIndex then
+            roomData.StartUnthreadedEvents[eventIndex].GameStateRequirements[3] = {
+                FunctionName = _PLUGIN.guid .. "." .. "CheckLastBiome"
+            }
+        else
+            table.insert(roomData.StartUnthreadedEvents,
+            {
+                FunctionName = "CompleteSurfaceShopItems",
+                GameStateRequirements =
+                {
+                    {
+                        PathTrue = { "CurrentRun", "IsDreamRun" },
+                    },
+                    {
+                        PathTrue = { "CurrentRun", "CurrentRoom", "AutocompleteSurfaceShopDelivery" },
+                    },
+                    {
+                        FunctionName = _PLUGIN.guid .. "." .. "CheckLastBiome"
+                    }
+                }
+            })
+        end
+    end
+end
+
+function mod.CheckLastBiomeSummit(source, args)
     return (game.CurrentRun.EnteredBiomes == game.GameData.FullRunBiomeCount and game.CurrentRun.IsDreamRun) or (game.CurrentRun.EnteredBiomes == 4 and not game.CurrentRun.IsDreamRun)
 end
 
 if game.RoomData["Q_PreBoss01"].DistanceTriggers[1].GameStateRequirements.OrRequirements then
     table.insert(game.RoomData["Q_PreBoss01"].DistanceTriggers[1].GameStateRequirements.OrRequirements, {
         {
-            FunctionName = _PLUGIN.guid .. "." .. "CheckLastBiome"
+            FunctionName = _PLUGIN.guid .. "." .. "CheckLastBiomeSummit"
         }
     })
 else
@@ -462,7 +480,7 @@ else
         {
             {
                 {
-                    FunctionName = _PLUGIN.guid .. "." .. "CheckLastBiome"
+                    FunctionName = _PLUGIN.guid .. "." .. "CheckLastBiomeSummit"
                 },
             }
         }
