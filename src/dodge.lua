@@ -39,14 +39,15 @@ function mod.ElementalDodgeBoonSetup(hero, traitArgs, args)
         print("aircount", airCount)
         print("CurrentAirDodgeBonus", trait.CurrentAirDodgeBonus)
         trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement
-        if game.CurrentRun.IsDreamRun then
-            if airCount <= 10 then
+        if game.CurrentRun.IsDreamRun or true and traitArgs.LinearLimit then
+            if airCount <= traitArgs.LinearLimit then
                 trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement
-            elseif traitArgs.Decay * (airCount-10) <= traitArgs.DodgePerAirElement then
-                trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement - traitArgs.Decay * (airCount - 10) * (airCount - 10 - 1) / 2
+            elseif traitArgs.Decay * (airCount - traitArgs.LinearLimit) <= traitArgs.DodgePerAirElement then
+                trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement - traitArgs.Decay * (airCount - traitArgs.LinearLimit) * (airCount - traitArgs.LinearLimit - 1) / 2
             else
                 local decayLimit = math.floor(traitArgs.DodgePerAirElement/traitArgs.Decay)
-                trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement - traitArgs.Decay * decayLimit * (decayLimit - 1) / 2
+                print("aircount, decayLimit", airCount, decayLimit, (airCount - traitArgs.LinearLimit - decayLimit) * traitArgs.Decay)
+                trait.CurrentAirDodgeBonus = (decayLimit + traitArgs.LinearLimit) * traitArgs.DodgePerAirElement - traitArgs.Decay * decayLimit * (decayLimit - 1) / 2 + (airCount - traitArgs.LinearLimit - decayLimit) * traitArgs.SoftcapIncrement
             end
         end
         game.SetLifeProperty({ Property = "DodgeChance", Value = trait.CurrentAirDodgeBonus, ValueChangeType = "Add", DestinationId = game.CurrentRun.Hero.ObjectId, DataValue = false })
@@ -92,7 +93,9 @@ local dodgeTraits = {
 			Args =
 			{
 				DodgePerAirElement = 0.02,
-                Decay = 0.0003,
+                Decay = 0.0005,
+                SoftcapIncrement = 0.0002,
+                LinearLimit = 1,
                 ReportValues = {
                     ReportedDodgeBonus = "DodgePerAirElement",
                 }

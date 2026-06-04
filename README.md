@@ -29,4 +29,4 @@ Use the Imgui menu (default toggle keybind: INSERT) in the Crossroads training g
 
 ## Issues and feedback
 
-Report any issues or feedback [here](https://github.com/adi1998/DreamDiveTweaks/issues) or on [Discord](https://discord.gg/bKvJTAJj).
+Report any issues or feedback [here](https://github.com/adi1998/DreamDiveTweaks/issues) or on [Discord](https://discord.gg/KuMbyrN).
