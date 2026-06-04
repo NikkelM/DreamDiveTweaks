@@ -1,3 +1,5 @@
+--#region Dodge logging
+
 local totalDodge = 0
 
 modutil.mod.Path.Wrap("SetLifeProperty", function (base, args)
@@ -21,10 +23,22 @@ modutil.mod.Path.Wrap("DeathAreaSwitchRoom", function (base, ...)
     return base(...)
 end)
 
+--#endregion
+
+function ScaleDodge(linearLimit, decay, count, delta, softcapIncrement)
+    if count <= linearLimit then
+        return count * delta
+    elseif decay * (count - linearLimit) <= delta then
+        return count * delta - decay * (count - linearLimit) * (count - linearLimit - 1) / 2
+    else
+        local decayLimit = math.floor(delta/decay)
+        return (decayLimit + linearLimit) * delta - decay * decayLimit * (decayLimit - 1) / 2 + (count - linearLimit - decayLimit) * softcapIncrement
+    end
+end
+
+--#region WispyWiles scaling
+
 function mod.GetLastHeroTrait( traitName )
-	--if verboseLogging then
-		--DebugAssert({ Condition = (CurrentRun.Hero.TraitDictionary[traitName] ~= nil), Text = "Trait " .. tostring(traitName) .. " not found on call to GetHeroTrait.", Owner = "Alice" })
-	--end
 	if game.CurrentRun.Hero.TraitDictionary[traitName] ~= nil then
 		return game.CurrentRun.Hero.TraitDictionary[traitName][#(game.CurrentRun.Hero.TraitDictionary[traitName])]
 	end
@@ -32,23 +46,12 @@ function mod.GetLastHeroTrait( traitName )
 end
 
 function mod.ElementalDodgeBoonSetup(hero, traitArgs, args)
-    print("ElementalDodgeBoonSetup")
     local trait = mod.GetLastHeroTrait("ElementalDodgeBoon")
     if trait then
         local airCount = game.CurrentRun.Hero.Elements.Air
-        print("aircount", airCount)
-        print("CurrentAirDodgeBonus", trait.CurrentAirDodgeBonus)
         trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement
-        if game.CurrentRun.IsDreamRun or true and traitArgs.LinearLimit then
-            if airCount <= traitArgs.LinearLimit then
-                trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement
-            elseif traitArgs.Decay * (airCount - traitArgs.LinearLimit) <= traitArgs.DodgePerAirElement then
-                trait.CurrentAirDodgeBonus = airCount * traitArgs.DodgePerAirElement - traitArgs.Decay * (airCount - traitArgs.LinearLimit) * (airCount - traitArgs.LinearLimit - 1) / 2
-            else
-                local decayLimit = math.floor(traitArgs.DodgePerAirElement/traitArgs.Decay)
-                print("aircount, decayLimit", airCount, decayLimit, (airCount - traitArgs.LinearLimit - decayLimit) * traitArgs.Decay)
-                trait.CurrentAirDodgeBonus = (decayLimit + traitArgs.LinearLimit) * traitArgs.DodgePerAirElement - traitArgs.Decay * decayLimit * (decayLimit - 1) / 2 + (airCount - traitArgs.LinearLimit - decayLimit) * traitArgs.SoftcapIncrement
-            end
+        if game.CurrentRun.IsDreamRun and config.biome_pool.dodge_softcap then
+            trait.CurrentAirDodgeBonus = ScaleDodge(traitArgs.LinearLimit, traitArgs.Decay, airCount, traitArgs.DodgePerAirElement, traitArgs.SoftcapIncrement)
         end
         game.SetLifeProperty({ Property = "DodgeChance", Value = trait.CurrentAirDodgeBonus, ValueChangeType = "Add", DestinationId = game.CurrentRun.Hero.ObjectId, DataValue = false })
     else
@@ -57,9 +60,6 @@ function mod.ElementalDodgeBoonSetup(hero, traitArgs, args)
 end
 
 function mod.ElementalDodgeBoonClear(traitArgs, trait)
-    print("ElementalDodgeBoonClear")
-    local airCount = game.CurrentRun.Hero.Elements.Air
-    print("aircount", airCount)
     game.SetLifeProperty({ Property = "DodgeChance", Value = -trait.CurrentAirDodgeBonus, ValueChangeType = "Add", DestinationId = game.CurrentRun.Hero.ObjectId, DataValue = false })
 end
 
@@ -131,5 +131,78 @@ local dodgeTraits = {
 }
 
 game.OverwriteTableKeys(game.TraitData, dodgeTraits)
+
+--#endregion
+
+--#region Hermes dodge scaling
+
+game.TraitData.DodgeChanceBoon.CurrentBoonCountDodgeChance = 0
+
+game.TraitData.DodgeChanceBoon.ExtractValues[2] =
+{
+    Key = "CurrentBoonCountDodgeChance",
+    ExtractAs = "TooltipTotalDodgeBonus",
+    Format = "Percent",
+    DecimalPlaces = 3,
+}
+
+modutil.mod.Path.Wrap("MultipliedSpeedDodgeSetup", function (base, hero, traitArgs, args)
+    local trait = game.GetHeroTrait("DodgeChanceBoon")
+    if game.CurrentRun.IsDreamRun and config.biome_pool.dodge_softcap then
+        local rarity = trait.Rarity
+        local rarityMulitplier = trait.RarityLevels[rarity].Multiplier
+
+        local linearLimit = math.floor(18 / rarityMulitplier)
+        local delta = traitArgs.SpeedDodgePerBoon
+        local decay = (delta / 0.02) * 0.0005
+        local count = game.CurrentRun.Hero.OlympianBoonCount or 0
+        local softcapIncrement = (delta / 0.02) * 0.0002
+
+        local totalSpeedChange = 1 + ScaleDodge(linearLimit, decay, count, delta, softcapIncrement)
+
+        if not game.SessionMapState.OlympianBoonCountBoost or game.SessionMapState.OlympianBoonCountBoost ~= totalBoost then
+            if game.SessionMapState.OlympianBoonCountBoost then
+                game.ApplyUnitPropertyChanges( game.CurrentRun.Hero, game.SessionMapState.OlympianBoonCountBoostPropertyChanges, true, true )
+            end
+            local allPropertyChanges =
+            {
+                {
+                    LifeProperty = "DodgeChance",
+                    ChangeValue = totalSpeedChange - 1,
+                    ChangeType = "Add",
+                    DataValue = false,
+                },
+                {
+                    UnitProperty = "Speed",
+                    ChangeType = "Multiply",
+                    ChangeValue = totalSpeedChange,
+                },
+                {
+                    WeaponNames = { "WeaponSprint" },
+                    WeaponProperty = "SelfVelocity",
+                    ChangeValue = totalSpeedChange,
+                    ChangeType = "Multiply",
+                    ExcludeLinked = true,
+                },
+                {
+                    WeaponNames = { "WeaponSprint" },
+                    WeaponProperty = "SelfVelocityCap",
+                    ChangeValue = totalSpeedChange,
+                    ChangeType = "Multiply",
+                    ExcludeLinked = true,
+                },
+            }
+            game.SessionMapState.OlympianBoonCountBoostPropertyChanges = allPropertyChanges
+            game.SessionMapState.OlympianBoonCountBoost = totalSpeedChange
+            game.ApplyUnitPropertyChanges( game.CurrentRun.Hero, game.SessionMapState.OlympianBoonCountBoostPropertyChanges )
+        end
+        trait.CurrentBoonCountDodgeChance = game.SessionMapState.OlympianBoonCountBoost - 1
+        return
+    end
+    base(hero, traitArgs, args)
+    trait.CurrentBoonCountDodgeChance = game.SessionMapState.OlympianBoonCountBoost - 1
+end)
+
+--#endregion
 
 game.SetupRunData()

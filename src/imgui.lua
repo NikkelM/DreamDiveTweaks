@@ -75,6 +75,11 @@ function DrawMenu()
         config.purging_well = value
     end
 
+    value, checked = rom.ImGui.Checkbox("Enable softcaps for Hasty Retreat and Wispy Wiles", config.biome_pool.dodge_softcap)
+    if checked then
+        config.biome_pool.dodge_softcap = value
+    end
+
     rom.ImGui.Separator()
 
     if game.CurrentHubRoom then

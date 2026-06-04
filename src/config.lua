@@ -24,7 +24,8 @@ local config = {
       ["10"] = "Asphodel",
       ["11"] = "Elysium",
       ["12"] = "Styx",
-    }
+    },
+    dodge_softcap = true,
   },
   meta_reward_fix = true,
   meta_reward_fix_chance_cap = 50,
