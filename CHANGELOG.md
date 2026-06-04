@@ -2,8 +2,9 @@
 
 ## [Unreleased]
 
+- Fix Hermes early delivery in longer/shorter runs after Post Launch Patch 2 - Hotfix 3
 - Add toggle for H1 biomes to appear in dream dives.
-- Add a soft cap to Wisply Wiles and Hasty Retreat during long Dream Dives.
+- Add a soft cap to Wisply Wiles and Hasty Retreat during Dream Dives.
 
 ## [1.3.2] - 2026-05-31
 
