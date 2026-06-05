@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-06-05
+
 - Fix Hermes early delivery in longer/shorter runs after Post Launch Patch 2 - Hotfix 3
 - Add toggle for H1 biomes to appear in dream dives.
 - Add a soft cap to Wisply Wiles and Hasty Retreat during Dream Dives.
@@ -50,7 +52,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.2...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.2...1.4.0
 [1.3.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.1...1.3.2
 [1.3.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.2.0...1.3.0
