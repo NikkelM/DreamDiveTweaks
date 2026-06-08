@@ -7,18 +7,18 @@ local starting_biomes = {"I", "Q", "H", "P", "G", "O"}
 local all_biomes = {"F", "G", "H", "I", "N", "O", "P", "Q"}
 
 local default_order = {
-    ["1"] = "F",
-    ["2"] = "G",
-    ["3"] = "H",
-    ["4"] = "I",
-    ["5"] = "N",
-    ["6"] = "O",
-    ["7"] = "P",
-    ["8"] = "Q",
-    ["9"] = "Tartarus",
-    ["10"] = "Asphodel",
-    ["11"] = "Elysium",
-    ["12"] = "Styx",
+    ["1"] = "Random",
+    ["2"] = "Random",
+    ["3"] = "Random",
+    ["4"] = "Random",
+    ["5"] = "Random",
+    ["6"] = "Random",
+    ["7"] = "Random",
+    ["8"] = "Random",
+    ["9"] = "Random",
+    ["10"] = "Random",
+    ["11"] = "Random",
+    ["12"] = "Random",
 }
 
 local preset_orders = {
@@ -117,6 +117,37 @@ local preset_orders = {
         },
         zag = true,
         count = 3,
+    },
+    ["Random - 12"] = {
+        order = {
+            ["1"] = "Random",
+            ["2"] = "Random",
+            ["3"] = "Random",
+            ["4"] = "Random",
+            ["5"] = "Random",
+            ["6"] = "Random",
+            ["7"] = "Random",
+            ["8"] = "Random",
+            ["9"] = "Random",
+            ["10"] = "Random",
+            ["11"] = "Random",
+            ["12"] = "Random",
+        },
+        zag = true,
+        count = 12,
+    },
+    ["Random - 8"] = {
+        order = {
+            ["1"] = "Random",
+            ["2"] = "Random",
+            ["3"] = "Random",
+            ["4"] = "Random",
+            ["5"] = "Random",
+            ["6"] = "Random",
+            ["7"] = "Random",
+            ["8"] = "Random",
+        },
+        count = 8,
     }
 }
 
@@ -214,9 +245,6 @@ function GetCustomOrder()
 end
 
 function GenerateRoute()
-    if config.biome_pool.custom_order then
-        return GetCustomOrder()
-    end
     local startBiome
     local endBiome
     local biomeList = game.DeepCopyTable(all_biomes)
@@ -234,10 +262,33 @@ function GenerateRoute()
     end
 
     local route = {}
-    route[1] = startBiome
-    route[game.GameData.FullRunBiomeCount] = endBiome
+    if config.biome_pool.custom_order then
+        route = GetCustomOrder()
+        if endBiome then
+            table.insert(biomeList, endBiome)
+            endBiome = nil
+        end
+
+        if startBiome then
+            table.insert(biomeList, startBiome)
+            startBiome = nil
+        end
+
+        local unique_biomemap = {}
+        for index, value in ipairs(route) do
+            game.RemoveValueAndCollapse(biomeList, value)
+            if unique_biomemap[value] then
+                route[index] = "Random"
+            end
+            unique_biomemap[value] = true
+        end
+    end
+
+    route[1] = route[1] or startBiome
+    route[game.GameData.FullRunBiomeCount] = route[game.GameData.FullRunBiomeCount] or endBiome
+
     for depth = 1, game.GameData.FullRunBiomeCount do
-        if not route[depth] then
+        if not route[depth] or route[depth] == "Random" then
             route[depth] = mod.GetRandomTableValue(biomeList)
             game.RemoveValueAndCollapse(biomeList, route[depth])
             local currentRoomSet = route[depth]
@@ -332,10 +383,12 @@ end
 function CheckOrderValid()
     local set = {}
     for i = 1, config.biome_count do
-        if set[config.biome_pool.custom_order_data[i..""]] or not game.Contains(all_biomes, config.biome_pool.custom_order_data[i..""]) then
+        if (set[config.biome_pool.custom_order_data[i..""]] or not game.Contains(all_biomes, config.biome_pool.custom_order_data[i..""])) and config.biome_pool.custom_order_data[i..""] ~= "Random" then
             return false
         end
-        set[config.biome_pool.custom_order_data[i..""]] = true
+        if config.biome_pool.custom_order_data[i..""] ~= "Random" then
+            set[config.biome_pool.custom_order_data[i..""]] = true
+        end
     end
     return true
 end
@@ -364,8 +417,12 @@ function DrawCustomOrderOptions()
             local currentBiome = config.biome_pool.custom_order_data[depth..""]
             rom.ImGui.Text(depth..":"); rom.ImGui.SameLine()
             if rom.ImGui.BeginCombo("###biome"..depth, biomeDisplayNameMap[currentBiome] or currentBiome) then
+                if rom.ImGui.Selectable("Random", (currentBiome == "Random")) then
+                    config.biome_pool.custom_order_data[depth..""] = "Random"
+                    currentBiome = "Random"
+                    rom.ImGui.SetItemDefaultFocus()
+                end
                 for _, biome in ipairs(all_biomes) do
-                    -- print(currentBiome, biome)
                     if rom.ImGui.Selectable(biomeDisplayNameMap[biome] or biome, (currentBiome == biome)) then
                         config.biome_pool.custom_order_data[depth..""] = biome
                         currentBiome = biome
