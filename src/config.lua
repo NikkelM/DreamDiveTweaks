@@ -35,7 +35,8 @@ local config = {
   purging_well = true,
   hermes_shrine_chance = 50,
   biome_count = 4,
-  donk = false
+  donk = false,
+  increase_scorch_cap = true,
 }
 
 local configDesc = {

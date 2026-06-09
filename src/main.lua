@@ -134,6 +134,7 @@ local function on_ready()
     import 'bounty.lua'
     import 'npc_scaling.lua'
     import 'dodge.lua'
+    import 'scorch.lua'
 end
 
 local function on_reload()

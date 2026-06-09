@@ -80,6 +80,11 @@ function DrawMenu()
         config.biome_pool.dodge_softcap = value
     end
 
+    value, checked = rom.ImGui.Checkbox("Increase Scroch cap to 9999", config.increase_scorch_cap)
+    if checked then
+        config.increase_scorch_cap = value
+    end
+
     rom.ImGui.Separator()
 
     if game.CurrentHubRoom then
