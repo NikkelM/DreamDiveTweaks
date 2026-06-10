@@ -395,6 +395,9 @@ end
 
 CurrentPresetName = CurrentPresetName or "Underworld - Surface"
 
+CheckOrder = true
+IsOrderValid = true
+
 function DrawCustomOrderOptions()
 
     local value, checked = rom.ImGui.Checkbox("Custom biome order", config.biome_pool.custom_order)
@@ -411,21 +414,40 @@ function DrawCustomOrderOptions()
             config.biome_pool.custom_order_data = default_order
             config.biome_count = mod.MaxAllowedBiomeCount
             game.GameData.FullRunBiomeCount = config.biome_count
+            IsOrderValid = true
         end
 
+        local notCollapsed1
+        local notCollapsed2
+        local notCollapsed3
+
         for depth = 1, config.biome_count do
+            if depth == 1 then
+                notCollapsed1 = rom.ImGui.CollapsingHeader("Biomes 1-" .. math.min(4, config.biome_count))
+            end
+            if depth == 5 then
+                notCollapsed2 = rom.ImGui.CollapsingHeader("Biomes 5-" .. math.min(8, config.biome_count))
+            end
+            if depth == 9 then
+                notCollapsed3 = rom.ImGui.CollapsingHeader("Biomes 9-" .. math.min(12, config.biome_count))
+            end
             local currentBiome = config.biome_pool.custom_order_data[depth..""]
-            rom.ImGui.Text(depth..":"); rom.ImGui.SameLine()
-            if rom.ImGui.BeginCombo("###biome"..depth, biomeDisplayNameMap[currentBiome] or currentBiome) then
+            local drawCombo = (notCollapsed1 and depth <= 4) or (notCollapsed2 and depth <= 8) or (notCollapsed3 and depth <= 12)
+            if drawCombo then
+                rom.ImGui.Text(depth..":"); rom.ImGui.SameLine()
+            end
+            if drawCombo and rom.ImGui.BeginCombo("###biome"..depth, biomeDisplayNameMap[currentBiome] or currentBiome) then
                 if rom.ImGui.Selectable("Random", (currentBiome == "Random")) then
                     config.biome_pool.custom_order_data[depth..""] = "Random"
                     currentBiome = "Random"
+                    CheckOrder = true
                     rom.ImGui.SetItemDefaultFocus()
                 end
                 for _, biome in ipairs(all_biomes) do
                     if rom.ImGui.Selectable(biomeDisplayNameMap[biome] or biome, (currentBiome == biome)) then
                         config.biome_pool.custom_order_data[depth..""] = biome
                         currentBiome = biome
+                        CheckOrder = true
                         rom.ImGui.SetItemDefaultFocus()
                     end
                 end
@@ -433,7 +455,11 @@ function DrawCustomOrderOptions()
             end
         end
 
-        if not CheckOrderValid() then
+        if CheckOrder then
+            IsOrderValid = CheckOrderValid()
+            CheckOrder = false
+        end
+        if not IsOrderValid then
             rom.ImGui.Text("WARNING: Invalid custom order, will be\nreverted to default order on run start")
         end
 
@@ -447,6 +473,7 @@ function DrawCustomOrderOptions()
                         game.GameData.FullRunBiomeCount = config.biome_count
                         config.biome_pool.custom_order_data = presetData.order
                         rom.ImGui.SetItemDefaultFocus()
+                        CheckOrder = true
                     end
                 end
             end
