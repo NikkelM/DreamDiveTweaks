@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Change scorch cap to 9999 in Dream Dives
+- Allow Random biome selection in custom order fields
+
 ## [1.4.0] - 2026-06-05
 
 - Fix Hermes early delivery in longer/shorter runs after Post Launch Patch 2 - Hotfix 3
