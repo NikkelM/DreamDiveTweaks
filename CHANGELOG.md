@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add trap scaling for H1 biomes
+
 ## [1.5.0] - 2026-06-10
 
 - Change scorch cap to 9999 in Dream Dives
