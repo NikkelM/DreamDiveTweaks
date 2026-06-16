@@ -1,6 +1,4 @@
-local function ExtendDreamBiomeData( biomeData, maxIndex )
-	maxIndex = maxIndex or 8
-
+local function ExtendDreamBiomeData(biomeData, maxIndex)
 	for i = 5, maxIndex do
 		local prevEntry = biomeData[4]
 
@@ -8,17 +6,17 @@ local function ExtendDreamBiomeData( biomeData, maxIndex )
 			break
 		end
 
-		local newEntry = game.DeepCopyTable( prevEntry )
+		local newEntry = game.DeepCopyTable(prevEntry)
 		biomeData[i] = newEntry
 	end
 end
 
-local function ExtendAllDreamBiomeData( encounterTable, maxIndex )
-	for _, encounterData in pairs( encounterTable ) do
-		if type( encounterData ) == "table" and encounterData.DreamBiomeData then
+local function ExtendAllDreamBiomeData(encounterTable, maxIndex)
+	for _, encounterData in pairs(encounterTable) do
+		if encounterData.DreamBiomeData then
 			ExtendDreamBiomeData(encounterData.DreamBiomeData, maxIndex)
 		end
 	end
 end
 
-ExtendAllDreamBiomeData( game.EncounterData, mod.MaxAllowedBiomeCount )
+ExtendAllDreamBiomeData(game.EncounterData, 12)
