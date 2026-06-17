@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Add trap scaling for H1 biomes
+- Allow configuring damage and health scaling ramp up
 
 ## [1.5.0] - 2026-06-10
 
