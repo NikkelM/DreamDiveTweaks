@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.6.1] - 2026-06-17
+
 - Fix nil reference
 
 ## [1.6.0] - 2026-06-17
@@ -64,7 +66,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.0...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.1...HEAD
+[1.6.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.0...1.6.1
 [1.6.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.5.0...1.6.0
 [1.5.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.4.0...1.5.0
 [1.4.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.3.2...1.4.0
