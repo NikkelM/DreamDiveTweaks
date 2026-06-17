@@ -54,30 +54,6 @@ function dump(o, depth)
     end
 end
 
-local function parseVersion(v)
-    local major, minor, patch = string.match(v, "^(%d+)%.(%d+)%.(%d+)$")
-    return tonumber(major), tonumber(minor), tonumber(patch)
-end
-
-local function compareSemver(a, b)
-    local aMaj, aMin, aPat = parseVersion(a)
-    local bMaj, bMin, bPat = parseVersion(b)
-
-    if aMaj ~= bMaj then
-        return (aMaj < bMaj and -1) or 1
-    end
-
-    if aMin ~= bMin then
-        return (aMin < bMin and -1) or 1
-    end
-
-    if aPat ~= bPat then
-        return (aPat < bPat and -1) or 1
-    end
-
-    return 0
-end
-
 local function on_ready()
     -- what to do when we are ready, but not re-do on reload.
     if config.enabled == false then return end
@@ -87,8 +63,7 @@ local function on_ready()
     mod.IsZagAvailable = rom.mods["NikkelM-Zagreus_Journey"] and
                          rom.mods["NikkelM-Zagreus_Journey"].config and
                          rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
-                         not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives and
-                         compareSemver(rom.mods["NikkelM-Zagreus_Journey"]._PLUGIN.version, "1.1.0") >= 0
+                         not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives
 
     mod.IsZag = mod.IsZagAvailable and (not config.biome_pool.disable_zag_biomes)
 
