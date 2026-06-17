@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix nil reference
+
 ## [1.6.0] - 2026-06-17
 
 - Add trap scaling for H1 biomes

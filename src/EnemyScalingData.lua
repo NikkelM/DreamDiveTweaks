@@ -898,7 +898,7 @@ local enemyScalingData =
 }
 
 for enemy, data in pairs(enemyScalingData) do
-    if game.EnemyData[enemy] then
+    if game.EnemyData[enemy] and game.EnemyData[enemy].DreamBiomeData then
         for index, value in pairs(data.DreamBiomeData) do
             game.EnemyData[enemy].DreamBiomeData[index] = value
         end
