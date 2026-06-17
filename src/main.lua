@@ -78,39 +78,11 @@ local function compareSemver(a, b)
     return 0
 end
 
-function xor(a,b)
-    return (a and not b) or (b and not a)
-end
-
-function xnor(a,b)
-    return (a and b) or ((not a) and (not b))
-end
-
 local function on_ready()
     -- what to do when we are ready, but not re-do on reload.
     if config.enabled == false then return end
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     mod.config = config
-
-    function MergeUptoDepth(base, incoming, depth, currentDepth)
-        depth = depth or 0
-        currentDepth = currentDepth or 0
-        local returnTable = base
-        for k, v in pairs( incoming ) do
-            if type(v) == "table" and currentDepth<depth then
-                if next(v) == nil then
-                    returnTable[k] = {}
-                else
-                    returnTable[k] = MergeUptoDepth( returnTable[k], v, depth, currentDepth + 1 )
-                end
-            elseif v == "nil" then
-                returnTable[k] = nil
-            else
-                returnTable[k] = v
-            end
-        end
-        return returnTable
-    end
 
     mod.IsZagAvailable = rom.mods["NikkelM-Zagreus_Journey"] and
                          rom.mods["NikkelM-Zagreus_Journey"].config and
@@ -126,6 +98,7 @@ local function on_ready()
     import 'harvest.lua'
     import 'early_unlock.lua'
     import 'runlength.lua'
+    import 'late_biome_scaling.lua'
     import 'runlength_late.lua'
     import 'music_fix.lua'
     import 'metareward.lua'

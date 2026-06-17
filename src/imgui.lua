@@ -1,6 +1,10 @@
 print("current run length", game.GameData.FullRunBiomeCount)
 
-local previousConfig = {biome_pool = {custom_order_data = {}}}
+local previousConfig = {
+    biome_pool = {
+        custom_order_data = {}
+    },
+}
 
 rom.gui.add_imgui(function()
     if rom.ImGui.Begin("Dream Dive Tweaks") then
@@ -17,6 +21,8 @@ rom.gui.add_to_menu_bar(function()
 end)
 
 local headerState = {}
+
+local scaling_applied = nil
 
 function DrawMenu()
     local value, selected, checked
@@ -90,6 +96,57 @@ function DrawMenu()
         value, checked = rom.ImGui.Checkbox("Increase Scorch cap to 9999", config.increase_scorch_cap)
         if checked then
             config.increase_scorch_cap = value
+        end
+
+        rom.ImGui.Separator()
+        rom.ImGui.Text("Late biome scaling ramp up adjustment")
+        rom.ImGui.Text("This adjustment is in addition to the scaling data present in the mod")
+        rom.ImGui.Text("It will have a compounding effect after the starting depth")
+        value, selected = rom.ImGui.SliderInt("###latebiome", config.late_biome_start, 5, 12, '%d%')
+        if selected and value ~= previousConfig.late_biome_start then
+            config.late_biome_start = value
+            previousConfig.late_biome_start = value
+            scaling_applied = nil
+        end
+        rom.ImGui.SameLine()
+        rom.ImGui.Text("Starting late biome depth")
+
+        value, selected = rom.ImGui.SliderInt("###dmgramp", config.late_biome_damage_ramp, 90, 115, '%d%%')
+        if selected and value ~= previousConfig.late_biome_damage_ramp then
+            config.late_biome_damage_ramp = value
+            previousConfig.late_biome_damage_ramp = value
+            scaling_applied = nil
+        end
+        rom.ImGui.SameLine()
+        rom.ImGui.Text("Damage ramp up")
+
+        value, selected = rom.ImGui.SliderInt("###hpramp", config.late_biome_health_ramp, 90, 115, '%d%%')
+        if selected and value ~= previousConfig.late_biome_health_ramp then
+            config.late_biome_health_ramp = value
+            previousConfig.late_biome_health_ramp = value
+            scaling_applied = nil
+        end
+        rom.ImGui.SameLine()
+        rom.ImGui.Text("Health ramp up")
+
+        if rom.ImGui.Button("Apply scaling") then
+            mod.ApplyLateBiomeScaling()
+            scaling_applied = true
+        end
+
+        rom.ImGui.SameLine()
+
+        if rom.ImGui.Button("Reset scaling") then
+            config.late_biome_health_ramp = 100
+            config.late_biome_damage_ramp = 100
+            config.late_biome_start = 5
+            mod.ApplyLateBiomeScaling()
+            scaling_applied = true
+        end
+
+        if scaling_applied then
+            rom.ImGui.SameLine()
+            rom.ImGui.Text("Scaling updated")
         end
     end
 

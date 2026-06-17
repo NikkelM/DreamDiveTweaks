@@ -37,6 +37,9 @@ local config = {
   biome_count = 4,
   donk = false,
   increase_scorch_cap = true,
+  late_biome_damage_ramp = 100,
+  late_biome_health_ramp = 100,
+  late_biome_start = 5,
 }
 
 local configDesc = {
@@ -52,6 +55,9 @@ local configDesc = {
   purging_well = "Spawn a purging well along with the well shop at rest spots",
   hermes_shrine_chance = "The % chance of spawning a Hermes Shrine instead of a Well Shop in post boss rooms",
   biome_count = "Set a longer/shorter number of Regions (2-12)",
+  late_biome_damage_ramp = "Enemy damage ramp for biomes >= late_biome_start",
+  late_biome_health_ramp = "Enemy health ramp for biomes >= late_biome_start",
+  late_biome_start = "Biome depth to start ramping up the scaling from",
 }
 
 return config, configDesc

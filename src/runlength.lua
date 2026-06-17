@@ -1,10 +1,15 @@
 local original_scaled_count = 0
+local original_full_scaled_count = 0
 for enemy, data in pairs(game.EnemyData) do
     if data.DreamBiomeData then
         original_scaled_count = original_scaled_count + 1
+        if data.DreamBiomeData[12] then
+            original_full_scaled_count = original_full_scaled_count + 1
+        end
     end
 end
 print("enemies with scaling data", original_scaled_count)
+print("enemies with scaling data for 12 biomes", original_full_scaled_count)
 
 import 'EnemyScalingData.lua'
 

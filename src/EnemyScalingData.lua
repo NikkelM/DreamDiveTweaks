@@ -936,7 +936,7 @@ end
 
 -- print(dump(game.EnemyData.Hecate.DreamBiomeData))
 
-local vorBossSetupEventIndex = {
+VorBossSetupEventIndex = {
 	Hecate = {2},
 	Polyphemus = {3},
 	Scylla = {1},
@@ -947,14 +947,14 @@ local vorBossSetupEventIndex = {
 	Eris = {1},
 }
 
-for enemy, eventIndex in pairs(vorBossSetupEventIndex) do
+for enemy, _ in pairs(VorBossSetupEventIndex) do
 	local patched
 	if game.EnemyData[enemy] then
 		local setupEvents = game.EnemyData[enemy].SetupEvents or {}
-		for index, value in ipairs(setupEvents) do
-			if value.FunctionName == "OverwriteSelf" and value.Args and value.Args.DreamBiomeData then
+		for _, event in ipairs(setupEvents) do
+			if event.FunctionName == "OverwriteSelf" and event.Args and event.Args.DreamBiomeData then
 				for b = 5, 12 do
-					value.Args.DreamBiomeData[b] = game.EnemyData[enemy].DreamBiomeData[b]
+					event.Args.DreamBiomeData[b] = game.EnemyData[enemy].DreamBiomeData[b]
 				end
 				patched = true
 			end
