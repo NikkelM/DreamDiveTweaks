@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- More perf improvements for custom order menu
+
 ## [1.6.1] - 2026-06-17
 
 - Fix nil reference
