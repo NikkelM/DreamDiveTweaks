@@ -163,6 +163,8 @@ local biomeDisplayNameMap = {
     ["Tartarus"] = "Tartarus (H1)"
 }
 
+local previousConfig = {biome_pool = {custom_order_data = {}}}
+
 function UpdateZagBiomeSets()
     table.insert(hard_biomes, "Styx")
     table.insert(hard_biomes, "Elysium")
@@ -436,16 +438,19 @@ function DrawCustomOrderOptions()
             if drawCombo then
                 rom.ImGui.Text(depth..":"); rom.ImGui.SameLine()
             end
+
             if drawCombo and rom.ImGui.BeginCombo("###biome"..depth, biomeDisplayNameMap[currentBiome] or currentBiome) then
-                if rom.ImGui.Selectable("Random", (currentBiome == "Random")) then
+                if rom.ImGui.Selectable("Random", (currentBiome == "Random")) and previousConfig.biome_pool.custom_order_data[depth..""] ~= "Random" then
                     config.biome_pool.custom_order_data[depth..""] = "Random"
+                    previousConfig.biome_pool.custom_order_data[depth..""] = "Random"
                     currentBiome = "Random"
                     CheckOrder = true
                     rom.ImGui.SetItemDefaultFocus()
                 end
                 for _, biome in ipairs(all_biomes) do
-                    if rom.ImGui.Selectable(biomeDisplayNameMap[biome] or biome, (currentBiome == biome)) then
+                    if rom.ImGui.Selectable(biomeDisplayNameMap[biome] or biome, (currentBiome == biome)) and previousConfig.biome_pool.custom_order_data[depth..""] ~= biome then
                         config.biome_pool.custom_order_data[depth..""] = biome
+                        previousConfig.biome_pool.custom_order_data[depth..""] = biome
                         currentBiome = biome
                         CheckOrder = true
                         rom.ImGui.SetItemDefaultFocus()
