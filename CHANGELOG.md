@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 
-- More perf improvements for custom order menu
+- More perf improvements for the ImGui menu
+- Fix scorch cap being removed outside Dream Dives
 
 ## [1.6.1] - 2026-06-17
 
