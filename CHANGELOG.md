@@ -4,6 +4,7 @@
 
 - More perf improvements for the ImGui menu
 - Fix scorch cap being removed outside Dream Dives
+- Fix Shrine of Hermes delivering rewards a bit too far in Hypnos rooms
 
 ## [1.6.1] - 2026-06-17
 

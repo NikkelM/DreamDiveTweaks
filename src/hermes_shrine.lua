@@ -48,3 +48,10 @@ local shopRoomList = {
 for _, roomName in ipairs(shopRoomList) do
     game.OverwriteTableKeys(game.RoomData[roomName], shopModifications)
 end
+
+modutil.mod.Path.Wrap("SelectSurfaceItemSpawnPoint", function (base, ...)
+    if game.CurrentRun and game.CurrentRun.CurrentRoom and game.CurrentRun.CurrentRoom.Name and string.match(game.CurrentRun.CurrentRoom.Name, "Dream_PostBoss") then
+        return game.CurrentRun.Hero.ObjectId
+    end
+    return base(...)
+end)
