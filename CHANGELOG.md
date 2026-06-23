@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Bump h2m and remove vsync workaround
+
 ## [1.6.2] - 2026-06-19
 
 - More perf improvements for the ImGui menu
