@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.6.3] - 2026-06-23
+
 - Bump h2m and remove vsync workaround
 
 ## [1.6.2] - 2026-06-19
@@ -74,7 +76,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.2...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.3...HEAD
+[1.6.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.2...1.6.3
 [1.6.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.1...1.6.2
 [1.6.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.0...1.6.1
 [1.6.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.5.0...1.6.0
