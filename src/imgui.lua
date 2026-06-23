@@ -23,26 +23,7 @@ end)
 
 local scaling_applied = nil
 
-local vsync_switch = false
-
-local vsync_cache = true
-
-local function restoreVsyncOnUiClose()
-    while rom.gui.is_open() and shouldDraw do
-        game.wait(1)
-    end
-    game.SetConfigOption({Name = "VSync", Value = vsync_cache})
-    vsync_switch = false
-end
-
 function DrawMenu()
-
-    if not vsync_switch then
-        vsync_cache = game.GetConfigOptionValue({Name = "VSync"})
-        game.SetConfigOption({Name = "VSync", Value = false})
-        vsync_switch = true
-        game.thread(restoreVsyncOnUiClose)
-    end
 
     local value, selected, checked
     if rom.ImGui.CollapsingHeader("Biome pool options", rom.ImGuiTreeNodeFlags.DefaultOpen) then
