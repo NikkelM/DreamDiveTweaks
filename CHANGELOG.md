@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.6.2] - 2026-06-19
+
 - More perf improvements for the ImGui menu
 - Fix scorch cap being removed outside Dream Dives
 - Fix Shrine of Hermes delivering rewards a bit too far in Hypnos rooms
@@ -70,7 +72,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.1...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.2...HEAD
+[1.6.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.1...1.6.2
 [1.6.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.0...1.6.1
 [1.6.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.5.0...1.6.0
 [1.5.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.4.0...1.5.0
