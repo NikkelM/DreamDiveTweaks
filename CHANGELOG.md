@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Fix enabling/disabling ZJ biomes not working properly for Custom Order.
+- Fix Chronos/Typhon shops scaling up earlier than expected.
+
 ## [1.6.3] - 2026-06-23
 
 - Bump h2m and remove vsync workaround

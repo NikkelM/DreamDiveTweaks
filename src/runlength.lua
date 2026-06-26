@@ -97,6 +97,70 @@ modutil.mod.Path.Wrap("CheckDreamBiomeCompletion", function (base, ...)
     return base(...)
 end)
 
+function mod.DreamFirstHalf(source, args)
+    args = args or {}
+    local invert = args.Invert
+    local result = game.CurrentRun.EnteredBiomes or 0 < game.GameData.FullRunBiomeCount / 2
+    if invert then
+        return not result
+    end
+    return result
+end
+
+game.NamedRequirementsData.InRunFirstHalf =
+{
+    OrRequirements =
+    {
+        {
+            {
+                Path = { "CurrentRun", "EnteredBiomes" },
+                Comparison = "<=",
+                Value = 2,
+            },
+            {
+                PathFalse = { "CurrentRun", "IsDreamRun" }
+            }
+        },
+        {
+            {
+                FunctionName = _PLUGIN.guid .. "." .. "DreamFirstHalf",
+            },
+            {
+                PathTrue = { "CurrentRun", "IsDreamRun" }
+            }
+        }
+    }
+}
+
+game.NamedRequirementsData.InRunSecondHalf =
+{
+    OrRequirements =
+    {
+        {
+            {
+                Path = { "CurrentRun", "EnteredBiomes" },
+                Comparison = ">",
+                Value = 2,
+            },
+            {
+                PathFalse = { "CurrentRun", "IsDreamRun" }
+            }
+        },
+        {
+            {
+                FunctionName = _PLUGIN.guid .. "." .. "DreamFirstHalf",
+                FunctionArgs =
+                {
+                    Invert = true,
+                }
+            },
+            {
+                PathTrue = { "CurrentRun", "IsDreamRun" }
+            }
+        }
+    }
+}
+
 --#endregion
 
 modutil.mod.Path.Wrap("IsBossDifficultyShrineUpgradeActive", function (base, source, args)

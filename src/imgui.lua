@@ -44,6 +44,21 @@ function DrawMenu()
                     mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
                     config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
                     game.GameData.FullRunBiomeCount = config.biome_count
+
+                    PurgeZagBiomeSets()
+                    if mod.MaxAllowedBiomeCount == 12 then
+                        UpdateZagBiomeSets()
+                    end
+
+                    PurgeEasyBiome()
+                    if config.biome_pool.larger_starting_pool then
+                        UpdateEasyBiome()
+                    end
+
+                    PurgeEasyBiomeZag()
+                    if config.biome_pool.larger_starting_pool and mod.MaxAllowedBiomeCount == 12 then
+                        UpdateEasyBiomeZag()
+                    end
                 end
             end
 
