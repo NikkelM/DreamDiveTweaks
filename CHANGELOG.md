@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.6.4] - 2026-06-26
+
 - Fix enabling/disabling ZJ biomes not working properly for Custom Order.
 - Fix Chronos and Typhon shops scaling up earlier than expected.
 
@@ -79,7 +81,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.3...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.4...HEAD
+[1.6.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.3...1.6.4
 [1.6.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.2...1.6.3
 [1.6.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.1...1.6.2
 [1.6.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.0...1.6.1
