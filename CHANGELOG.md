@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.6.5] - 2026-07-02
+
 - Fix Chronos and Typhon shops never scaling up in the second half of the run.
 
 ## [1.6.4] - 2026-06-26
@@ -83,7 +85,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.4...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.5...HEAD
+[1.6.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.4...1.6.5
 [1.6.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.3...1.6.4
 [1.6.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.2...1.6.3
 [1.6.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.1...1.6.2
