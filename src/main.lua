@@ -63,6 +63,7 @@ local function on_ready()
     mod.IsZagAvailable = rom.mods["NikkelM-Zagreus_Journey"] and
                          rom.mods["NikkelM-Zagreus_Journey"].config and
                          rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
+                         rom.mods["NikkelM-Zagreus_Journey"].IsValidInstallation and
                          not rom.mods["NikkelM-Zagreus_Journey"].config.z_ExcludeFromDreamDives
 
     mod.IsZag = mod.IsZagAvailable and (not config.biome_pool.disable_zag_biomes)
