@@ -100,7 +100,7 @@ end)
 function mod.DreamFirstHalf(source, args)
     args = args or {}
     local invert = args.Invert
-    local result = game.CurrentRun.EnteredBiomes or 0 < game.GameData.FullRunBiomeCount / 2
+    local result = (game.CurrentRun.EnteredBiomes or 0) <= (game.GameData.FullRunBiomeCount / 2)
     if invert then
         return not result
     end

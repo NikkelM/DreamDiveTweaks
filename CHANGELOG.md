@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix Chronos and Typhon shops never scaling up in the second half of the run.
+
 ## [1.6.4] - 2026-06-26
 
 - Fix enabling/disabling ZJ biomes not working properly for Custom Order.
