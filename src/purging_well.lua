@@ -60,7 +60,7 @@ modutil.mod.Path.Wrap("HandleSecretSpawns", function (base, currentRun)
     local currentRoom = currentRun.CurrentRoom
     if config.purging_well and PurgeWellLocationData[currentRoom.Name] and
             mod.CheckWellShop(currentRoom) and game.GameState.WorldUpgradesAdded.WorldUpgradePostBossSellTraitShops and
-            game.IsWellShopEligible(currentRun, currentRoom) then
+            game.IsGameStateEligible( currentRoom, currentRoom.WellShopRequirements ) then
         local wellData = PurgeWellLocationData[currentRoom.Name]
         mod.SpawnSellShop(wellData.DestinationId, wellData.OffsetX, wellData.OffsetY, "Sell", wellData.Flipped)
     end

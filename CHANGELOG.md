@@ -2,8 +2,9 @@
 
 ## [Unreleased]
 
-- Add support for dependants to draw their ImGui in this mods ImGui window
+- Add support for dependant mods to draw their ImGui in this mods ImGui window
 - Potential fix for shop music
+- Block purging well from spawning if normal well shop is not eligible
 
 ## [1.6.5] - 2026-07-02
 
