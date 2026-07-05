@@ -368,7 +368,7 @@ if not WrappedNextDream then
 
         if game.CurrentRun.CurrentRoom.NextRoomSet[1] == nil then
             print("nil NextRoomSet detected", dump(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]), dump(game.CurrentRun.BiomeVisitOrder), game.CurrentRun.EnteredBiomes, game.CurrentRun.DreamBiomePool)
-            game.CurrentRun.CurrentRoom.NextRoomSet = { game.RemoveRandomValue( game.CurrentRun.DreamBiomePool ) }
+            game.CurrentRun.CurrentRoom.NextRoomSet = { game.RemoveRandomValue( game.CurrentRun.DreamBiomePool ) or "F" }
         end
     end)
 

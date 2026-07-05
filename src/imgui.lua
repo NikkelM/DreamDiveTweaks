@@ -225,4 +225,20 @@ function DrawMenu()
             config.purging_well = value
         end
     end
+
+    if not game.IsEmpty(ImguiPluginMap) then
+        rom.ImGui.Separator()
+        rom.ImGui.Text("Plugins:")
+        for pluginKey, drawFunc in pairs(ImguiPluginMap) do
+            if rom.ImGui.CollapsingHeader(pluginKey) then
+                drawFunc()
+            end
+        end
+    end
+end
+
+ImguiPluginMap = ImguiPluginMap or {}
+
+public.RegisterPluginImGui = function (drawFunc, pluginKey)
+    ImguiPluginMap[pluginKey] = drawFunc
 end

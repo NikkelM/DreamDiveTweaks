@@ -9,4 +9,8 @@ local public = {}
 --    ---@return table c helpful description
 --    function public.do_stuff(a, b) end
 
+---@param drawFunc function Function which will draw the plugins ImGui
+---@param pluginKey string Used for the collapsing header title
+function public.RegisterPluginImGui(drawFunc, pluginKey) end
+
 return public

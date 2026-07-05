@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add support for dependants to draw their ImGui in this mods ImGui window
+- Potential fix for shop music
+
 ## [1.6.5] - 2026-07-02
 
 - Fix Chronos and Typhon shops never scaling up in the second half of the run.
