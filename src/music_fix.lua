@@ -1,7 +1,7 @@
-local revertPlsyBiomeMusicMap = {}
+local revertSecretMusicMap = {}
 
 modutil.mod.Path.Wrap("KillHero", function (base, ...)
-    for roomName, value in pairs(revertPlsyBiomeMusicMap) do
+    for roomName, value in pairs(revertSecretMusicMap) do
         local roomData = game.RoomData[roomName]
         if roomData then
             roomData.SecretMusic = value
@@ -9,7 +9,7 @@ modutil.mod.Path.Wrap("KillHero", function (base, ...)
             print("Unable to revert SecretMusic flag for", roomName)
         end
     end
-    revertPlsyBiomeMusicMap = {}
+    revertSecretMusicMap = {}
     return base(...)
 end)
 
@@ -19,7 +19,7 @@ modutil.mod.Path.Wrap("StartRoomMusic", function (base, currentRun, currentRoom)
     if config.shop_music_fix and currentRun.IsDreamRun and currentRoom.ChosenRewardType == "Shop" and not currentRoom.SkipShopSecretMusic then
         print("overriding secret music", roomData.SecretMusic, roomData.ShopSecretMusic)
         roomData.SecretMusic = roomData.ShopSecretMusic
-        revertPlsyBiomeMusicMap[currentRoom.Name] = secretMusicCopy
+        revertSecretMusicMap[currentRoom.Name] = secretMusicCopy
     end
     return base(currentRun, currentRoom)
 end)
