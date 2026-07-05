@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-07-05
+
 - Add support for dependant mods to draw their ImGui in this mods ImGui window
 - Potential fix for shop music
 - Block purging well from spawning if normal well shop is not eligible
@@ -89,7 +91,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.5...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.0...HEAD
+[1.7.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.5...1.7.0
 [1.6.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.4...1.6.5
 [1.6.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.3...1.6.4
 [1.6.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.2...1.6.3
