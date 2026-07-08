@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Nerf Circe's shrink boon
+
 ## [1.7.0] - 2026-07-05
 
 - Add support for dependant mods to draw their ImGui in this mods ImGui window

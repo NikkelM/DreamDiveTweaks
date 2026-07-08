@@ -92,6 +92,14 @@ local rarityOverrideData = {
             Multiplier = 7/3,
         }
     },
+    CirceShrinkTrait = {
+         [_PLUGIN.guid .. "RarityBiome" .. 1] = {
+            Multiplier = 21/10,
+        },
+        [_PLUGIN.guid .. "RarityBiome" .. 2] = {
+            Multiplier = 22/10,
+        }
+    },
     ModsNikkelMHadesBiomesBuffFutureBoonRarity = {
          [_PLUGIN.guid .. "RarityBiome" .. 1] = {
             Multiplier = 5/3,
