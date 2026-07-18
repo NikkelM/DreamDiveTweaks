@@ -2,7 +2,9 @@
 
 ## [Unreleased]
 
-- Nerf Circe's shrink boon
+- BoonOverflowFix is now a dependency, as boons are very likely to overflow in 8+ zone runs
+- Nerf Circe's shrink/dodge boon
+- Dream Purging Wells now have a shadow tile :)
 
 ## [1.7.0] - 2026-07-05
 
