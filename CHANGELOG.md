@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.7.1] - 2026-07-18
+
 - BoonOverflowFix is now a dependency, as boons are very likely to overflow in 8+ zone runs
 - Nerf Circe's shrink/dodge boon
 - Dream Purging Wells now have a shadow tile :)
@@ -95,7 +97,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.0...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.1...HEAD
+[1.7.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.0...1.7.1
 [1.7.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.5...1.7.0
 [1.6.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.4...1.6.5
 [1.6.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.3...1.6.4
