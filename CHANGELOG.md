@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Fig lag when opening keepsake and chaos trial UI
+- Fig lag when opening keepsake and chaos trial menus
 
 ## [1.7.1] - 2026-07-18
 
