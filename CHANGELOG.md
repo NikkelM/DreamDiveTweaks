@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fig lag when opening keepsake and chaos trial UI
+
 ## [1.7.1] - 2026-07-18
 
 - BoonOverflowFix is now a dependency, as boons are very likely to overflow in 8+ zone runs

@@ -79,30 +79,37 @@ modutil.mod.Path.Wrap("UpdateTraitSummary", function (base, args)
     local shrinePointX
     local dreamActiveFearPadding
     local showingShrinePoints = false
-    if game.CurrentRun and game.IsGameStateEligible( game.HUDScreen, game.ScreenData.TraitTrayScreen.ItemCategories[4].GameStateRequirements ) then
-    	showingShrinePoints = true
-    end
-    if game.CurrentRun and game.CurrentRun.IsDreamRun then
-        shrinePointX = game.HUDScreen.Components.ShrinePointCount.X
-        dreamActiveFearPadding = game.HUDScreen.Components.DreamActive.NoFearPaddingX
-        if not showingShrinePoints then
-            -- shifts dream and bounty icons to right
-            game.HUDScreen.Components.ShrinePointCount.X = game.HUDScreen.Components.ShrinePointCount.X + 80
-            -- shifts dream icon back to the left
-            game.HUDScreen.Components.DreamActive.NoFearPaddingX = game.HUDScreen.Components.DreamActive.NoFearPaddingX - 80
+
+    local wrapCondition = (not game.ConfigOptionCache.ShowUIAnimations or not game.ShowingCombatUI) or
+        (game.CurrentHubRoom ~= nil and not game.CurrentHubRoom.ShowShrinePoints)
+
+    if not wrapCondition then
+        if game.CurrentRun and game.IsGameStateEligible( game.HUDScreen, game.ScreenData.TraitTrayScreen.ItemCategories[4].GameStateRequirements ) then
+            showingShrinePoints = true
+        end
+        if game.CurrentRun and game.CurrentRun.IsDreamRun then
+            shrinePointX = game.HUDScreen.Components.ShrinePointCount.X
+            dreamActiveFearPadding = game.HUDScreen.Components.DreamActive.NoFearPaddingX
+            if not showingShrinePoints then
+                -- shifts dream and bounty icons to right
+                game.HUDScreen.Components.ShrinePointCount.X = game.HUDScreen.Components.ShrinePointCount.X + 80
+                -- shifts dream icon back to the left
+                game.HUDScreen.Components.DreamActive.NoFearPaddingX = game.HUDScreen.Components.DreamActive.NoFearPaddingX - 80
+            end
         end
     end
 
     local retval = base(args)
-
-    if game.CurrentRun and game.CurrentRun.IsDreamRun then
-        game.HUDScreen.Components.ShrinePointCount.X = shrinePointX
-        game.HUDScreen.Components.DreamActive.NoFearPaddingX = dreamActiveFearPadding
+    if not wrapCondition then
+        if game.CurrentRun and game.CurrentRun.IsDreamRun then
+            game.HUDScreen.Components.ShrinePointCount.X = shrinePointX
+            game.HUDScreen.Components.DreamActive.NoFearPaddingX = dreamActiveFearPadding
+        end
+        if game.CurrentRun and game.CurrentRun.IsDreamRun and game.CurrentRun.ActiveBounty and showingShrinePoints and game.CurrentHubRoom == nil then
+            -- shift bounty icon to the right if dream run is also active
+            game.Teleport({ Id = bountyActive.Id, OffsetX = bountyActive.X + bountyActive.OffsetX + 80, OffsetY = bountyActive.Y })
+        end
     end
-    if game.CurrentRun and game.CurrentRun.IsDreamRun and game.CurrentRun.ActiveBounty and showingShrinePoints and game.CurrentHubRoom == nil then
-        -- shift bounty icon to the right if dream run is also active
-        game.Teleport({ Id = bountyActive.Id, OffsetX = bountyActive.X + bountyActive.OffsetX + 80, OffsetY = bountyActive.Y })
-	end
     return retval
 end)
 
