@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.7.2] - 2026-07-20
+
 - Fig lag when opening keepsake and chaos trial menus
 
 ## [1.7.1] - 2026-07-18
@@ -99,7 +101,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.1...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.2...HEAD
+[1.7.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.1...1.7.2
 [1.7.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.0...1.7.1
 [1.7.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.5...1.7.0
 [1.6.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.6.4...1.6.5
