@@ -504,6 +504,15 @@ end
 --         printRoute = true
 --         print("large pool test failed", route[1])
 --     end
+--     local lookup = {}
+--     for index, value in ipairs(route) do
+--         if lookup[value] then
+--             printRoute = true
+--             print("duplicate biome in route")
+--             break
+--         end
+--         lookup[value] = true
+--     end
 --     if printRoute then
 --         print(dump(route))
 --     end
@@ -561,6 +570,6 @@ end
 --     end
 -- end
 
--- for _ = 1, 100 do
+-- for _ = 1, 1000 do
 --     TestRouteGeneration()
 -- end
