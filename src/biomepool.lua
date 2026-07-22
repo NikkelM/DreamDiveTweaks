@@ -259,7 +259,10 @@ function GenerateRoute()
     end
 
     if config.biome_pool.hard_last_biome then
-        endBiome = mod.GetRandomTableValue(hard_biomes)
+        local hard_biome_copy = game.DeepCopyTable(hard_biomes)
+        game.RemoveValueAndCollapse(hard_biome_copy, startBiome)
+
+        endBiome = mod.GetRandomTableValue(hard_biome_copy)
         game.RemoveValueAndCollapse(biomeList, endBiome)
     end
 

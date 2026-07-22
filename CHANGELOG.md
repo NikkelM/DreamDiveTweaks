@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix the "Hard last biome" setting sometimes picking an already vistied biome
+
 ## [1.7.2] - 2026-07-20
 
 - Fig lag when opening keepsake and chaos trial menus
