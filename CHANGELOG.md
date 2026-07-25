@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Update for new Zagreus' Journey config format
+
 ## [1.7.3] - 2026-07-22
 
 - Fix the "Hard last biome" setting sometimes picking an already vistied biome
