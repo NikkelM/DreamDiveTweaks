@@ -80,11 +80,11 @@ modutil.mod.Path.Wrap("UpdateTraitSummary", function (base, args)
     local dreamActiveFearPadding
     local showingShrinePoints = false
 
-    local wrapCondition = (not game.ConfigOptionCache.ShowUIAnimations or not game.ShowingCombatUI) or
+    local wrapCondition = (not game.ConfigOptionCache.ShowUIAnimations or not game._G.ShowingCombatUI) or
         (game.CurrentHubRoom ~= nil and not game.CurrentHubRoom.ShowShrinePoints)
 
     if not wrapCondition then
-        if game.CurrentRun and game.IsGameStateEligible( game.HUDScreen, game.ScreenData.TraitTrayScreen.ItemCategories[4].GameStateRequirements ) then
+        if game.CurrentRun and game.GameState.SpentShrinePointsCache and game.GameState.SpentShrinePointsCache >= 1 then
             showingShrinePoints = true
         end
         if game.CurrentRun and game.CurrentRun.IsDreamRun then

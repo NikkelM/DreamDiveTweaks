@@ -2,7 +2,12 @@
 
 ## [Unreleased]
 
-- Update for new Zagreus' Journey config format
+- Minor compat update for Zagreus Journey v1.2.0
+- Minor UI fix
+
+#### Dev
+
+- Replace Context.Wrap.Static with Context.Env
 
 ## [1.7.3] - 2026-07-22
 

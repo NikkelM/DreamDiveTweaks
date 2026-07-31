@@ -60,17 +60,10 @@ local function on_ready()
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     mod.config = config
 
-    local gameplay_table = rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config
-
-    if gameplay_table and gameplay_table.gameplay then
-        gameplay_table = gameplay_table.gameplay
-    end
-
     mod.IsZagAvailable = rom.mods["NikkelM-Zagreus_Journey"] and
-                         rom.mods["NikkelM-Zagreus_Journey"].config and
-                         rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
-                         rom.mods["NikkelM-Zagreus_Journey"].IsValidInstallation and
-                         not gameplay_table.z_ExcludeFromDreamDives
+                         rom.mods["NikkelM-Zagreus_Journey"].IsModEnabledAndInstallationValid and
+                         rom.mods["NikkelM-Zagreus_Journey"].IsModEnabledAndInstallationValid() and
+                         not rom.mods["NikkelM-Zagreus_Journey"].GetModConfigValueByLeafKey("z_ExcludeFromDreamDives")
 
     mod.IsZag = mod.IsZagAvailable and (not config.biome_pool.disable_zag_biomes)
 

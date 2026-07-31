@@ -95,12 +95,3 @@ modutil.mod.Path.Wrap("SetAudioEffectState", function (base, args)
     end
     return base(args)
 end)
-
--- workaround for HUD being disabled during Typhon babality phase if the wrap is within a static context wrap
-modutil.mod.Path.Wrap("SetThingProperty", function (base, args)
-    args = args or {}
-    if game.CurrentRun.IsDreamRun and config.disable_visage_forms.model and args.Property == "GrannyTexture" and args.Value == "GR2/TyphonHeadDreamStage3_Color" then
-        args.Value = string.gsub(args.Value, "Dream", "")
-    end
-    return base(args)
-end)
