@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.7.4] - 2026-08-01
+
 - Minor compat update for Zagreus Journey v1.2.0
 - Minor UI fix
 
@@ -112,7 +114,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.3...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.4...HEAD
+[1.7.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.3...1.7.4
 [1.7.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.2...1.7.3
 [1.7.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.1...1.7.2
 [1.7.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.0...1.7.1
