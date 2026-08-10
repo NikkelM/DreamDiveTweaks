@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add optional dependancy on ZJ
+- ImGui menu perf improvements
+
 ## [1.7.4] - 2026-08-01
 
 - Minor compat update for Zagreus Journey v1.2.0
