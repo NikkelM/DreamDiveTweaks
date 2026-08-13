@@ -3,6 +3,8 @@
 ## [Unreleased]
 
 - Minor GameOverScreen compat (failed runs will show the remaining biomes as ?)
+- ImGui perf improvements
+- Optional ZJ dependency
 
 ## [1.7.4] - 2026-08-01
 
