@@ -163,6 +163,8 @@ local biomeDisplayNameMap = {
     ["Tartarus"] = "Tartarus (H1)"
 }
 
+local previousConfig = {biome_pool = {custom_order_data = {}}}
+
 function UpdateZagBiomeSets()
     table.insert(hard_biomes, "Styx")
     table.insert(hard_biomes, "Elysium")
@@ -235,7 +237,6 @@ function GetCustomOrder()
         config.biome_pool.custom_order_data = default_order
         config.biome_count = mod.MaxAllowedBiomeCount
         game.GameData.FullRunBiomeCount = config.biome_count
-        RefreshConfigCache()
     end
     local route = {}
     for i = 1, config.biome_count do
@@ -321,7 +322,6 @@ if not WrappedNextDream then
             mod.MaxAllowedBiomeCount = 8
             config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
             game.GameData.FullRunBiomeCount = config.biome_count
-            RefreshConfigCache()
         elseif mod.IsZag then
             mod.MaxAllowedBiomeCount = 12
         end
@@ -403,15 +403,14 @@ CurrentPresetName = CurrentPresetName or "Underworld - Surface"
 CheckOrder = true
 IsOrderValid = true
 
-function DrawCustomOrderOptions(previousConfig)
+function DrawCustomOrderOptions()
 
-    local value, checked = rom.ImGui.Checkbox("Custom biome order", previousConfig.biome_pool.custom_order)
+    local value, checked = rom.ImGui.Checkbox("Custom biome order", config.biome_pool.custom_order)
     if checked then
         config.biome_pool.custom_order = value
-        previousConfig.biome_pool.custom_order = value
     end
 
-    if previousConfig.biome_pool.custom_order then
+    if config.biome_pool.custom_order then
 
         rom.ImGui.SameLine()
 
@@ -419,8 +418,6 @@ function DrawCustomOrderOptions(previousConfig)
         if clicked then
             config.biome_pool.custom_order_data = default_order
             config.biome_count = mod.MaxAllowedBiomeCount
-            previousConfig.biome_pool.custom_order_data = default_order
-            previousConfig.biome_count = mod.MaxAllowedBiomeCount
             game.GameData.FullRunBiomeCount = config.biome_count
             IsOrderValid = true
         end
@@ -429,17 +426,17 @@ function DrawCustomOrderOptions(previousConfig)
         local notCollapsed2
         local notCollapsed3
 
-        for depth = 1, previousConfig.biome_count do
+        for depth = 1, config.biome_count do
             if depth == 1 then
-                notCollapsed1 = rom.ImGui.CollapsingHeader("Biomes 1-" .. math.min(4, previousConfig.biome_count))
+                notCollapsed1 = rom.ImGui.CollapsingHeader("Biomes 1-" .. math.min(4, config.biome_count))
             end
             if depth == 5 then
-                notCollapsed2 = rom.ImGui.CollapsingHeader("Biomes 5-" .. math.min(8, previousConfig.biome_count))
+                notCollapsed2 = rom.ImGui.CollapsingHeader("Biomes 5-" .. math.min(8, config.biome_count))
             end
             if depth == 9 then
-                notCollapsed3 = rom.ImGui.CollapsingHeader("Biomes 9-" .. math.min(12, previousConfig.biome_count))
+                notCollapsed3 = rom.ImGui.CollapsingHeader("Biomes 9-" .. math.min(12, config.biome_count))
             end
-            local currentBiome = previousConfig.biome_pool.custom_order_data[depth..""]
+            local currentBiome = config.biome_pool.custom_order_data[depth..""]
             local drawCombo = (notCollapsed1 and depth <= 4) or (notCollapsed2 and depth <= 8) or (notCollapsed3 and depth <= 12)
             if drawCombo then
                 rom.ImGui.Text(depth..":"); rom.ImGui.SameLine()
@@ -481,10 +478,8 @@ function DrawCustomOrderOptions(previousConfig)
                     if rom.ImGui.Selectable(presetName, (CurrentPresetName == presetName)) then
                         CurrentPresetName = presetName
                         config.biome_count = presetData.count
-                        previousConfig.biome_count = presetData.count
-                        game.GameData.FullRunBiomeCount = previousConfig.biome_count
+                        game.GameData.FullRunBiomeCount = config.biome_count
                         config.biome_pool.custom_order_data = presetData.order
-                        previousConfig.biome_pool.custom_order_data = presetData.order
                         rom.ImGui.SetItemDefaultFocus()
                         CheckOrder = true
                     end

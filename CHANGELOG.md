@@ -2,8 +2,6 @@
 
 ## [Unreleased]
 
-- Add optional dependancy on ZJ
-- ImGui menu perf improvements
 - Minor GameOverScreen compat (failed runs will show the remaining biomes as ?)
 
 ## [1.7.4] - 2026-08-01
