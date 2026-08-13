@@ -4,6 +4,7 @@
 
 - Add optional dependancy on ZJ
 - ImGui menu perf improvements
+- Minor GameOverScreen compat (failed runs will show the remaining biomes as ?)
 
 ## [1.7.4] - 2026-08-01
 
@@ -30,7 +31,7 @@
 
 ## [1.7.0] - 2026-07-05
 
-- Add support for dependant mods to draw their ImGui in this mods ImGui window
+- Add support for dependant mods to draw their ImGui in this mod's ImGui window
 - Potential fix for shop music
 - Block purging well from spawning if normal well shop is not eligible
 
