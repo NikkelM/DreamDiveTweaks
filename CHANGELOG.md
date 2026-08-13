@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.7.5] - 2026-08-13
+
 - Minor GameOverScreen compat (failed runs will show the remaining biomes as ?)
 - ImGui perf improvements
 - Optional ZJ dependency
@@ -118,7 +120,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.4...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.5...HEAD
+[1.7.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.4...1.7.5
 [1.7.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.3...1.7.4
 [1.7.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.2...1.7.3
 [1.7.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.1...1.7.2
