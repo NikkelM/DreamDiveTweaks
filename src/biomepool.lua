@@ -231,10 +231,18 @@ function mod.GetRandomTableValue(tableArg)
     end
 end
 
+function CopyCustomOrder(order)
+    for key, value in pairs(order) do
+        if config.biome_pool.custom_order_data[key] then
+            config.biome_pool.custom_order_data[key] = value
+        end
+    end
+end
+
 function GetCustomOrder()
     if not CheckOrderValid() then
         game.thread(game.InCombatText, game.CurrentRun.Hero.ObjectId, "Invalid custom order, resetting to default order", 3, { OffsetY = -60, SkipRise = true })
-        config.biome_pool.custom_order_data = default_order
+        CopyCustomOrder(default_order)
         config.biome_count = mod.MaxAllowedBiomeCount
         game.GameData.FullRunBiomeCount = config.biome_count
     end
@@ -416,7 +424,7 @@ function DrawCustomOrderOptions()
 
         local clicked = rom.ImGui.Button("Reset Order")
         if clicked then
-            config.biome_pool.custom_order_data = default_order
+            CopyCustomOrder(default_order)
             config.biome_count = mod.MaxAllowedBiomeCount
             game.GameData.FullRunBiomeCount = config.biome_count
             IsOrderValid = true
@@ -479,7 +487,7 @@ function DrawCustomOrderOptions()
                         CurrentPresetName = presetName
                         config.biome_count = presetData.count
                         game.GameData.FullRunBiomeCount = config.biome_count
-                        config.biome_pool.custom_order_data = presetData.order
+                        CopyCustomOrder(presetData.order)
                         rom.ImGui.SetItemDefaultFocus()
                         CheckOrder = true
                     end
