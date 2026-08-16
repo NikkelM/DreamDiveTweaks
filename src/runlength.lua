@@ -47,6 +47,16 @@ end
 
 game.GameData.FullRunBiomeCount = config.biome_count
 
+game.OnAnyLoad
+{
+    function ()
+        if not game.CurrentHubRoom and game.CurrentRun and game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"] then
+            config.biome_count = #game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]
+            game.GameData.FullRunBiomeCount = config.biome_count
+        end
+    end
+}
+
 game.ConcatTableValuesIPairs(game.RoomSets.Dream, {
     "Dream_PostBoss01",
     "Dream_PostBoss02",

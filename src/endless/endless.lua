@@ -79,6 +79,17 @@ function mod.CleanupBiomeVisits()
     game.CurrentRun.BiomesReached = {}
     game.CurrentRun.MusicRecord = {}
 
+    local use_record_clears =
+    {
+        "NPC_Artemis_Field_01",
+        "NPC_Athena_01",
+        "NPC_Icarus_01",
+    }
+
+    for _, name in pairs(use_record_clears) do
+        game.CurrentRun.UseRecord[name] = nil
+    end
+
     -- ZJ
     if mod.IsZagAvailable then
         game.CurrentRun.CompletedStyxWings = 0
