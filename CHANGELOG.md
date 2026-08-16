@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.8.1] - 2026-08-16
+
 - Allow repeat NPC encounters in endless mode.
 
 ## [1.8.0] - 2026-08-16
@@ -126,7 +128,8 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.8.0...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.8.1...HEAD
+[1.8.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.8.0...1.8.1
 [1.8.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.5...1.8.0
 [1.7.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.4...1.7.5
 [1.7.4]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.3...1.7.4
