@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Allow repeat NPC encounters in endless mode.
+
 ## [1.8.0] - 2026-08-16
 
 - Added endless mode. Can activate it in the Victory screen of a Dream Dive to continue that run.
