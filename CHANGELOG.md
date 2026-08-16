@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Update README
+
 ## [1.8.1] - 2026-08-16
 
 - Allow repeat NPC encounters in endless mode.
