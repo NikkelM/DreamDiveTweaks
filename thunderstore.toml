@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "zerp"
 name = "DreamDiveTweaks"
-versionNumber = "1.8.1"
+versionNumber = "1.13.3"
 description = "Hades II mod offering multiple configurable tweaks for Dream Dives. Including but not limited to disabling visage forms, longer runs, some minor fixes and more. Compatible with Zagreus' Journey"
 websiteUrl = "https://github.com/adi1998/DreamDiveTweaks"
 containsNsfwContent = false
@@ -39,9 +39,9 @@ source = "./src"
 target = "./plugins"
 
 # Uncomment (remove the #) the three lines below if you have any files to copy to the plugins_data folder (like custom .pkg files)
-# [[build.copy]]
-# source = "./data"
-# target = "./plugins_data"
+[[build.copy]]
+source = "./data"
+target = "./plugins_data"
 
 [publish]
 repository = "https://thunderstore.io"

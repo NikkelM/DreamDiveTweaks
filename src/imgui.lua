@@ -1,5 +1,3 @@
-print("current run length", game.GameData.FullRunBiomeCount)
-
 local previousConfig = {
     biome_pool = {
     },
@@ -23,6 +21,11 @@ end)
 
 local scaling_applied = nil
 
+local curve_display_name = {
+    exp = "Exponential",
+    linear = "Linear"
+}
+
 function DrawMenu()
 
     local value, selected, checked
@@ -33,7 +36,6 @@ function DrawMenu()
             if selected and value ~= previousConfig.biome_count then
                 config.biome_count = value
                 previousConfig.biome_count = value
-                game.GameData.FullRunBiomeCount = config.biome_count
             end
 
             if mod.IsZagAvailable then
@@ -43,7 +45,6 @@ function DrawMenu()
                     mod.IsZag = not value
                     mod.MaxAllowedBiomeCount = (mod.IsZag and 12) or 8
                     config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
-                    game.GameData.FullRunBiomeCount = config.biome_count
 
                     PurgeZagBiomeSets()
                     if mod.MaxAllowedBiomeCount == 12 then
@@ -163,6 +164,20 @@ function DrawMenu()
             rom.ImGui.SameLine()
             rom.ImGui.Text("Scaling updated")
         end
+
+        rom.ImGui.Separator()
+        rom.ImGui.Text("Number of regions before the max god limit is increased.\nFirst limit increase always happens after 4 regions.")
+        value, selected = rom.ImGui.SliderInt("###maxgods", config.max_gods_increase_interval, 1, 6, "%d")
+        if selected then
+            config.max_gods_increase_interval = value
+        end
+
+        rom.ImGui.Separator()
+        rom.ImGui.Text("Number of regions before Hermes/hammer limit is increased.\nFirst limit increase always happens after 4 regions.")
+        value, selected = rom.ImGui.SliderInt("###maxhamherm", config.hammer_hermes_interval, 1, 6, "%d")
+        if selected then
+            config.hammer_hermes_interval = value
+        end
     end
 
     rom.ImGui.Separator()
@@ -223,6 +238,38 @@ function DrawMenu()
         value, checked = rom.ImGui.Checkbox("Add purging wells to post boss rooms", config.purging_well)
         if checked then
             config.purging_well = value
+        end
+    end
+
+    rom.ImGui.Separator()
+
+    if rom.ImGui.CollapsingHeader("Endless") then
+        rom.ImGui.Text("Configure scaling parameters beyond 12 biomes.")
+        if rom.ImGui.BeginCombo("Scaling curve", curve_display_name[config.endless.gain_type]) then
+            for _, gain_type in ipairs({"exp", "linear"}) do
+                if rom.ImGui.Selectable(curve_display_name[gain_type], gain_type == config.endless.gain_type) then
+                    config.endless.gain_type = gain_type
+                    rom.ImGui.SetItemDefaultFocus()
+                end
+            end
+            rom.ImGui.EndCombo()
+        end
+
+        value, selected = rom.ImGui.SliderFloat("Enemy health gain", config.endless.health_gain * 100, 5, 25, "+%.1f%%", rom.ImGuiSliderFlags.Logarithmic)
+        if selected then
+            config.endless.health_gain = value / 100
+        end
+
+        value, selected = rom.ImGui.SliderFloat("Enemy damage gain", config.endless.damage_gain * 100, 5, 25, "+%.1f%%", rom.ImGuiSliderFlags.Logarithmic)
+        if selected then
+            config.endless.damage_gain = value / 100
+        end
+
+        rom.ImGui.Text("Global dodge hard cap")
+
+        value, selected = rom.ImGui.SliderInt("###globaldcap", config.endless.dodge_cap * 100, 1, 100, "%d%%")
+        if selected then
+            config.endless.dodge_cap = value / 100
         end
     end
 

@@ -2,7 +2,42 @@
 
 ## [Unreleased]
 
-- Update README
+## [1.13.3] - 2026-10-03
+
+- Show an announcement screen explaining endless mode the first time a user starts one.
+
+## [1.13.2] - 2026-10-01
+
+- Block endless button in ZJ victory screen until 10 wins have been achieved.
+
+## [1.13.1] - 2026-09-20
+
+- Fix Vow of Menace scaling bug for ZJ enemies.
+
+## [1.13.0] - 2026-09-20
+
+- Fix Vow of Menace scaling up enemies when no replacement is found.
+- Add a way to end an endless run by holding down `Gift + Salute`.
+
+## [1.12.0] - 2026-09-11
+
+- Add endless option for regular runs.
+
+## [1.11.0] - 2026-09-08
+
+- Allow the dodge cap in endless to be configurable.
+- Fix normal runs being affected by the `biome_count` setting.
+
+## [1.10.0] - 2026-09-02
+
+- Allow configuring how frequently new gods/hammers are added to the loot pool.
+- Fix Worry Free staying visisble after triggering endless mode.
+
+## [1.9.0] - 2026-08-25
+
+- Allow configuring how endless scales enemy health and damage after 12 regions.
+- Fix some voice lines not playing at the appropriate run depth.
+- Cleanup more stuff on triggering endless mode.
 
 ## [1.8.1] - 2026-08-16
 
@@ -130,7 +165,15 @@
 
 - First version of the mod!
 
-[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.8.1...HEAD
+[unreleased]: https://github.com/adi1998/DreamDiveTweaks/compare/1.13.3...HEAD
+[1.13.3]: https://github.com/adi1998/DreamDiveTweaks/compare/1.13.2...1.13.3
+[1.13.2]: https://github.com/adi1998/DreamDiveTweaks/compare/1.13.1...1.13.2
+[1.13.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.13.0...1.13.1
+[1.13.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.12.0...1.13.0
+[1.12.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.11.0...1.12.0
+[1.11.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.10.0...1.11.0
+[1.10.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.9.0...1.10.0
+[1.9.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.8.1...1.9.0
 [1.8.1]: https://github.com/adi1998/DreamDiveTweaks/compare/1.8.0...1.8.1
 [1.8.0]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.5...1.8.0
 [1.7.5]: https://github.com/adi1998/DreamDiveTweaks/compare/1.7.4...1.7.5

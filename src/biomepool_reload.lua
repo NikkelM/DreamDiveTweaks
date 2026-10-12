@@ -307,7 +307,6 @@ function GetCustomOrder()
         game.thread(game.InCombatText, game.CurrentRun.Hero.ObjectId, "Invalid custom order, resetting to default order", 3, { OffsetY = -60, SkipRise = true })
         CopyCustomOrder(default_order)
         config.biome_count = mod.MaxAllowedBiomeCount
-        game.GameData.FullRunBiomeCount = config.biome_count
     end
     local route = {}
     for i = 1, config.biome_count do
@@ -381,7 +380,7 @@ function GenerateRoute()
     return route, biomeList
 end
 
-mod.SelectNextDreamBiomeWrap = function (base, source, args)
+function mod.SetupBiomeSets()
     -- clamp max biome count and configured biome count if we detect ZJ doesn't have its requirements met
     if mod.IsZag and (game.GameState.ModsNikkelMHadesBiomesClearedRunsCache or 0) < 1 then
         if config.biome_count > 8 then
@@ -391,7 +390,6 @@ mod.SelectNextDreamBiomeWrap = function (base, source, args)
         end
         mod.MaxAllowedBiomeCount = 8
         config.biome_count = math.min(config.biome_count, mod.MaxAllowedBiomeCount)
-        game.GameData.FullRunBiomeCount = config.biome_count
     elseif mod.IsZag then
         mod.MaxAllowedBiomeCount = 12
     end
@@ -410,12 +408,15 @@ mod.SelectNextDreamBiomeWrap = function (base, source, args)
     if config.biome_pool.larger_starting_pool and mod.MaxAllowedBiomeCount == 12 then
         UpdateEasyBiomeZag()
     end
+end
+
+mod.SelectNextDreamBiomeWrap = function (base, source, args)
+    mod.SetupBiomeSets()
 
     -- on getting a pre generated route from elsewhere
     if not game.IsEmpty(game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]) and (game.CurrentRun.EnteredBiomes or 0) == 0 then
         game.CurrentRun[_PLUGIN.guid .. "StoredFullBiomeCount"] = config.biome_count
         config.biome_count = #game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"]
-        game.GameData.FullRunBiomeCount = config.biome_count
     end
 
     -- only run this if starting a new run or in the middle of a DreamDiveTweaks modded run
@@ -478,7 +479,6 @@ function DrawCustomOrderOptions()
         if clicked then
             CopyCustomOrder(default_order)
             config.biome_count = mod.MaxAllowedBiomeCount
-            game.GameData.FullRunBiomeCount = config.biome_count
             IsOrderValid = true
         end
 
@@ -538,7 +538,6 @@ function DrawCustomOrderOptions()
                     if rom.ImGui.Selectable(presetName, (CurrentPresetName == presetName)) then
                         CurrentPresetName = presetName
                         config.biome_count = presetData.count
-                        game.GameData.FullRunBiomeCount = config.biome_count
                         CopyCustomOrder(presetData.order)
                         rom.ImGui.SetItemDefaultFocus()
                         CheckOrder = true
@@ -607,7 +606,6 @@ end
 --                     game.CurrentRun.EnteredBiomes = 0
 --                     game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"] = nil
 --                     config.biome_count = test_length
---                     game.GameData.FullRunBiomeCount = config.biome_count
 --                     game.SelectNextDreamBiome()
 --                     local route = {game.CurrentRun.CurrentRoom.NextRoomSet[1]}
 --                     for _ = 2, test_length do

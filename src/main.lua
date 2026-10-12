@@ -94,6 +94,8 @@ local function on_ready()
 
     import 'biomepool_ready.lua'
 
+    import 'dialogue.lua'
+
     import 'endless/endless.lua'
     import 'endless/runclearscreen.lua'
 end

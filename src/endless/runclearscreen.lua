@@ -17,9 +17,6 @@ game.ScreenData.RunClear.ComponentData[_PLUGIN.guid .. "EndlessButton"] =
     Requirements =
     {
         {
-            PathTrue = {"CurrentRun", "IsDreamRun"}
-        },
-        {
             Path = { "CurrentRun", "ScreenViewRecord", "RunClear" },
             Comparison = "==",
             Value = 1,
@@ -31,14 +28,61 @@ game.ScreenData.RunClear.ComponentData[_PLUGIN.guid .. "EndlessButton"] =
         {
             PathFromSource = true,
             PathFalse = { _PLUGIN.guid .. "DeathScreen" }
-        }
+        },
+        {
+            PathFalse = { "CurrentRun", "ActiveBounty" },
+        },
+        OrRequirements =
+        {
+            {
+                {
+                    PathTrue = { "CurrentRun", "IsDreamRun" },
+                },
+            },
+            {
+                {
+					PathTrue = { "GameState", "ReachedTrueEnding" },
+				},
+                {
+                    PathFalse = { "CurrentRun", "ModsNikkelMHadesBiomesIsModdedRun" }
+                }
+            },
+            {
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "Ending01" },
+                },
+                {
+                    PathTrue = { "CurrentRun", "ModsNikkelMHadesBiomesIsModdedRun" }
+                },
+            }
+        },
+        NamedRequirements = { "DreamRunsUnlocked" },
     }
 }
 
 function mod.StartEndlessRun(screen)
+    if not game.CurrentRun.IsDreamRun then
+        game.CurrentRun.IsDreamRun = true
+        mod.SetupBiomeSets()
+        game.CurrentRun[_PLUGIN.guid .. "GeneratedRoute"], game.CurrentRun[_PLUGIN.guid .. "UnusedBiomes"] = GenerateRoute()
+        local key = "DreamPointsDrop"
+        local id = game.SpawnObstacle({ Name = key, DestinationId = game.CurrentRun.Hero.ObjectId, Group = "Standing" })
+        local reward = game.CreateConsumableItem( id, key, 0 )
+        game.MapState.RoomRequiredObjects[reward.ObjectId] = reward
+    end
     game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] = true
     print("Starting endless mode.")
     game.CloseRunClearScreen(screen)
+    if config.endless.first_time then
+        mod.OpenFirstTimeEndlessScreen()
+        config.endless.first_time = false
+    end
+end
+
+function mod.OpenFirstTimeEndlessScreen()
+    game.ZeroMouseTether( "ShowDreamRunMessage" )
+	game.GenericInfoPresentation( { InfoMessageId = "DreamDiveTweaksEndlessModeMessage" } )
+	game.UnzeroMouseTether( "ShowDreamRunMessage" )
 end
 
 modutil.mod.Path.Wrap("CloseRunClearScreen", function (base, screen)
@@ -62,6 +106,9 @@ modutil.mod.Path.Wrap("DeathPresentation", function (base, ...)
             (gameOver and gameOver.config and gameOver.config.enabled ) then
         game.thread(openDeathRunClearScreen)
         game.waitUntil(_PLUGIN.guid .. "CloseRunClearScreenTriggered")
+    end
+    if game.CurrentRun.IsDreamRun and game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] then
+        game.CurrentRun.Cleared = nil
     end
 end)
 

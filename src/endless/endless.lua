@@ -1,6 +1,4 @@
-local fullRunBiomeCountProxy = {
-    FullRunBiomeCount = game.GameData.FullRunBiomeCount
-}
+local fullRunBiomeCountProxy = game.GameData.FullRunBiomeCount
 
 game.GameData.FullRunBiomeCount = nil
 
@@ -10,13 +8,16 @@ setmetatable(game.GameData, {
             if not game.CurrentHubRoom and game.CurrentRun and game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] then
                 return 999
             end
-            return fullRunBiomeCountProxy[k]
+            if not game.CurrentHubRoom and game.CurrentRun and game.CurrentRun.IsDreamRun then
+                return config.biome_count
+            end
+            return fullRunBiomeCountProxy
         end
     end,
 
     __newindex = function(t, k, v)
         if k == "FullRunBiomeCount" then
-            fullRunBiomeCountProxy[k] = v
+            fullRunBiomeCountProxy = v
         else
             rawset(t, k, v)
         end
@@ -61,6 +62,7 @@ function mod.CleanupBiomeVisits()
     game.CurrentRun.RoomCountCache = {}
     game.CurrentRun.BiomeRoomCountCache = {}
     game.CurrentRun.EncountersOccurredBiomeCache = {}
+    game.CurrentRun.EncountersDepthCache = {}
 
     game.CurrentRun.FieldsMaxDoorsRolled = 0
 
@@ -98,6 +100,8 @@ function mod.CleanupBiomeVisits()
     end
 end
 
+local scalingCache = {}
+
 modutil.mod.Path.Wrap("SelectNextDreamBiome", function(base, source, args)
     if game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] then
         if game.IsEmpty(game.CurrentRun[_PLUGIN.guid .. "EndlessBiomePool"]) then
@@ -111,46 +115,68 @@ modutil.mod.Path.Wrap("SelectNextDreamBiome", function(base, source, args)
         end
         local nextRoomSet = table.remove(game.CurrentRun[_PLUGIN.guid .. "EndlessBiomePool"])
         game.CurrentRun.CurrentRoom.NextRoomSet = { nextRoomSet }
+        scalingCache = {}
         return
     end
     return base(source, args)
 end)
 
+local function scaleItem(orig, ramp, exp)
+    if config.endless.gain_type == "exp" then
+        return orig * (1 + ramp) ^ exp
+    end
+    return orig * (1 + ramp * exp)
+end
+
 function  mod.GetScaledDreamBiomeData(dreamBiomeData, depth)
     local entry = dreamBiomeData[12]
-    local endlessDamageRamp = 1.25
-    local endlessHealthRamp = 1.1
     local new_entry = game.DeepCopyTable(entry)
     if entry.AddOutgoingDamageModifier and entry.AddOutgoingDamageModifier.PlayerMultiplier then
-        new_entry.AddOutgoingDamageModifier.PlayerMultiplier = entry.AddOutgoingDamageModifier.PlayerMultiplier * ( endlessDamageRamp ^ (depth - 12))
+        new_entry.AddOutgoingDamageModifier.PlayerMultiplier = scaleItem(entry.AddOutgoingDamageModifier.PlayerMultiplier, config.endless.damage_gain, depth - 12)
         print("Damage", entry.AddOutgoingDamageModifier.PlayerMultiplier, "to", new_entry.AddOutgoingDamageModifier.PlayerMultiplier)
     end
     if entry.DataOverrides and entry.DataOverrides.HealthMultiplier then
-        new_entry.DataOverrides.HealthMultiplier = entry.DataOverrides.HealthMultiplier * (endlessHealthRamp ^ (depth - 12))
+        new_entry.DataOverrides.HealthMultiplier = scaleItem(entry.DataOverrides.HealthMultiplier, config.endless.health_gain, depth - 12)
         print("HealthMultiplier", entry.DataOverrides.HealthMultiplier, "to", new_entry.DataOverrides.HealthMultiplier)
     end
     if entry.DataOverrides and entry.DataOverrides.HealingMultiplier then
-        new_entry.DataOverrides.HealingMultiplier = entry.DataOverrides.HealingMultiplier * (endlessHealthRamp ^ (depth - 12))
+        new_entry.DataOverrides.HealingMultiplier = scaleItem(entry.DataOverrides.HealingMultiplier, config.endless.health_gain, depth - 12)
         print("HealingMultiplier", entry.DataOverrides.HealingMultiplier, "to", new_entry.DataOverrides.HealingMultiplier)
     end
     if entry.DataOverrides and entry.DataOverrides.OutgoingDamageModifiers then
         for index, modifier in ipairs(entry.DataOverrides.OutgoingDamageModifiers) do
             if modifier.PlayerMultiplier ~= nil then
-                new_entry.DataOverrides.OutgoingDamageModifiers[index].PlayerMultiplier = modifier.PlayerMultiplier * ( endlessDamageRamp ^ (depth - 12))
+                new_entry.DataOverrides.OutgoingDamageModifiers[index].PlayerMultiplier = scaleItem(modifier.PlayerMultiplier, config.endless.damage_gain, depth - 12)
             end
             if modifier.NonPlayerMultiplier ~= nil then
-                new_entry.DataOverrides.OutgoingDamageModifiers[index].NonPlayerMultiplier = modifier.NonPlayerMultiplier * (endlessHealthRamp ^ (depth - 12))
+                new_entry.DataOverrides.OutgoingDamageModifiers[index].NonPlayerMultiplier = scaleItem(modifier.NonPlayerMultiplier, config.endless.health_gain, depth - 12)
             end
         end
     end
     return new_entry
 end
 
-local scalingCache = {}
+local ignoreNextBiomeEnemyShrineUpgradeLookup = game.ToLookup({
+    "I",
+    "Q",
+    "Styx"
+})
 
 modutil.mod.Path.Wrap("SetupUnit", function (base, unit, currentRun, args)
     currentRun = currentRun or game.CurrentRun
 	args = args or {}
+
+    --#region Vow of Menace fix for final biomes
+    if (
+        unit and unit.IsFromNextBiomeEnemyShrineUpgrade and
+        currentRun and currentRun.CurrentRoom and currentRun.CurrentRoom.RoomSetName and
+        ignoreNextBiomeEnemyShrineUpgradeLookup[currentRun.CurrentRoom.RoomSetName]
+    ) then
+        print("resetting IsFromNextBiomeEnemyShrineUpgrade for", unit.Name)
+        unit.IsFromNextBiomeEnemyShrineUpgrade = nil
+    end
+    --#endregion
+
     if unit and unit.DreamBiomeData and unit.DreamBiomeData[12] and currentRun and currentRun.IsDreamRun and currentRun.EnteredBiomes > 12 then
         print("scaling unit ", unit.Name, "for depth ", currentRun.EnteredBiomes)
         scalingCache[unit.Name] = scalingCache[unit.Name] or {}
@@ -180,13 +206,12 @@ end)
 
 local totalDodge = 0
 local totalCappedDodge = 0
-local dodgeCap = 0.96
 
 game.OnAnyLoad
 {
     function ()
         if game.CurrentRun and game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] then
-            game.zerpDreamDiveTweaksEndlessDodgeMessage = "Capped to " .. dodgeCap * 100 .. "% in Endless."
+            game.zerpDreamDiveTweaksEndlessDodgeMessage = "Capped to " .. config.endless.dodge_cap * 100 .. "% in Endless."
         else
             game.zerpDreamDiveTweaksEndlessDodgeMessage = ""
         end
@@ -228,15 +253,15 @@ modutil.mod.Path.Wrap("SetLifeProperty", function (base, args)
         print(args.ValueChangeType, args.Value)
         if args.ValueChangeType == "Add" then
             local value = args.Value
-            if totalDodge < dodgeCap then
-                if totalDodge + args.Value > dodgeCap then
-                    args.Value = dodgeCap - totalDodge
+            if totalDodge < config.endless.dodge_cap then
+                if totalDodge + args.Value > config.endless.dodge_cap then
+                    args.Value = config.endless.dodge_cap - totalDodge
                 else
 
                 end
             else
-                if totalDodge + args.Value < dodgeCap then
-                    args.Value = (totalDodge + args.Value) - dodgeCap
+                if totalDodge + args.Value < config.endless.dodge_cap then
+                    args.Value = (totalDodge + args.Value) - config.endless.dodge_cap
                 else
                     args.Value = 0
                 end
@@ -289,3 +314,43 @@ for _, functionName in ipairs(NPC_fucntions) do
         return base(source, args, screen)
     end)
 end
+
+modutil.mod.Path.Wrap("IsHealthHidden", function (base)
+    if game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] then
+        return game.HasHeroTraitValue("HideHealth") and game.CurrentRun.Cleared
+    end
+    return base()
+end)
+
+game.OnControlPressed{ "Gift",
+    function (triggerArgs)
+        if game.CurrentRun and game.CurrentRun.IsDreamRun and game.CurrentRun[_PLUGIN.guid .. "EndlessStarted"] and game.IsEmpty(game.ActiveScreens) then
+            game.wait(0.2)
+            if game.IsControlDown({ Name = "Gift" }) and game.IsControlDown({Name = "SpecialInteract"}) then
+                local notifyName = _PLUGIN.guid .. "KillReleased"
+                local threshold  = 0.9
+                game.NotifyOnControlReleased({
+                    Names   = { "Gift" },
+                    Notify  = notifyName,
+                    Timeout = threshold,
+                })
+                game.NotifyOnControlReleased({
+                    Names   = { "SpecialInteract" },
+                    Notify  = notifyName,
+                    Timeout = threshold,
+                })
+                game.waitUntil( notifyName )
+                local timedOut = game._eventTimeoutRecord and game._eventTimeoutRecord[ notifyName ]
+                if game._eventTimeoutRecord then
+                    game._eventTimeoutRecord[ notifyName ] = nil
+                end
+                if timedOut then
+                    game.CurrentRun.Hero.IsDead = false
+                    game.Kill(game.CurrentRun.Hero)
+                    return
+                end
+                return
+            end
+        end
+    end
+}
